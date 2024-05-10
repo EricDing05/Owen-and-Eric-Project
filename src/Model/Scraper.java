@@ -10,11 +10,15 @@ public class Scraper {
     public static void scrape(String url) {
         try  {
             Document doc = Jsoup.connect(url).get();
-            System.out.println(doc.title());
-            System.out.println(doc);
+            String json = doc.select("script#__NEXT_DATA__").first().html();
+            System.out.println(json);
         } catch (IOException e) {
             throw new RuntimeException();
         }
+    }
+
+    private void JsonParser(String s) {
+
     }
 
 
