@@ -1,10 +1,5 @@
 package model;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Product {
 
@@ -35,23 +30,23 @@ public class Product {
     }
 
 
-    public List<Product> makeProducts(String ja) {
-        ObjectMapper mapper = new ObjectMapper();
-        try {
-            JsonNode rootArray = mapper.readTree(ja);
-            List<Product> products = new ArrayList<>();
-            for (JsonNode node : rootArray) {
-                String name = node.get("name").asText();
-                System.out.println(name);
-                double price = node.get("price").asDouble();
-                boolean isOutOfStock = node.get("isOutOfStock").isBoolean(); //fix
-                products.add(new Product(name, price, !inStock));
-            }
-            return products;
-        } catch (Exception e) {
-            //
-        }
-        return null;
-
-    }
+//    public List<Product> makeProducts(String ja) {
+//        ObjectMapper mapper = new ObjectMapper();
+//        try {
+//            JsonNode rootArray = mapper.readTree(ja);
+//            List<Product> products = new ArrayList<>();
+//            for (JsonNode node : rootArray) {
+//                String name = node.get("name").asText();
+//                System.out.println(name);
+//                double price = node.get("price").asDouble();
+//                boolean isOutOfStock = node.get("isOutOfStock").isBoolean(); //fix
+//                products.add(new Product(name, price, !inStock));
+//            }
+//            return products;
+//        } catch (Exception e) {
+//            //
+//        }
+//        return null;
+//
+//    }
 }
