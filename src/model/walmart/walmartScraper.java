@@ -8,7 +8,7 @@ import org.jsoup.nodes.Document;
 
 import java.io.IOException;
 
-public class Scraper extends model.Scraper {
+public class walmartScraper extends model.Scraper {
 
     public void scrape(String url) {
         try {
@@ -25,7 +25,7 @@ public class Scraper extends model.Scraper {
         return jsonObject;
     }
 
-    private void parseArray(JsonObject o) {
+    public void parseArray(JsonObject o) {
         JsonArray products = o.getAsJsonObject("props").getAsJsonObject("pageProps").getAsJsonObject("initialData").getAsJsonObject("searchResult").getAsJsonArray("itemStacks").get(0).getAsJsonObject().getAsJsonArray("items");
         for (int i = 0; i < products.size(); i++) {
             JsonObject product = products.get(i).getAsJsonObject();

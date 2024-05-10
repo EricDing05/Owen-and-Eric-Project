@@ -8,5 +8,7 @@ public abstract class Scraper {
 
     public abstract JsonObject JsonParser (String s);
 
+    public abstract void parseArray(JsonObject o);
+
 
 }
