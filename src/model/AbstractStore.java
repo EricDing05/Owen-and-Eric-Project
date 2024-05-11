@@ -18,5 +18,4 @@ public abstract class AbstractStore {
 
     public abstract void generateProducts();
 
-
 }
