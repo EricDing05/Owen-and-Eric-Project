@@ -14,7 +14,7 @@ public class walmartScraper extends model.Scraper {
         try {
             Document doc = Jsoup.connect(url).get();
             String json = doc.select("script#__NEXT_DATA__").first().html();
-            JsonParser(json);
+            parseArray(JsonParser(json));
         } catch (IOException e) {
             throw new RuntimeException();
         }
