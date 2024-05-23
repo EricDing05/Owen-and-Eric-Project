@@ -5,10 +5,11 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import model.Scraper;
 
 import java.io.IOException;
 
-public class walmartScraper extends model.Scraper {
+public class WalmartScraper extends Scraper {
 
     public void scrape(String url) {
         try {
@@ -32,9 +33,10 @@ public class walmartScraper extends model.Scraper {
             System.out.println("Product Name: " + product.get("name").getAsString());
             System.out.println("Price: " + product.get("price").getAsDouble());
         }
-
     }
 }
+
+// i think scraper should have an association with its store so that it can add products directly to the store
 
 
 
