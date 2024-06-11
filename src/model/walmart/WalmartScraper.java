@@ -2,41 +2,36 @@ package model.walmart;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
+import model.Product;
 import model.Scraper;
 
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class WalmartScraper extends Scraper {
 
-    public void scrape(String url) {
-        try {
-            Document doc = Jsoup.connect(url).get();
-            String json = doc.select("script#__NEXT_DATA__").first().html();
-            parseArray(JsonParser(json));
-        } catch (IOException e) {
-            throw new RuntimeException();
-        }
-    }
 
-    public JsonObject JsonParser(String s) {
-        JsonObject jsonObject = JsonParser.parseString(s).getAsJsonObject();
-        return jsonObject;
-    }
+    // EFFECTS: turns all the products in the JSONArray into product objects. Returns the list of objects.
+    public List<Product> parseArray(JsonObject o) {
+        List<Product> finishedProducts = new ArrayList<>();
 
-    public void parseArray(JsonObject o) {
+        // Navigate through the complicated JSONObject to get to the JSONArray of products
         JsonArray products = o.getAsJsonObject("props").getAsJsonObject("pageProps").getAsJsonObject("initialData").getAsJsonObject("searchResult").getAsJsonArray("itemStacks").get(0).getAsJsonObject().getAsJsonArray("items");
+
+        // iterate through the JSONArray and extract information
         for (int i = 0; i < products.size(); i++) {
             JsonObject product = products.get(i).getAsJsonObject();
-            System.out.println("Product Name: " + product.get("name").getAsString());
-            System.out.println("Price: " + product.get("price").getAsDouble());
+            String name = product.get("name").getAsString();
+            System.out.println(name);
+            double price = product.get("price").getAsDouble();
+            String image = product.getAsJsonObject("imageInfo").get("thumbnailUrl").getAsString();
+            finishedProducts.add(new Product(name,price,true,image));
         }
+        return finishedProducts;
     }
 }
 
-// i think scraper should have an association with its store so that it can add products directly to the store
+
 
 
 

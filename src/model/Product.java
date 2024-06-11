@@ -5,12 +5,14 @@ public class Product {
 
     private String name;
     private double price;
+    private String imageUrl;
     private boolean inStock;
 
-    public Product(String name, double price, boolean inStock) {
+    public Product(String name, double price, boolean inStock, String imageUrl) {
         this.name = name;
         this.price = price;
         this.inStock = inStock;
+        this.imageUrl = imageUrl;
     }
 
     public String getName() {
