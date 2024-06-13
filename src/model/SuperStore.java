@@ -17,8 +17,8 @@ public class SuperStore {
         try {
             driver.get("https://www.realcanadiansuperstore.ca/food/fruits-vegetables/fresh-vegetables/c/28195?navid=flyout-L3-Fresh-Vegetables");
 
+            // these lines makes sure the page gets loaded before it scrapes, preventing "No Such Element Exception"
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
             WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@data-testid='product-grid']")));
             // Super store vegetables
 
