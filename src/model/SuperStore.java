@@ -28,7 +28,7 @@ public class SuperStore {
             for (WebElement productTile : productTiles) {
                 try {
                     // Find the span element with data-testid="sale-price" or data-testid="regular-price" within the product tile
-                    WebElement priceElement = productTile.findElement(By.xpath(".//span[@data-testid='sale-price' or @data-testid='regular-price']"));
+                    WebElement priceElement = productTile.findElement(By.xpath(".//span[@data-testid='sale-price' or @data-testid='regular-price']/span"));
                     String priceText = priceElement.getText();
                     System.out.println("Price: " + priceText);
                 } catch (Exception e) {
