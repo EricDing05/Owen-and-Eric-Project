@@ -13,6 +13,6 @@
     <orderEntry type="library" name="jsoup-1.17.2" level="project" />
     <orderEntry type="library" name="google.code.gson" level="project" />
     <orderEntry type="library" name="seleniumhq.selenium.safari.driver" level="project" />
-    <orderEntry type="library" exported="" name="seleniumhq.selenium.java" level="project" />
+    <orderEntry type="library" name="seleniumhq.selenium.java" level="project" />
   </component>
 </module>
