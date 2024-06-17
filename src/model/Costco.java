@@ -28,7 +28,7 @@ public class Costco {
             // should wrap this for loop inside another loop that loops through the page index based off the number of pages we can find
             for (WebElement productTitle : productTitles) {
                 try {
-                    String priceText = productTitle.getText();
+                    String priceText = productTitle.getText().trim();
                     System.out.println("Price: " + priceText);
                 } catch (Exception e) {
                     System.out.println("Price element not found in this product tile.");
