@@ -28,7 +28,8 @@ public class Walmart {
             // should wrap this for loop inside another loop that loops through the page index based off the number of pages we can find
             for (WebElement productTitle : productTitles) {
                 try {
-                    String priceText = productTitle.getText();
+                    WebElement priceElement = productTitle.findElement(By.xpath(".//span[contains(text(),'current')]"));
+                    String priceText = priceElement.getText();
                     System.out.println("Price: " + priceText);
                 } catch (Exception e) {
                     System.out.println("Price element not found in this product tile.");
