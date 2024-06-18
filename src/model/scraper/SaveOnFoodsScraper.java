@@ -11,21 +11,16 @@ import java.util.List;
 public class SaveOnFoodsScraper {
 
     public void scrapePage(String url, AbstractStore store, WebDriver driver) {
-        // create an instance of the SafariDriver
 
-
-        for (int i = 0; i < 5; i++) {
             driver.manage().timeouts().implicitlyWait(Duration.ofMillis(9000));
             // connect to saveonfoods website
-            driver.get("https://www.saveonfoods.com/sm/pickup/rsid/1982/categories/fruits-vegetables/fresh-fruit-id-30682?f=Breadcrumb%3Agrocery%2Ffruits+%26+vegetables%2Ffresh+fruit&page=1&skip=" + i * 30);
+            driver.get(url);
             // wait 5 seconds to allow the website to fully load
             // TODO: create a better waiting system
             driver.manage().timeouts().implicitlyWait(Duration.ofMillis(9000));
 
             findElements(driver);
             driver.quit();
-
-        }
 
 
     }
