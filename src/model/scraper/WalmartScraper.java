@@ -39,8 +39,14 @@ public class WalmartScraper extends WebsiteScraper {
         }
     }
 
+
+
     public String getNextURL(String url, int i) {
         return ""; //TODO
+    }
+
+    public void findProductElements() {
+        //
     }
 
 }
