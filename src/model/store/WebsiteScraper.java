@@ -1,10 +1,11 @@
 package model.store;
 
+import model.AbstractStore;
+
 public abstract class WebsiteScraper {
 
 
-    public void scrapeWebsite() {
-
+    public void scrapeWebsite(AbstractStore store) {
 
     }
 
