@@ -34,7 +34,8 @@ public abstract class WebsiteScraper {
     }
 
     public abstract void scrapePage(String url, AbstractStore store, WebDriver driver);
-    public abstract void findProductElements();
+
+
 
 
 }

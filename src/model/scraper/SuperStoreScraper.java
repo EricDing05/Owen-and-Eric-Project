@@ -1,5 +1,6 @@
 package model.scraper;
 
+import model.AbstractStore;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,13 +13,13 @@ import java.util.List;
 public class SuperStoreScraper extends WebsiteScraper {
 
 
-    public void scrapePage(String url, String gridPath, String productPath, String infoPath,WebDriver driver) {
+    public void scrapePage(String url, AbstractStore store, WebDriver driver) {
         try {
             driver.get(url);
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-            WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(gridPath)));
+            WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(store.getGridPath())));
 
-            List<WebElement> productTitles = gridElement.findElements(By.xpath(productPath));
+            List<WebElement> productTitles = gridElement.findElements(By.xpath(store.getProductPath()));
 
             for (WebElement productTitle : productTitles) {
                 try {
