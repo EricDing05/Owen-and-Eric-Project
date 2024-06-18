@@ -10,9 +10,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class SuperStore {
+public class SuperStoreScraper {
     public static void main(String[] args) {
         WebDriver driver = new SafariDriver();
+
+
 
         try {
             driver.get("https://www.realcanadiansuperstore.ca/food/fruits-vegetables/fresh-vegetables/c/28195?navid=flyout-L3-Fresh-Vegetables");

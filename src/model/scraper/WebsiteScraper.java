@@ -12,7 +12,6 @@ public abstract class WebsiteScraper {
         for (String url :store.getCategoriesURLs().values()) {
             scrapeCategory(url,store);
         }
-
     }
 
     public void scrapeCategory(String url, AbstractStore store) {
@@ -23,19 +22,17 @@ public abstract class WebsiteScraper {
                 String currentPageURL = getNextURL(url,i); //TODO make this method
                 driver.manage().timeouts().implicitlyWait(Duration.ofMillis(9000));
 
-                scrapePage(currentPageURL, store.getGridPath(), store.getGridPath(), store.getInfoPath());
+                scrapePage(currentPageURL, store.getGridPath(), store.getGridPath(), store.getInfoPath(), driver);
 
                 driver.quit();
             } catch (Exception e) {
                 break;
             }
-
-
         }
 
     }
 
-    public abstract void scrapePage(String url, String gridPath, String productPath, String infoPath);
+    public abstract void scrapePage(String url, String gridPath, String productPath, String infoPath,WebDriver driver);
 
 
     public abstract String getNextURL(String url, int i);

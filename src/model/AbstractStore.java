@@ -14,7 +14,6 @@ public abstract class AbstractStore {
     private String productPath;
     private String infoPath;
 
-
     public AbstractStore(String name) {
         this.name = name;
     }
@@ -74,8 +73,6 @@ public abstract class AbstractStore {
     public void setCategoriesURLs(Map<String, String> categoriesURLs) {
         this.categoriesURLs = categoriesURLs;
     }
-
-
 
     public abstract void generateProducts();
 

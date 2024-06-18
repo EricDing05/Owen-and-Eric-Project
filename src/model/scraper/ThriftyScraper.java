@@ -11,7 +11,7 @@ import java.util.List;
 public class ThriftyScraper {
 
 
-    public void scrape() {
+    public void scrapePage() {
         WebDriver driver = new SafariDriver();
         driver.get("https://www.thriftyfoods.com/shop-online/grocery?page=1&pageSize=200");
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
