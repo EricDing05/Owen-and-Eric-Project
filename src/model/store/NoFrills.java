@@ -15,7 +15,13 @@ public class NoFrills extends AbstractStore {
 
     }
     public String getNextURL(String url, int i) {
-        return "";
+        if (i == 1) {
+            return url + "?page=2";
+        } else {
+            // If i > 1, we replace the current page number with i + 1
+            return url.replaceAll("page=\\d+", "page=" + (i + 1));
+        }
+
     }
 
     // has the same master food page as superstore
@@ -44,8 +50,10 @@ public class NoFrills extends AbstractStore {
 //        this.categoriesURLs.put("Non-Dairy Milk Alternatives","https://www.nofrills.ca/food/dairy-eggs/non-dairy-milk-alternatives/c/58904");
 //        this.categoriesURLs.put("Natural and Organic","https://www.nofrills.ca/food/dairy-eggs/natural-and-organic/c/59463");
 
-
-
     }
+
+    // https://www.nofrills.ca/food/c/27985
+    // https://www.nofrills.ca/food/c/27985?page=2
+    // https://www.nofrills.ca/food/c/27985?page=3
 
 }
