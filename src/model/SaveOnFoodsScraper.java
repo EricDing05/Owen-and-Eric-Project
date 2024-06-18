@@ -12,20 +12,22 @@ public class SaveOnFoodsScraper {
 
     public void scrape() throws InterruptedException {
         // create an instance of the SafariDriver
-        WebDriver driver = new SafariDriver();
 
-        for (int i = 1; i < 2; i++) {
+
+        for (int i = 0; i < 5; i++) {
+            WebDriver driver = new SafariDriver();
             driver.manage().timeouts().implicitlyWait(Duration.ofMillis(9000));
             // connect to saveonfoods website
-            driver.get("https://www.saveonfoods.com/sm/pickup/rsid/1982/categories/fruits-vegetables/fresh-fruit-id-30682?f=Breadcrumb%3Agrocery%2Ffruits%20%26%20vegetables%2Ffresh%20fruit");
+            driver.get("https://www.saveonfoods.com/sm/pickup/rsid/1982/categories/fruits-vegetables/fresh-fruit-id-30682?f=Breadcrumb%3Agrocery%2Ffruits+%26+vegetables%2Ffresh+fruit&page=1&skip=" + i * 30);
             // wait 5 seconds to allow the website to fully load
             // TODO: create a better waiting system
             driver.manage().timeouts().implicitlyWait(Duration.ofMillis(9000));
 
             findElements(driver);
+            driver.quit();
 
         }
-        driver.quit();
+
 
     }
 

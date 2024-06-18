@@ -3,7 +3,7 @@ package model;
 public class test {
 
     public static void main(String[] args) {
-        ThriftyScraper s = new ThriftyScraper();
+        SaveOnFoodsScraper s = new SaveOnFoodsScraper();
         try {
             s.scrape();
         } catch (Exception e) {
