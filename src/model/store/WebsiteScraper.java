@@ -5,6 +5,7 @@ public abstract class WebsiteScraper {
 
     public void scrapeWebsite() {
 
+
     }
 
     public void scrapeCategory() {
