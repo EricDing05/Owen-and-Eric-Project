@@ -16,6 +16,7 @@ public abstract class AbstractStore {
 
     public AbstractStore(String name) {
         this.name = name;
+        categoriesURLs = new HashMap<>();
     }
 
     public String getName() {
@@ -73,7 +74,6 @@ public abstract class AbstractStore {
     public void setCategoriesURLs(Map<String, String> categoriesURLs) {
         this.categoriesURLs = categoriesURLs;
     }
-
     public abstract void generateProducts();
     public abstract String getNextURL(String url, int i);
 
