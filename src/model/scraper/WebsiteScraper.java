@@ -20,7 +20,7 @@ public abstract class WebsiteScraper {
             try {
                 WebDriver driver = new SafariDriver();
                 driver.manage().timeouts().implicitlyWait(Duration.ofMillis(9000));
-                String currentPageURL = getNextURL(url,i); //TODO make this method
+                String currentPageURL = store.getNextURL(url,i); //TODO make this method
                 driver.manage().timeouts().implicitlyWait(Duration.ofMillis(9000));
 
                 scrapePage(currentPageURL, store.getGridPath(), store.getGridPath(), store.getInfoPath(), driver);
@@ -35,8 +35,6 @@ public abstract class WebsiteScraper {
 
     public abstract void scrapePage(String url, String gridPath, String productPath, String infoPath,WebDriver driver);
 
-
-    public abstract String getNextURL(String url, int i);
 
 
 }

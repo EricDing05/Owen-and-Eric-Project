@@ -12,7 +12,6 @@ import java.util.List;
 public class SuperStoreScraper extends WebsiteScraper {
 
 
-
     public void scrapePage(String url, String gridPath, String productPath, String infoPath,WebDriver driver) {
         try {
             driver.get(url);
@@ -42,4 +41,5 @@ public class SuperStoreScraper extends WebsiteScraper {
     public String getNextURL(String url, int i) {
         return ""; //TODO
     }
+
 }
