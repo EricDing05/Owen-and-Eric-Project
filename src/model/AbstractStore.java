@@ -5,17 +5,18 @@ import java.util.*;
 public abstract class AbstractStore {
 
     private String name;
+    private String gridPath;
+    private String infoPath;
+    private String productPath;
     protected List<Product> products;
-    protected Scraper scraper;
 
     public AbstractStore(String name) {
         this.name = name;
     }
 
-    public void addProduct(Product p) {
-        this.products.add(p);
-    }
+    public abstract void scrapeStore();
 
-    public abstract void generateProducts();
+
+
 
 }
