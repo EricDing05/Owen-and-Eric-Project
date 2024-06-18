@@ -6,6 +6,19 @@ import java.util.*;
 
 public abstract class AbstractStore {
 
+    private String name;
+    protected List<Product> products;
+    protected Map<String, String> categoriesURLs;
+    protected WebsiteScraper scraper;
+    private String gridPath;
+    private String productPath;
+    private String infoPath;
+
+
+    public AbstractStore(String name) {
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }
@@ -20,14 +33,6 @@ public abstract class AbstractStore {
 
     public void setProducts(List<Product> products) {
         this.products = products;
-    }
-
-    public List<String> getCategories() {
-        return categories;
-    }
-
-    public void setCategories(List<String> categories) {
-        this.categories = categories;
     }
 
     public WebsiteScraper getScraper() {
@@ -62,19 +67,15 @@ public abstract class AbstractStore {
         this.infoPath = infoPath;
     }
 
-    private String name;
-    protected List<Product> products;
-    protected List<String> categories;
-    protected WebsiteScraper scraper;
-    private String gridPath;
-    private String productPath;
-    private String infoPath;
-
-
-
-    public AbstractStore(String name) {
-        this.name = name;
+    public Map<String, String> getCategoriesURLs() {
+        return categoriesURLs;
     }
+
+    public void setCategoriesURLs(Map<String, String> categoriesURLs) {
+        this.categoriesURLs = categoriesURLs;
+    }
+
+
 
     public abstract void generateProducts();
 
