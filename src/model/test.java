@@ -1,5 +1,7 @@
 package model;
 
+import model.store.SaveOnFoodsScraper;
+
 public class test {
 
     public static void main(String[] args) {

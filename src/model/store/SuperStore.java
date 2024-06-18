@@ -1,4 +1,4 @@
-package model;
+package model.store;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
