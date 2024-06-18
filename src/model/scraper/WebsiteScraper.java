@@ -17,14 +17,19 @@ public abstract class WebsiteScraper {
 
     public void scrapeCategory(String url, AbstractStore store) {
         for (int i = 0; i < 99999; i++) {
-            WebDriver driver = new SafariDriver();
-            driver.manage().timeouts().implicitlyWait(Duration.ofMillis(9000));
-            String currentPageURL = getNextURL(url,i); //TODO make this method
-            driver.manage().timeouts().implicitlyWait(Duration.ofMillis(9000));
+            try {
+                WebDriver driver = new SafariDriver();
+                driver.manage().timeouts().implicitlyWait(Duration.ofMillis(9000));
+                String currentPageURL = getNextURL(url,i); //TODO make this method
+                driver.manage().timeouts().implicitlyWait(Duration.ofMillis(9000));
 
-            scrapePage(currentPageURL, store.getGridPath(), store.getGridPath(), store.getInfoPath());
+                scrapePage(currentPageURL, store.getGridPath(), store.getGridPath(), store.getInfoPath());
 
-            driver.quit();
+                driver.quit();
+            } catch (Exception e) {
+                break;
+            }
+
 
         }
 
