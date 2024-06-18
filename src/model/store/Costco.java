@@ -16,9 +16,17 @@ public class Costco extends AbstractStore {
 
     }
 
+    //This shoulldd work for all categories.
     public String getNextURL(String url, int i) {
-        return "";
+        if (i == 1) {
+            // If i == 1, we need to generate the URL for the second page
+            return url + "?currentPage=2&pageSize=24";
+        } else {
+            // If i > 1, we update the current page in the URL
+            return url.replaceAll("currentPage=\\d+", "currentPage=" + (i + 1));
+        }
     }
+
 
     public void initializeCategories() {
         this.categoriesURLs.put("Kirkland Signature", "https://www.costco.ca/kirkland-signature-products.html" );
@@ -45,5 +53,7 @@ public class Costco extends AbstractStore {
         this.categoriesURLs.put("Household Products","https://www.costco.ca/household.html"); //neccessary?
         this.categoriesURLs.put("Health & Beauty","https://www.costco.ca/health-beauty.html?costcoprogramtypes=costco-grocery&refine=||item_program_eligibility-2DayDelivery");
     }
+
+
 
 }

@@ -17,8 +17,14 @@ public class Walmart extends AbstractStore {
     }
 
     public String getNextURL(String url, int i) {
-        return "";
+        if (i == 1) {
+            return url + "&page=2";
+        } else {
+            // If i > 1, replace the current page number with i + 1
+            return url.replaceAll("page=\\d+", "page=" + (i + 1));
+        }
     }
+
 
     public void initializeCategories() {
 
@@ -38,7 +44,9 @@ public class Walmart extends AbstractStore {
         this.categoriesURLs.put("Ice cream shop","https://www.walmart.ca/en/browse/grocery/frozen-food/ice-cream-treats/10019_6000194326337_6000194349402?icid=landing/cp_page_grocery_shop_all_17778_I8YF0M83QT");
         this.categoriesURLs.put("New Arrivals","https://www.walmart.ca/en/shop/new-arrivals/1364258455409?icid=cp_l1_page_grocery_more_grocery_new_arrivals_80296_PXS9XMFYAY");
 
-        //might need to add dietary category not sure might be a repeat.
+        //might need to add dietary category, but might not have to bc they would be repeats.
     }
+
+
 
 }

@@ -16,8 +16,14 @@ public class SuperStore extends AbstractStore {
     }
 
     public String getNextURL(String url, int i) {
-        return "";
+        if (i == 1) {
+            return url + "?page=2";
+        } else {
+            // If i > 1, we replace the current page number with i + 1
+            return url.replaceAll("page=\\d+", "page=" + (i + 1));
+        }
     }
+
 
     // i think super store just has an all page so we can use that. no need to add categories?
     // also note
@@ -35,4 +41,9 @@ public class SuperStore extends AbstractStore {
 //        this.categoriesURLs.put("Fresh Juice & Smoothies","https://www.realcanadiansuperstore.ca/food/fruits-vegetables/fresh-juice-smoothies/c/28200");
 //        this.categoriesURLs.put("In-Store Salads","https://www.realcanadiansuperstore.ca/food/fruits-vegetables/in-store-salads/c/59222");
     }
+
+
+    // https://www.realcanadiansuperstore.ca/food/c/27985
+    // https://www.realcanadiansuperstore.ca/food/c/27985?page=2
+    // https://www.realcanadiansuperstore.ca/food/c/27985?page=3
 }
