@@ -1,21 +1,20 @@
 package model.scraper;
 
+import model.AbstractStore;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
 import java.util.List;
 
 public class SaveOnFoodsScraper {
 
-    public void scrape() throws InterruptedException {
+    public void scrapePage(String url, AbstractStore store, WebDriver driver) {
         // create an instance of the SafariDriver
 
 
         for (int i = 0; i < 5; i++) {
-            WebDriver driver = new SafariDriver();
             driver.manage().timeouts().implicitlyWait(Duration.ofMillis(9000));
             // connect to saveonfoods website
             driver.get("https://www.saveonfoods.com/sm/pickup/rsid/1982/categories/fruits-vegetables/fresh-fruit-id-30682?f=Breadcrumb%3Agrocery%2Ffruits+%26+vegetables%2Ffresh+fruit&page=1&skip=" + i * 30);
@@ -27,6 +26,8 @@ public class SaveOnFoodsScraper {
             driver.quit();
 
         }
+
+
     }
 
     private void findElements(WebDriver driver) {
