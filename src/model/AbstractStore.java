@@ -6,7 +6,7 @@ public abstract class AbstractStore {
 
     private String name;
     protected List<Product> products;
-    protected Scraper scraper;
+
 
     public AbstractStore(String name) {
         this.name = name;
