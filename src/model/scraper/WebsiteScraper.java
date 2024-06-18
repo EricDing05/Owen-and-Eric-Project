@@ -10,7 +10,7 @@ public abstract class WebsiteScraper {
 
 
     public void scrapeWebsite(AbstractStore store) {
-        for (String url :store.getCategoriesURLs().values()) {
+        for (String url : store.getCategoriesURLs().values()) {
             scrapeCategory(url,store);
         }
     }
@@ -34,7 +34,5 @@ public abstract class WebsiteScraper {
     }
 
     public abstract void scrapePage(String url, AbstractStore store, WebDriver driver);
-    public abstract void findProductElements();
-
 
 }

@@ -1,9 +1,9 @@
 package model.scraper;
 
+import model.AbstractStore;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -12,20 +12,19 @@ import java.util.List;
 
 public class noFrillsScraper {
 
-    // Note that this method is the EXACT same as the method used for SuperStore. The websites seem to be the exact same. Possibly room for some even higher level abstraction here.
-    public static void main(String[] args) {
 
-        WebDriver driver = new SafariDriver();
+    // Note that this method is the EXACT same as the method used for SuperStore. The websites seem to be the exact same. Possibly room for some even higher level abstraction here.
+    public void scrapePage(String url, AbstractStore store, WebDriver driver) {
 
         try {
-            driver.get("https://www.nofrills.ca/food/fruits-vegetables/fresh-fruits/c/28194");
+            driver.get(url);
 
             // these lines makes sure the page gets loaded before it scrapes, preventing "No Such Element Exception"
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-            WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@data-testid='product-grid']")));
+            WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(store.getGridPath())));
             // Super store vegetables
 
-            List<WebElement> productTiles = gridElement.findElements(By.xpath(".//div[@data-testid='price-product-tile']"));
+            List<WebElement> productTiles = gridElement.findElements(By.xpath(store.getProductPath()));
 
             // should wrap this for loop inside another loop that loops through the page index based off the number of pages we can find
             for (WebElement productTile : productTiles) {
