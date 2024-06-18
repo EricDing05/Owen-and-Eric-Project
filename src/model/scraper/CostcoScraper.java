@@ -9,9 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class SuperStoreScraper extends WebsiteScraper {
-
-
+public class CostcoScraper extends WebsiteScraper {
 
     public void scrapePage(String url, String gridPath, String productPath, String infoPath,WebDriver driver) {
         try {
@@ -42,4 +40,7 @@ public class SuperStoreScraper extends WebsiteScraper {
     public String getNextURL(String url, int i) {
         return ""; //TODO
     }
+
 }
+
+

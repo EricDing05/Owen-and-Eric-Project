@@ -8,6 +8,7 @@ import java.time.Duration;
 
 public abstract class WebsiteScraper {
 
+
     public void scrapeWebsite(AbstractStore store) {
         for (String url :store.getCategoriesURLs().values()) {
             scrapeCategory(url,store);

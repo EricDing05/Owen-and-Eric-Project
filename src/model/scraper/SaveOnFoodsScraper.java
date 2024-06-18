@@ -27,8 +27,6 @@ public class SaveOnFoodsScraper {
             driver.quit();
 
         }
-
-
     }
 
     private void findElements(WebDriver driver) {

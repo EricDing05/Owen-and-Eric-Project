@@ -19,4 +19,6 @@ public class ThriftyScraper {
         List<WebElement> productElements = gridElement.findElements(By.xpath("//div[@class='product-tile push--bottom grid__item slim palm--one-half portable--two-quarters desk--one-quarter']"));
 
     }
+
+
 }
