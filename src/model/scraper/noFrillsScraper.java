@@ -1,4 +1,4 @@
-package model.store;
+package model.scraper;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,15 +10,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class SuperStore {
+public class noFrillsScraper {
+
+    // Note that this method is the EXACT same as the method used for SuperStore. The websites seem to be the exact same. Possibly room for some even higher level abstraction here.
     public static void main(String[] args) {
+
         WebDriver driver = new SafariDriver();
 
         try {
-            driver.get("https://www.realcanadiansuperstore.ca/food/fruits-vegetables/fresh-vegetables/c/28195?navid=flyout-L3-Fresh-Vegetables");
+            driver.get("https://www.nofrills.ca/food/fruits-vegetables/fresh-fruits/c/28194");
 
             // these lines makes sure the page gets loaded before it scrapes, preventing "No Such Element Exception"
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
             WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@data-testid='product-grid']")));
             // Super store vegetables
 

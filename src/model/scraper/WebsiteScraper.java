@@ -1,4 +1,4 @@
-package model.store;
+package model.scraper;
 
 public abstract class WebsiteScraper {
 

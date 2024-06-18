@@ -1,4 +1,4 @@
-package model.store;
+package model.scraper;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,26 +10,25 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class Walmart {
+public class Costco {
 
     public static void main(String[] args) {
         WebDriver driver = new SafariDriver();
 
         try {
-            driver.get("https://www.walmart.com/search?q=groceries&catId=976759");
+            driver.get("https://www.costco.ca/meat.html");
 
-            // these lines makes sure the page gets loaded before it scrapes, preventing "No Such Element Exception"
+
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-            WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@data-testid='item-stack']")));
+            WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@automation-id='productList']")));
             // Super store vegetables
 
-            List<WebElement> productTitles = gridElement.findElements(By.xpath("//div[@data-automation-id='product-price']"));
+            List<WebElement> productTitles = gridElement.findElements(By.xpath("//div[contains(@automation-id, 'itemPriceOutput')]"));
 
             // should wrap this for loop inside another loop that loops through the page index based off the number of pages we can find
             for (WebElement productTitle : productTitles) {
                 try {
-                    WebElement priceElement = productTitle.findElement(By.xpath(".//span[contains(text(),'current')]"));
-                    String priceText = priceElement.getText();
+                    String priceText = productTitle.getText().trim();
                     System.out.println("Price: " + priceText);
                 } catch (Exception e) {
                     System.out.println("Price element not found in this product tile.");
@@ -52,4 +51,5 @@ public class Walmart {
         }
     }
 }
+
 

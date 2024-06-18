@@ -1,4 +1,4 @@
-package model.store;
+package model.scraper;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,28 +10,25 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class noFrillsScraper {
+public class Walmart {
 
-    // Note that this method is the EXACT same as the method used for SuperStore. The websites seem to be the exact same. Possibly room for some even higher level abstraction here.
     public static void main(String[] args) {
-
         WebDriver driver = new SafariDriver();
 
         try {
-            driver.get("https://www.nofrills.ca/food/fruits-vegetables/fresh-fruits/c/28194");
+            driver.get("https://www.walmart.com/search?q=groceries&catId=976759");
 
             // these lines makes sure the page gets loaded before it scrapes, preventing "No Such Element Exception"
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-            WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@data-testid='product-grid']")));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+            WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@data-testid='item-stack']")));
             // Super store vegetables
 
-            List<WebElement> productTiles = gridElement.findElements(By.xpath(".//div[@data-testid='price-product-tile']"));
+            List<WebElement> productTitles = gridElement.findElements(By.xpath("//div[@data-automation-id='product-price']"));
 
             // should wrap this for loop inside another loop that loops through the page index based off the number of pages we can find
-            for (WebElement productTile : productTiles) {
+            for (WebElement productTitle : productTitles) {
                 try {
-                    // Find the span element with data-testid="sale-price" or data-testid="regular-price" within the product tile
-                    WebElement priceElement = productTile.findElement(By.xpath(".//span[@data-testid='sale-price' or @data-testid='regular-price']/span"));
+                    WebElement priceElement = productTitle.findElement(By.xpath(".//span[contains(text(),'current')]"));
                     String priceText = priceElement.getText();
                     System.out.println("Price: " + priceText);
                 } catch (Exception e) {
@@ -55,3 +52,4 @@ public class noFrillsScraper {
         }
     }
 }
+

@@ -1,6 +1,6 @@
 package model;
 
-import model.store.SaveOnFoodsScraper;
+import model.scraper.SaveOnFoodsScraper;
 
 public class test {
 

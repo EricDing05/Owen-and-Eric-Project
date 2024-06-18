@@ -1,4 +1,4 @@
-package model.store;
+package model.scraper;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,25 +10,26 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class Costco {
-
+public class SuperStore {
     public static void main(String[] args) {
         WebDriver driver = new SafariDriver();
 
         try {
-            driver.get("https://www.costco.ca/meat.html");
+            driver.get("https://www.realcanadiansuperstore.ca/food/fruits-vegetables/fresh-vegetables/c/28195?navid=flyout-L3-Fresh-Vegetables");
 
-
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-            WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@automation-id='productList']")));
+            // these lines makes sure the page gets loaded before it scrapes, preventing "No Such Element Exception"
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@data-testid='product-grid']")));
             // Super store vegetables
 
-            List<WebElement> productTitles = gridElement.findElements(By.xpath("//div[contains(@automation-id, 'itemPriceOutput')]"));
+            List<WebElement> productTiles = gridElement.findElements(By.xpath(".//div[@data-testid='price-product-tile']"));
 
             // should wrap this for loop inside another loop that loops through the page index based off the number of pages we can find
-            for (WebElement productTitle : productTitles) {
+            for (WebElement productTile : productTiles) {
                 try {
-                    String priceText = productTitle.getText().trim();
+                    // Find the span element with data-testid="sale-price" or data-testid="regular-price" within the product tile
+                    WebElement priceElement = productTile.findElement(By.xpath(".//span[@data-testid='sale-price' or @data-testid='regular-price']/span"));
+                    String priceText = priceElement.getText();
                     System.out.println("Price: " + priceText);
                 } catch (Exception e) {
                     System.out.println("Price element not found in this product tile.");
@@ -51,5 +52,3 @@ public class Costco {
         }
     }
 }
-
-

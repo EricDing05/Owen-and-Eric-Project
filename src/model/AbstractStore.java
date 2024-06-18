@@ -1,6 +1,6 @@
 package model;
 
-import model.store.WebsiteScraper;
+import model.scraper.WebsiteScraper;
 
 import java.util.*;
 
