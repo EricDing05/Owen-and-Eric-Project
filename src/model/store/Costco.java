@@ -1,4 +1,15 @@
 package model.store;
 
-public class Costco {
+import model.AbstractStore;
+
+public class Costco extends AbstractStore {
+
+
+    public void generateProducts() {
+
+    }
+    public String getNextURL(String url, int i) {
+        return "";
+    }
+
 }

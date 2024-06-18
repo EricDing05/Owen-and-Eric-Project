@@ -1,4 +1,14 @@
 package model.store;
 
-public class NoFrills {
+import model.AbstractStore;
+
+public class NoFrills extends AbstractStore {
+
+    public void generateProducts() {
+
+    }
+    public String getNextURL(String url, int i) {
+        return "";
+    }
+
 }
