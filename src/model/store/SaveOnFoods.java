@@ -13,9 +13,20 @@ public class SaveOnFoods extends AbstractStore  {
     public void generateProducts() {
 
     }
-    public String getNextURL(String url, int i) {
-        return "";
+
+    public String getNextURL(String url, int i) { //this only works for a page that has a siingle word title //TODO
+        if (i == 1) {
+            // If i == 1, we need to append &page=2&skip=30 and handle URL encoding
+            return url + "&page=2&skip=30";
+        } else {
+            // If i > 1, we replace the current page number and skip value
+            int nextPage = i + 1;
+            int nextSkip = i * 30;
+            return url.replaceAll("page=\\d+", "page=" + nextPage)
+                    .replaceAll("skip=\\d+", "skip=" + nextSkip);
+        }
     }
+
 
     public void initializeCategories() { //1982 is for the generic store. change this number to change location
         //fruit n veggies
@@ -125,4 +136,15 @@ public class SaveOnFoods extends AbstractStore  {
         this.categoriesURLs.put("Tofu","https://www.saveonfoods.com/sm/pickup/rsid/1982/categories/plant-based-non-dairy/tofu-id-39102?f=Breadcrumb%3Agrocery%2Fplant%20based%20%26%20non%20dairy%2Ftofu");
         this.categoriesURLs.put("Egg Alternatives","https://www.saveonfoods.com/sm/pickup/rsid/1982/categories/plant-based-non-dairy/egg-alternatives-id-33100?f=Breadcrumb%3Agrocery%2Fplant%20based%20%26%20non%20dairy%2Fegg%20alternatives");
     }
+
+
+    // https://www.saveonfoods.com/sm/pickup/rsid/1982/categories/pantry/snacks-id-30511?f=Breadcrumb%3Agrocery%2Fpantry%2Fsnacks
+    // https://www.saveonfoods.com/sm/pickup/rsid/1982/categories/pantry/snacks-id-30511?f=Breadcrumb%3Agrocery%2Fpantry%2Fsnacks&page=2&skip=30
+    // pg 3:
+
+    // https://www.saveonfoods.com/sm/pickup/rsid/1982/categories/meat-seafood/frozen-meat-id-30830?f=Breadcrumb%3Agrocery%2Fmeat%20%26%20seafood%2Ffrozen%20meat
+    // https://www.saveonfoods.com/sm/pickup/rsid/1982/categories/meat-seafood/frozen-meat-id-30830?f=Breadcrumb%3Agrocery%2Fmeat+%26+seafood%2Ffrozen+meat&page=2&skip=30
+    //
+
+
 }
