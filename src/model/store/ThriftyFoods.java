@@ -9,7 +9,8 @@ public class ThriftyFoods extends AbstractStore  {
     public ThriftyFoods(String name) {
         super(name);
         initializeCategories();
-
+        this.setGridPath(); //TODO
+        this.setProductPath(); //TODO
     }
 
     public void generateProducts() {
@@ -18,7 +19,12 @@ public class ThriftyFoods extends AbstractStore  {
 
 
     public String getNextURL(String url, int i) {
-        return "";
+        if (i == 1) {
+            return url + "?page=2&pageSize=20";
+        } else {
+            // If i > 1, we replace the current page number with i + 1
+            return url.replaceAll("page=\\d+", "page=" + (i + 1));
+        }
     }
 
     public void initializeCategories() {
@@ -38,5 +44,9 @@ public class ThriftyFoods extends AbstractStore  {
         this.categoriesURLs.put("TAKE IT TO GO","https://www.thriftyfoods.com/shop-online/take-it-to-go");
         this.categoriesURLs.put("VITAMINS & MORE","https://www.thriftyfoods.com/shop-online/vitamins-and-more");
     }
+
+    //https://www.thriftyfoods.com/shop-online/bakery-commercial
+    //https://www.thriftyfoods.com/shop-online/bakery-commercial?page=2&pageSize=20
+    //https://www.thriftyfoods.com/shop-online/bakery-commercial?page=3&pageSize=20
 
 }
