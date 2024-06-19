@@ -52,8 +52,5 @@ public class NoFrills extends AbstractStore {
 
     }
 
-    // https://www.nofrills.ca/food/c/27985
-    // https://www.nofrills.ca/food/c/27985?page=2
-    // https://www.nofrills.ca/food/c/27985?page=3
 
 }
