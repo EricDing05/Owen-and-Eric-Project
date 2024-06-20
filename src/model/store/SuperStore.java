@@ -1,6 +1,7 @@
 package model.store;
 
 import model.AbstractStore;
+import model.scraper.SaveOnFoodsScraper;
 
 public class SuperStore extends AbstractStore {
 
@@ -9,6 +10,7 @@ public class SuperStore extends AbstractStore {
         initializeCategories();
         this.setGridPath("//div[@data-testid='product-grid']");
         this.setProductPath("//div[contains(@class, 'chakra-linkbox') and contains(@class, 'css-')]");
+        scraper = new SaveOnFoodsScraper();
     }
 
     public void generateProducts() {

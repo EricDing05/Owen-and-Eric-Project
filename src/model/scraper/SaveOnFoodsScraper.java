@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import java.time.Duration;
 import java.util.List;
 
-public class SaveOnFoodsScraper {
+public class SaveOnFoodsScraper extends WebsiteScraper {
 
     public void scrapePage(String url, AbstractStore store, WebDriver driver) {
 

@@ -1,6 +1,7 @@
 package model.store;
 
 import model.AbstractStore;
+import model.scraper.SaveOnFoodsScraper;
 
 public class SaveOnFoods extends AbstractStore  {
 
@@ -9,6 +10,7 @@ public class SaveOnFoods extends AbstractStore  {
         initializeCategories();
         this.setGridPath("//section[@aria-labelledby='productGrid__title']");
         this.setProductPath("//article[starts-with(@class, 'ProductCardWrapper--')]");
+        scraper = new SaveOnFoodsScraper();
 
     }
 

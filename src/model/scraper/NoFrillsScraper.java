@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class noFrillsScraper {
+public class NoFrillsScraper extends WebsiteScraper {
 
 
     // Note that this method is the EXACT same as the method used for SuperStore. The websites seem to be the exact same. Possibly room for some even higher level abstraction here.

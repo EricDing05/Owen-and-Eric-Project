@@ -1,6 +1,7 @@
 package model.store;
 
 import model.AbstractStore;
+import model.scraper.CostcoScraper;
 
 public class Costco extends AbstractStore {
 
@@ -10,6 +11,7 @@ public class Costco extends AbstractStore {
         initializeCategories();
         this.setGridPath("//div[@automation-id='productList']");
         this.setProductPath("//div[contains(@class, 'product') and contains(@class, 'col-xs-12')]"); //this might not work. not tested
+        scraper = new CostcoScraper();
     }
 
     public void generateProducts() {

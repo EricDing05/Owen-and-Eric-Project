@@ -1,6 +1,7 @@
 package model.store;
 
 import model.AbstractStore;
+import model.scraper.NoFrillsScraper;
 
 public class NoFrills extends AbstractStore {
 
@@ -10,6 +11,7 @@ public class NoFrills extends AbstractStore {
         initializeCategories();
         this.setGridPath("//div[@data-testid='product-grid']");
         this.setProductPath("//div[contains(@class, 'chakra-linkbox') and contains(@class, 'css-')]");
+        scraper = new NoFrillsScraper();
 
     }
 

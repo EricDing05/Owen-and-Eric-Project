@@ -1,6 +1,7 @@
 package model.store;
 
 import model.AbstractStore;
+import model.scraper.ThriftyScraper;
 
 public class ThriftyFoods extends AbstractStore  {
 
@@ -11,6 +12,7 @@ public class ThriftyFoods extends AbstractStore  {
         initializeCategories();
         this.setGridPath("//div[contains(@class, 'grid ')]");
         this.setProductPath("//div[@class='item-product']");
+        scraper = new ThriftyScraper();
     }
 
     public void generateProducts() {
