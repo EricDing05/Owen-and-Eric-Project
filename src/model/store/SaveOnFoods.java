@@ -7,6 +7,8 @@ public class SaveOnFoods extends AbstractStore  {
     public SaveOnFoods(String name) {
         super(name);
         initializeCategories();
+        this.setGridPath("//section[@aria-labelledby='productGrid__title']");
+        this.setProductPath("//article[starts-with(@class, 'ProductCardWrapper--')]");
 
     }
 

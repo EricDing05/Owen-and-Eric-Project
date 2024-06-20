@@ -9,8 +9,8 @@ public class ThriftyFoods extends AbstractStore  {
     public ThriftyFoods(String name) {
         super(name);
         initializeCategories();
-        this.setGridPath(); //TODO
-        this.setProductPath(); //TODO
+        this.setGridPath("//div[contains(@class, 'grid ')]");
+        this.setProductPath("//div[@class='item-product']");
     }
 
     public void generateProducts() {
