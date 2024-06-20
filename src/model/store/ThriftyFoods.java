@@ -21,7 +21,7 @@ public class ThriftyFoods extends AbstractStore  {
 
 
     public String getNextURL(String url, int i) {
-            return url + "?page=" + (i + 1) + "&pageSize=100";
+            return url + "?page=" + (i + 1) + "&pageSize=200";
             // I have no idea why u made like that, it seems much easier:
 //        if (i == 1) {
 //            return url + "?page=2&pageSize=20";

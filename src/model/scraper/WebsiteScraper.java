@@ -17,8 +17,8 @@ public abstract class WebsiteScraper {
 
     public void scrapeCategory(String url, AbstractStore store) {
         for (int i = 0; i < 9999; i++) {
+            WebDriver driver = new SafariDriver();
             try {
-                WebDriver driver = new SafariDriver();
                 driver.manage().timeouts().implicitlyWait(Duration.ofMillis(9000));
                 String currentPageURL = store.getNextURL(url,i); //TODO make this method
                 System.out.println(currentPageURL);
@@ -26,6 +26,8 @@ public abstract class WebsiteScraper {
 
                 driver.quit();
             } catch (Exception e) {
+                driver.quit();
+                e.printStackTrace();
                 return;
             }
         }

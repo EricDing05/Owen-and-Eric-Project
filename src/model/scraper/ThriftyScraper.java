@@ -18,6 +18,9 @@ public class ThriftyScraper extends WebsiteScraper {
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
         WebElement gridElement = driver.findElement(By.xpath("//*[@id=\"body_0_main_1_ProductSearch_GroceryBrowsing_TemplateResult_SearchResultListView_MansoryPanel\"]/div"));
         List<WebElement> productElements = gridElement.findElements(By.xpath("//div[@class='item-product js-product js-equalized js-addtolist-container js-ga']"));
+        if (productElements.size() == 0) {
+            throw new RuntimeException();
+        }
         for (WebElement e : productElements) {
             String dataProduct = e.getAttribute("data-product");
             parseJson(dataProduct);
@@ -31,7 +34,8 @@ public class ThriftyScraper extends WebsiteScraper {
         Gson gson = new Gson();
         JsonObject json = gson.fromJson(input, JsonObject.class);
         String name = json.get("FullDisplayName").getAsString();
-        System.out.println(name);
+        Double price = json.get("RegularPrice").getAsDouble();
+        System.out.println(name + price);
     }
 
 
