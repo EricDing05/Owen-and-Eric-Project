@@ -1,15 +1,18 @@
 package model;
 
-import model.scraper.SaveOnFoodsScraper;
+import model.scraper.ThriftyScraper;
+import model.store.ThriftyFoods;
 
 public class test {
 
     public static void main(String[] args) {
-        SaveOnFoodsScraper s = new SaveOnFoodsScraper();
+        ThriftyFoods foods = new ThriftyFoods("thriftys");
+        ThriftyScraper t = new ThriftyScraper();
         try {
-
+            foods.generateProducts();
+            // t.scrapePage("wdawd",new ThriftyFoods("thrify"), new SafariDriver());
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
 
 

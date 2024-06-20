@@ -1,23 +1,37 @@
 package model.scraper;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import model.AbstractStore;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
 import java.util.List;
 
-public class ThriftyScraper {
+public class ThriftyScraper extends WebsiteScraper {
 
 
-    public void scrapePage() {
-        WebDriver driver = new SafariDriver();
-        driver.get("https://www.thriftyfoods.com/shop-online/grocery?page=1&pageSize=200");
+    public void scrapePage(String url, AbstractStore store, WebDriver driver) {
+        driver.get(url);
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
         WebElement gridElement = driver.findElement(By.xpath("//*[@id=\"body_0_main_1_ProductSearch_GroceryBrowsing_TemplateResult_SearchResultListView_MansoryPanel\"]/div"));
-        List<WebElement> productElements = gridElement.findElements(By.xpath("//div[@class='product-tile push--bottom grid__item slim palm--one-half portable--two-quarters desk--one-quarter']"));
+        List<WebElement> productElements = gridElement.findElements(By.xpath("//div[@class='item-product js-product js-equalized js-addtolist-container js-ga']"));
+        for (WebElement e : productElements) {
+            String dataProduct = e.getAttribute("data-product");
+            parseJson(dataProduct);
+        }
 
+    }
+
+
+    // EFFECTS: takes the JSON data from the website and parses it (currently just printing to console)
+    private void parseJson(String input) {
+        Gson gson = new Gson();
+        JsonObject json = gson.fromJson(input, JsonObject.class);
+        String name = json.get("FullDisplayName").getAsString();
+        System.out.println(name);
     }
 
 

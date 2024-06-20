@@ -1,6 +1,7 @@
 package model.store;
 
 import model.AbstractStore;
+import model.scraper.ThriftyScraper;
 
 public class ThriftyFoods extends AbstractStore  {
 
@@ -9,22 +10,25 @@ public class ThriftyFoods extends AbstractStore  {
     public ThriftyFoods(String name) {
         super(name);
         initializeCategories();
-        this.setGridPath(); //TODO
-        this.setProductPath(); //TODO
+        this.scraper = new ThriftyScraper();
+        // this.setGridPath(); //TODO
+        // this.setProductPath(); //TODO
     }
 
     public void generateProducts() {
-
+        this.scraper.scrapeWebsite(this);
     }
 
 
     public String getNextURL(String url, int i) {
-        if (i == 1) {
-            return url + "?page=2&pageSize=20";
-        } else {
-            // If i > 1, we replace the current page number with i + 1
-            return url.replaceAll("page=\\d+", "page=" + (i + 1));
-        }
+            return url + "?page=" + (i + 1) + "&pageSize=100";
+            // I have no idea why u made like that, it seems much easier:
+//        if (i == 1) {
+//            return url + "?page=2&pageSize=20";
+//        } else {
+//            // If i > 1, we replace the current page number with i + 1
+//            return url.replaceAll("page=\\d+", "page=" + (i + 1));
+//        }
     }
 
     public void initializeCategories() {

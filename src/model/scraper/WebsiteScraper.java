@@ -16,18 +16,17 @@ public abstract class WebsiteScraper {
     }
 
     public void scrapeCategory(String url, AbstractStore store) {
-        for (int i = 0; i < 99999; i++) {
+        for (int i = 0; i < 9999; i++) {
             try {
                 WebDriver driver = new SafariDriver();
                 driver.manage().timeouts().implicitlyWait(Duration.ofMillis(9000));
                 String currentPageURL = store.getNextURL(url,i); //TODO make this method
-                driver.manage().timeouts().implicitlyWait(Duration.ofMillis(9000));
-
+                System.out.println(currentPageURL);
                 scrapePage(currentPageURL, store, driver);
 
                 driver.quit();
             } catch (Exception e) {
-                break;
+                return;
             }
         }
 

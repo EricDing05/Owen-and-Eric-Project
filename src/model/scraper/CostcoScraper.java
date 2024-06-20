@@ -23,7 +23,7 @@ public class CostcoScraper extends WebsiteScraper {
 
             for (WebElement productTitle : productTitles) {
                 try {
-                    WebElement priceElement = productTitle.findElement(By.xpath(".//span[contains(text(),'current')]"));
+                    WebElement priceElement = productTitle.findElement(By.xpath(store.getInfoPath()));
                     String priceText = priceElement.getText();
                     System.out.println("Price: " + priceText);
                 } catch (Exception e) {

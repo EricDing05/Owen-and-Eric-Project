@@ -1,6 +1,7 @@
 package model.store;
 
 import model.AbstractStore;
+import model.scraper.noFrillsScraper;
 
 public class NoFrills extends AbstractStore {
 
@@ -8,11 +9,12 @@ public class NoFrills extends AbstractStore {
     public NoFrills(String name) {
         super(name);
         initializeCategories();
-
+        this.scraper = new noFrillsScraper();
     }
 
-    public void generateProducts() {
 
+    public void generateProducts() {
+        this.scraper.scrapeWebsite(this);
     }
     public String getNextURL(String url, int i) {
         if (i == 1) {
