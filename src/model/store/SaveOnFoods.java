@@ -6,6 +6,7 @@ import model.scraper.SaveOnFoodsScraper;
 
 public class SaveOnFoods extends AbstractStore  {
 
+    // EFFECTS: Creates an instance of a store
     public SaveOnFoods(String name) {
         super(name);
         initializeCategories();
@@ -15,10 +16,12 @@ public class SaveOnFoods extends AbstractStore  {
 
     }
 
+    // EFFECTS: Generates/updates all products of this store
     public void generateProducts() {
 
     }
 
+    // EFFECTS: returns the next page of a given URL
     public String getNextURL(String url, int i) { //this only works for a page that has a siingle word title //TODO
         if (i == 1) {
             // If i == 1, we need to append &page=2&skip=30 and handle URL encoding
@@ -33,6 +36,7 @@ public class SaveOnFoods extends AbstractStore  {
     }
 
 
+    // EFFECTS: initializes all the categories and their URLs
     public void initializeCategories() { //1982 is for the generic store. change this number to change location
         //fruit n veggies
         this.categoriesURLs.put("Fresh Fruit","https://www.saveonfoods.com/sm/pickup/rsid/1982/categories/fruits-vegetables/fresh-fruit-id-30682?f=Breadcrumb%3Agrocery%2Ffruits%20%26%20vegetables%2Ffresh%20fruit");

@@ -5,7 +5,7 @@ import model.scraper.CostcoScraper;
 
 public class Costco extends AbstractStore {
 
-
+    // EFFECTS: Creates an instance of a store
     public Costco(String name) {
         super(name);
         initializeCategories();
@@ -14,11 +14,12 @@ public class Costco extends AbstractStore {
         scraper = new CostcoScraper();
     }
 
+    // EFFECTS: Generates/updates all products of this store
     public void generateProducts() {
 
     }
 
-    //This shoulldd work for all categories.
+    // EFFECTS: returns the next page of a given URL
     public String getNextURL(String url, int i) {
         if (i == 1) {
             // If i == 1, we need to generate the URL for the second page
@@ -30,6 +31,7 @@ public class Costco extends AbstractStore {
     }
 
 
+    // EFFECTS: initializes all the categories and their URLs
     public void initializeCategories() {
         this.categoriesURLs.put("Kirkland Signature", "https://www.costco.ca/kirkland-signature-products.html" );
         this.categoriesURLs.put("Pantry & Dry Goods","https://www.costco.ca/baking-packaged-food.html");
