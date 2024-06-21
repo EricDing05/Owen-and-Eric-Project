@@ -28,7 +28,7 @@ public class Walmart extends AbstractStore {
         }
     }
 
-
+    // EFFECTS: initializes all the categories and their URLs
     public void initializeCategories() {
 
         this.categoriesURLs.put("Fresh produce","https://www.walmart.ca/en/browse/grocery/fruits-vegetables/10019_6000194327370?icid=cp_l2_page_grocery_shop_all_22967_EMNZA1CAH7");

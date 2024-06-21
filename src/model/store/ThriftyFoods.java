@@ -25,6 +25,7 @@ public class ThriftyFoods extends AbstractStore  {
             return url + "?page=" + (i + 1) + "&pageSize=200";
     }
 
+    // EFFECTS: initializes all the categories and their URLs
     public void initializeCategories() {
         this.categoriesURLs.put("BAKERY (COMMERCIAL)","https://www.thriftyfoods.com/shop-online/bakery-commercial");
         this.categoriesURLs.put("BAKERY (INSTORE)","https://www.thriftyfoods.com/shop-online/bakery-instore");

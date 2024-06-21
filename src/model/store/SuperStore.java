@@ -32,6 +32,7 @@ public class SuperStore extends AbstractStore {
 
     // i think super store just has an all page so we can use that. no need to add categories?
     // also note
+    // EFFECTS: initializes all the categories and their URLs
     public void initializeCategories() {
         //the page with everything
         this.categoriesURLs.put("Food","https://www.realcanadiansuperstore.ca/food/c/27985");

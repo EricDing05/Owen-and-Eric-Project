@@ -31,6 +31,7 @@ public class Costco extends AbstractStore {
     }
 
 
+    // EFFECTS: initializes all the categories and their URLs
     public void initializeCategories() {
         this.categoriesURLs.put("Kirkland Signature", "https://www.costco.ca/kirkland-signature-products.html" );
         this.categoriesURLs.put("Pantry & Dry Goods","https://www.costco.ca/baking-packaged-food.html");

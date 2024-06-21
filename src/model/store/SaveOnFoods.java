@@ -36,6 +36,7 @@ public class SaveOnFoods extends AbstractStore  {
     }
 
 
+    // EFFECTS: initializes all the categories and their URLs
     public void initializeCategories() { //1982 is for the generic store. change this number to change location
         //fruit n veggies
         this.categoriesURLs.put("Fresh Fruit","https://www.saveonfoods.com/sm/pickup/rsid/1982/categories/fruits-vegetables/fresh-fruit-id-30682?f=Breadcrumb%3Agrocery%2Ffruits%20%26%20vegetables%2Ffresh%20fruit");

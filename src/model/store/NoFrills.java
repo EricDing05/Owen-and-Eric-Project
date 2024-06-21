@@ -29,6 +29,7 @@ public class NoFrills extends AbstractStore {
     }
 
     // has the same master food page as superstore
+    // EFFECTS: initializes all the categories and their URLs
     public void initializeCategories() {
         // Fruit n Veggies
 
