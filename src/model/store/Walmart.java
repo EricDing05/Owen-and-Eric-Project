@@ -4,6 +4,7 @@ import model.AbstractStore;
 
 public class Walmart extends AbstractStore {
 
+    // EFFECTS: Creates an instance of a store
     public Walmart(String name) {
         super(name);
         initializeCategories();
@@ -12,10 +13,12 @@ public class Walmart extends AbstractStore {
 
     }
 
+    // EFFECTS: Generates/updates all products of this store
     public void generateProducts() {
 
     }
 
+    // EFFECTS: returns the next page of a given URL
     public String getNextURL(String url, int i) {
         if (i == 1) {
             return url + "&page=2";

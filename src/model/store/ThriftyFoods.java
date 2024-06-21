@@ -6,7 +6,7 @@ import model.scraper.ThriftyScraper;
 public class ThriftyFoods extends AbstractStore  {
 
 
-    //list categories and urls
+    // EFFECTS: Creates an instance of a store
     public ThriftyFoods(String name) {
         super(name);
         initializeCategories();
@@ -15,20 +15,14 @@ public class ThriftyFoods extends AbstractStore  {
         // this.setProductPath(); //TODO
     }
 
+    // EFFECTS: Generates/updates all products of this store
     public void generateProducts() {
         this.scraper.scrapeWebsite(this);
     }
 
-
+    // EFFECTS: returns the next page of a given URL
     public String getNextURL(String url, int i) {
             return url + "?page=" + (i + 1) + "&pageSize=200";
-            // I have no idea why u made like that, it seems much easier:
-//        if (i == 1) {
-//            return url + "?page=2&pageSize=20";
-//        } else {
-//            // If i > 1, we replace the current page number with i + 1
-//            return url.replaceAll("page=\\d+", "page=" + (i + 1));
-//        }
     }
 
     public void initializeCategories() {

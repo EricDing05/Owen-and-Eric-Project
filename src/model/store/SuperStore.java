@@ -5,6 +5,7 @@ import model.scraper.SaveOnFoodsScraper;
 
 public class SuperStore extends AbstractStore {
 
+    // EFFECTS: Creates an instance of a store
     public SuperStore(String name) {
         super(name);
         initializeCategories();
@@ -13,10 +14,12 @@ public class SuperStore extends AbstractStore {
         scraper = new SaveOnFoodsScraper();
     }
 
+    // EFFECTS: Generates/updates all products of this store
     public void generateProducts() {
 
     }
 
+    // EFFECTS: returns the next page of a given URL
     public String getNextURL(String url, int i) {
         if (i == 1) {
             return url + "?page=2";

@@ -6,6 +6,7 @@ import model.scraper.SaveOnFoodsScraper;
 
 public class SaveOnFoods extends AbstractStore  {
 
+    // EFFECTS: Creates an instance of a store
     public SaveOnFoods(String name) {
         super(name);
         initializeCategories();
@@ -15,10 +16,12 @@ public class SaveOnFoods extends AbstractStore  {
 
     }
 
+    // EFFECTS: Generates/updates all products of this store
     public void generateProducts() {
 
     }
 
+    // EFFECTS: returns the next page of a given URL
     public String getNextURL(String url, int i) { //this only works for a page that has a siingle word title //TODO
         if (i == 1) {
             // If i == 1, we need to append &page=2&skip=30 and handle URL encoding
