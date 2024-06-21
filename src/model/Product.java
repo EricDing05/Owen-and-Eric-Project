@@ -7,12 +7,15 @@ public class Product {
     private double price;
     private String imageUrl;
     private String description;
+    private String storeName;
 
-    public Product(String name, double price, String imageUrl, String description) {
+    public Product(String name, double price, String imageUrl, String description, String storeName) {
         this.name = name;
         this.price = price;
         this.imageUrl = imageUrl;
         this.description = description;
+        this.storeName = storeName;
+
     }
 
     public String getName() {

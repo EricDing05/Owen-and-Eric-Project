@@ -13,7 +13,6 @@ public class SaveOnFoods extends AbstractStore  {
         this.setGridPath("//section[@aria-labelledby='productGrid__title']");
         this.setProductPath("//article[starts-with(@class, 'ProductCardWrapper--')]");
         scraper = new SaveOnFoodsScraper();
-
     }
 
     // EFFECTS: Generates/updates all products of this store

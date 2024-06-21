@@ -54,7 +54,6 @@ public class NoFrills extends AbstractStore {
 //        this.categoriesURLs.put("Yogurt","https://www.nofrills.ca/food/dairy-eggs/yogurt/c/28227");
 //        this.categoriesURLs.put("Non-Dairy Milk Alternatives","https://www.nofrills.ca/food/dairy-eggs/non-dairy-milk-alternatives/c/58904");
 //        this.categoriesURLs.put("Natural and Organic","https://www.nofrills.ca/food/dairy-eggs/natural-and-organic/c/59463");
-
     }
 
 
