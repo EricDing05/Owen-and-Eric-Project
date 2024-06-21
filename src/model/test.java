@@ -2,6 +2,8 @@ package model;
 
 import model.scraper.ThriftyScraper;
 import model.store.ThriftyFoods;
+import org.openqa.selenium.safari.SafariDriver;
+
 
 public class test {
 
@@ -11,7 +13,7 @@ public class test {
         System.out.println(foods.getCategoriesURLs().values());
         try {
             foods.generateProducts();
-            // t.scrapePage("wdawd",new ThriftyFoods("thrify"), new SafariDriver());
+            t.scrapePage("wdawd",new ThriftyFoods("thrify"), new SafariDriver());
         } catch (Exception e) {
             e.printStackTrace();
         }

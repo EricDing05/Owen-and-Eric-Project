@@ -13,6 +13,7 @@ import java.util.List;
 public class ThriftyScraper extends WebsiteScraper {
 
 
+    //EFFECTS: Scrapes all the products off the website page
     public void scrapePage(String url, AbstractStore store, WebDriver driver) {
         driver.get(url);
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
@@ -25,7 +26,6 @@ public class ThriftyScraper extends WebsiteScraper {
             String dataProduct = e.getAttribute("data-product");
             parseJson(dataProduct);
         }
-
     }
 
 

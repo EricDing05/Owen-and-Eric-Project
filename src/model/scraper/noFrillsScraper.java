@@ -13,7 +13,7 @@ import java.util.List;
 public class noFrillsScraper extends WebsiteScraper {
 
 
-    // Note that this method is the EXACT same as the method used for SuperStore. The websites seem to be the exact same. Possibly room for some even higher level abstraction here.
+    //EFFECTS: Scrapes all the products off the website page
     public void scrapePage(String url, AbstractStore store, WebDriver driver) {
 
         try {

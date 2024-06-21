@@ -9,12 +9,14 @@ import java.time.Duration;
 public abstract class WebsiteScraper {
 
 
+    //EFFECTS: Scrapes all categories of a store
     public void scrapeWebsite(AbstractStore store) {
         for (String url : store.getCategoriesURLs().values()) {
             scrapeCategory(url,store);
         }
     }
 
+    //EFFECTS: Scrapes all pages of a given category
     public void scrapeCategory(String url, AbstractStore store) {
         for (int i = 0; i < 9999; i++) {
             WebDriver driver = new SafariDriver();
@@ -34,6 +36,7 @@ public abstract class WebsiteScraper {
 
     }
 
+    //EFFECTS: scrapes all the products of a given page
     public abstract void scrapePage(String url, AbstractStore store, WebDriver driver);
 
 }

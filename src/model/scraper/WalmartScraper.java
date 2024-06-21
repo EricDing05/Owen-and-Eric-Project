@@ -14,6 +14,7 @@ public class WalmartScraper extends WebsiteScraper {
 
 //TODO maybe abstract more
 
+    //EFFECTS: Scrapes all the products off the website page
     public void scrapePage(String url, AbstractStore store, WebDriver driver) {
         try {
             driver.get(url);

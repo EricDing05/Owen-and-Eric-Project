@@ -10,6 +10,8 @@ import java.util.List;
 
 public class SaveOnFoodsScraper extends WebsiteScraper {
 
+
+    //EFFECTS: Scrapes all the products off the website page
     public void scrapePage(String url, AbstractStore store, WebDriver driver) {
 
             driver.manage().timeouts().implicitlyWait(Duration.ofMillis(9000));
@@ -21,10 +23,10 @@ public class SaveOnFoodsScraper extends WebsiteScraper {
 
             findElements(driver);
             driver.quit();
-
-
     }
 
+
+    //EFFECTS: Finds the product element of the website page
     private void findElements(WebDriver driver) {
         // Use the xPath of the gridElement to locate and get it
         WebElement gridElement = driver.findElement(By.xpath("//*[@id=\"pageMain\"]/div[2]/div[1]/div/div[3]/div/section[1]/section[2]/div[3]"));

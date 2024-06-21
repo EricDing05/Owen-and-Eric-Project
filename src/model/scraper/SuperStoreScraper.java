@@ -12,7 +12,7 @@ import java.util.List;
 
 public class SuperStoreScraper extends WebsiteScraper {
 
-
+    //EFFECTS: Scrapes all the products off the website page
     public void scrapePage(String url, AbstractStore store, WebDriver driver) {
         try {
             driver.get(url);
@@ -37,10 +37,6 @@ public class SuperStoreScraper extends WebsiteScraper {
         } finally {
             driver.quit();
         }
-    }
-
-    public String getNextURL(String url, int i) {
-        return ""; //TODO
     }
 
 }
