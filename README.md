@@ -1,10 +1,10 @@
 https://developer.android.com/studio
 
-You should work some tests or the generateproducts method
 
-also maybe we want to think about using lombok
+Eric i think we should set up the storing of products as Maps like Map(Category, List(Prodct)) based on the categories
+for that store. It will allow us to debug easier if needed. 
 
-
+Also should change the store constructor to prevent name typos like "Save On Foods" vs "SaveOnFoods" vs "SaveOnFood"
 
 Future tasks: 
 
