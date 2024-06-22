@@ -49,6 +49,7 @@ public class NoFrillsTest {
             assertTrue(nofrills.getProducts().size() >= i * 48);
         }
 
+        //
     }
 
 
