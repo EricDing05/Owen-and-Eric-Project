@@ -41,7 +41,7 @@ public class NoFrillsTest {
         nofrills.generateProducts();
 
         //checking that it scrapes all the products off of each page. Can help pinpoint where a missing product is later if needed.
-        for (int i = 1; i < 200; i++) {
+        for (int i = 0; i < 200; i++) {
             assertTrue(nofrills.getProducts().size() >= i * 48);
         }
 

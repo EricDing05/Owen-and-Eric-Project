@@ -44,6 +44,7 @@ public class Costco extends AbstractStore {
         this.categoriesURLs.put("Poultry","https://www.costco.ca/poultry.html");
         this.categoriesURLs.put("Deli & Cured Meats","https://www.costco.ca/cured-meats.html");
         this.categoriesURLs.put("Cheese","https://www.costco.ca/cheese.html");
+
         this.categoriesURLs.put("Bakery","https://www.costco.ca/bakery-desserts.html");
         this.categoriesURLs.put("Meals & Appetizers","https://www.costco.ca/meals-appetizers.html");
         this.categoriesURLs.put("Water & Beverages","https://www.costco.ca/water-beverages.html");
@@ -55,6 +56,7 @@ public class Costco extends AbstractStore {
         this.categoriesURLs.put("International Foods","https://www.costco.ca/international-foods.html");
         this.categoriesURLs.put("Emergency Food Kits","https://www.costco.ca/emergency-food-kits.html");
         this.categoriesURLs.put("Household Products","https://www.costco.ca/household.html"); //neccessary?
+
         this.categoriesURLs.put("Health & Beauty","https://www.costco.ca/health-beauty.html?costcoprogramtypes=costco-grocery&refine=||item_program_eligibility-2DayDelivery");
     }
 
