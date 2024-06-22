@@ -25,7 +25,6 @@ public class NoFrills extends AbstractStore {
             // If i > 1, we replace the current page number with i + 1
             return url.replaceAll("page=\\d+", "page=" + (i + 1));
         }
-
     }
 
     // has the same master food page as superstore

@@ -33,7 +33,6 @@ public abstract class WebsiteScraper {
                 return;
             }
         }
-
     }
 
     //EFFECTS: scrapes all the products of a given page

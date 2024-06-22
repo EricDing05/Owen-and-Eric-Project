@@ -19,6 +19,9 @@ public abstract class AbstractStore {
         categoriesURLs = new HashMap<>();
     }
 
+
+    public abstract void initializeCategories();
+
     public String getName() {
         return name;
     }

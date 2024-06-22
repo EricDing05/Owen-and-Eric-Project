@@ -31,7 +31,6 @@ public class CostcoScraper extends WebsiteScraper {
                     System.out.println("Price element not found in this product tile.");
                 }
             }
-
         } catch (Exception ex) {
             System.out.println("An error occurred: " + ex.getMessage());
             ex.printStackTrace();

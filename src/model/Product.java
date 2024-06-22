@@ -9,6 +9,7 @@ public class Product {
     private String description;
     private String storeName;
 
+    //EFFECTS: Creates an instance of a Product
     public Product(String name, double price, String imageUrl, String description, String storeName) {
         this.name = name;
         this.price = price;
