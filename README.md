@@ -1,4 +1,4 @@
-Eric I will finish the rest of the categories, url builders, gridpath/product path.
+https://developer.android.com/studio
 
 You should work some tests or the generateproducts method
 
