@@ -20,11 +20,12 @@ public class Walmart extends AbstractStore {
 
     // EFFECTS: returns the next page of a given URL
     public String getNextURL(String url, int i) {
-        if (i == 1) {
-            return url + "&page=2";
-        } else {
-            // If i > 1, replace the current page number with i + 1
+        if (url.contains("page=")) {
+            // If the URL already contains 'page=', replace the current page number with i + 1
             return url.replaceAll("page=\\d+", "page=" + (i + 1));
+        } else {
+            // If the URL does not contain 'page='
+            return url + "&page=" + (i + 1);
         }
     }
 

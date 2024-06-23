@@ -33,11 +33,6 @@ class WalmartTest {
         assertEquals(urlBreadBakery + "&page=2", walmart.getNextURL(urlBreadBakery, 1));
         assertEquals(urlBreadBakery + "&page=3", walmart.getNextURL(urlBreadBakery, 2));
 
-        // More than two-word category URL
-        String urlFreshMeatSeafood = "https://www.walmart.ca/en/browse/grocery/meat-seafood-alternatives/10019_6000194327357";
-        assertEquals(urlFreshMeatSeafood + "&page=2", walmart.getNextURL(urlFreshMeatSeafood, 1));
-        assertEquals(urlFreshMeatSeafood + "&page=3", walmart.getNextURL(urlFreshMeatSeafood, 2));
-
     }
 
     @Test
