@@ -25,7 +25,6 @@ public abstract class WebsiteScraper {
                 String currentPageURL = store.getNextURL(url,i); //TODO make this method
                 System.out.println(currentPageURL);
                 scrapePage(currentPageURL, store, driver);
-
                 driver.quit();
             } catch (Exception e) {
                 driver.quit();

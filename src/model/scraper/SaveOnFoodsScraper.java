@@ -32,6 +32,9 @@ public class SaveOnFoodsScraper extends WebsiteScraper {
         WebElement gridElement = driver.findElement(By.xpath("//*[@id=\"pageMain\"]/div[2]/div[1]/div/div[3]/div/section[1]/section[2]/div[3]"));
         // Within the gridElement, take get all the productElements
         List<WebElement> productElements = gridElement.findElements(By.xpath("//div[@class='ColListing--1fk1zey jGGReB']"));
+        if (productElements.size() == 0) {
+            throw new RuntimeException();
+        }
         // Within productElements, find the prices and print them to the console
         this.printPrices(productElements);
     }

@@ -17,7 +17,7 @@ public class SaveOnFoods extends AbstractStore  {
 
     // EFFECTS: Generates/updates all products of this store
     public void generateProducts() {
-
+        this.scraper.scrapeWebsite(this);
     }
 
     // EFFECTS: returns the next page of a given URL

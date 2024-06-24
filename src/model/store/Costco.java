@@ -10,13 +10,13 @@ public class Costco extends AbstractStore {
         super(name);
         initializeCategories();
         this.setGridPath("//div[@automation-id='productList']");
-        this.setProductPath("//div[contains(@class, 'product') and contains(@class, 'col-xs-12')]"); //this might not work. not tested
+        this.setProductPath("//div[@class='thumbnail']"); //this might not work. not tested
         scraper = new CostcoScraper();
     }
 
     // EFFECTS: Generates/updates all products of this store
     public void generateProducts() {
-
+        this.scraper.scrapeWebsite(this);
     }
 
     // EFFECTS: returns the next page of a given URL

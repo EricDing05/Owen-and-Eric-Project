@@ -1,12 +1,14 @@
 package model.store;
 
 import model.AbstractStore;
+import model.scraper.WalmartScraper;
 
 public class Walmart extends AbstractStore {
 
     // EFFECTS: Creates an instance of a store
     public Walmart(String name) {
         super(name);
+        this.scraper = new WalmartScraper();
         initializeCategories();
         this.setGridPath("//div[@data-testid='product-grid']");
         this.setProductPath(".//div[contains(@data-item-id, '')]");
@@ -15,7 +17,7 @@ public class Walmart extends AbstractStore {
 
     // EFFECTS: Generates/updates all products of this store
     public void generateProducts() {
-
+        this.scraper.scrapeWebsite(this);
     }
 
     // EFFECTS: returns the next page of a given URL
