@@ -20,7 +20,6 @@ public class SaveOnFoodsScraper extends WebsiteScraper {
             // wait 5 seconds to allow the website to fully load
             // TODO: create a better waiting system
             driver.manage().timeouts().implicitlyWait(Duration.ofMillis(9000));
-
             findElements(driver);
             driver.quit();
     }
