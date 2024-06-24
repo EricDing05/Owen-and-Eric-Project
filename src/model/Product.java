@@ -16,7 +16,6 @@ public class Product {
         this.imageUrl = imageUrl;
         this.description = description;
         this.storeName = storeName;
-
     }
 
     public String getName() {
