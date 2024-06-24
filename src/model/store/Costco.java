@@ -53,7 +53,6 @@ public class Costco extends AbstractStore {
 //        this.categoriesURLs.put("International Foods","https://www.costco.ca/international-foods.html");
 //        this.categoriesURLs.put("Emergency Food Kits","https://www.costco.ca/emergency-food-kits.html");
 //        this.categoriesURLs.put("Household Products","https://www.costco.ca/household.html"); //neccessary?
-//
 //        this.categoriesURLs.put("Health & Beauty","https://www.costco.ca/health-beauty.html?costcoprogramtypes=costco-grocery&refine=||item_program_eligibility-2DayDelivery");
     }
 

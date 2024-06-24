@@ -34,5 +34,17 @@ public class Product {
         return price;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getStoreName() {
+        return storeName;
+    }
+
 
 }
