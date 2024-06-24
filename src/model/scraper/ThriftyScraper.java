@@ -30,7 +30,7 @@ public class ThriftyScraper extends WebsiteScraper {
 
 
     // EFFECTS: takes the JSON data from the website and parses it (currently just printing to console)
-    private void parseJson(String input) {
+    public void parseJson(String input) {
         Gson gson = new Gson();
         JsonObject json = gson.fromJson(input, JsonObject.class);
         String name = json.get("FullDisplayName").getAsString();

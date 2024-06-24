@@ -22,7 +22,7 @@ public class ThriftyFoods extends AbstractStore  {
 
     // EFFECTS: returns the next page of a given URL
     public String getNextURL(String url, int i) {
-            return url + "?page=" + (i + 1) + "&pageSize=200";
+            return url + "?page=" + (i + 1) + "&pageSize=20";
     }
 
     // EFFECTS: initializes all the categories and their URLs

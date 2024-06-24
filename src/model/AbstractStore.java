@@ -17,10 +17,17 @@ public abstract class AbstractStore {
     public AbstractStore(String name) {
         this.name = name;
         categoriesURLs = new HashMap<>();
+        products = new ArrayList<>();
     }
 
 
     public abstract void initializeCategories();
+
+    public void addProduct(Product p) {
+        if (!products.contains(p)) { //TODO make a overriden equals for this
+            products.add(p);
+        }
+    }
 
     public String getName() {
         return name;
