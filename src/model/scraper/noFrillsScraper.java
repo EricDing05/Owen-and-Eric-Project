@@ -1,6 +1,7 @@
 package model.scraper;
 
 import model.AbstractStore;
+import model.Product;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,39 +19,28 @@ public class noFrillsScraper extends WebsiteScraper {
 
         try {
             driver.get(url);
-
-            // these lines makes sure the page gets loaded before it scrapes, preventing "No Such Element Exception"
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(store.getGridPath())));
-            // Super store vegetables
-
-            List<WebElement> productTiles = gridElement.findElements(By.xpath(store.getProductPath()));
-
-            // should wrap this for loop inside another loop that loops through the page index based off the number of pages we can find
-            for (WebElement productTile : productTiles) {
-                try {
-                    // Find the span element with data-testid="sale-price" or data-testid="regular-price" within the product tile
-                    WebElement priceElement = productTile.findElement(By.xpath(".//span[@data-testid='sale-price' or @data-testid='regular-price']/span"));
-                    String priceText = priceElement.getText();
-                    System.out.println("Price: " + priceText);
-                } catch (Exception e) {
-                    System.out.println("Price element not found in this product tile.");
-                }
-
-                // Add a delay of 2 seconds (2000 milliseconds)
-                try {
-                    Thread.sleep(2000); // should make this random to avoid detection
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+            List<WebElement> productHeads = gridElement.findElements(By.xpath(store.getProductPath()));
+            for (WebElement productHead : productHeads) {
+                createProduct(productHead, store);
             }
+        } catch (Exception e){
 
-        } catch (Exception ex) {
-            System.out.println("An error occurred: " + ex.getMessage());
-            ex.printStackTrace();
-        } finally {
-            // Close the browser
-            driver.quit();
         }
+
+    }
+
+
+    //EFFECTS: given the html product element, makes a product and adds it to store
+    public void createProduct(WebElement p, AbstractStore store) {
+        String altText = p.findElement(By.xpath(".//img[@alt]")).getAttribute("alt");
+        String name = altText.split(",")[0];
+        String priceText = p.findElement(By.xpath(".//span[@data-testid='sale-price']//span[@class='css-idkz9h']")).getText();
+        double price = Double.parseDouble(priceText.replace("$", "").trim());
+        String imgUrl = p.findElement(By.xpath(".//img[@alt]")).getAttribute("src");
+        String description = "n/a"; //There's no description
+        String storeName = store.getName();
+        store.addProduct(new Product(name, price, imgUrl, description, storeName));
     }
 }

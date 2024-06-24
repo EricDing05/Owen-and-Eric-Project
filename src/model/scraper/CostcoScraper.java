@@ -43,7 +43,7 @@ public class CostcoScraper extends WebsiteScraper {
         String imgUrl = p.findElement(By.xpath(".//a[contains(@class, 'product-image-url')]")).getAttribute("href");
         String storeName = store.getName();
 
-        // this complication is only needed b/c of the way costco stores its product description other stores should just be like above ^
+        // this complication is only needed b/c of the way costco stores its product description. Other stores should just be like above ^
         String description = "";
         List<WebElement> descriptionElements = p.findElements(By.xpath(".//ul[@class='product-features hidden-xs hidden-sm']//li"));
         if (!descriptionElements.isEmpty()) {

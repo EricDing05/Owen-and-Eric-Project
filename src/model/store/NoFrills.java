@@ -9,6 +9,8 @@ public class NoFrills extends AbstractStore {
     public NoFrills(String name) {
         super(name);
         initializeCategories();
+        this.setGridPath("//div[@data-testid='product-grid']");
+        this.setProductPath("//div[contains(@class, 'chakra-linkbox') and contains(@class, 'css-')]");
         this.scraper = new noFrillsScraper();
     }
 
@@ -19,11 +21,10 @@ public class NoFrills extends AbstractStore {
 
     // EFFECTS: returns the next page of a given URL
     public String getNextURL(String url, int i) {
-        if (i == 1) {
-            return url + "?page=2";
+        if (i == 0 || i == 1) {
+            return url;
         } else {
-            // If i > 1, we replace the current page number with i + 1
-            return url.replaceAll("page=\\d+", "page=" + (i + 1));
+            return url + "?page=" + i; //this
         }
     }
 
