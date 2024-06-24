@@ -1,6 +1,7 @@
 https://developer.android.com/studio
 
 
+Working on Costco Scraper. 
 Eric i think we should set up the storing of products as Maps like Map(Category, List(Prodct)) based on the categories
 for that store. It will allow us to debug easier if needed. 
 
