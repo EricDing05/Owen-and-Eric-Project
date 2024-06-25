@@ -12,7 +12,6 @@ public class Walmart extends AbstractStore {
         initializeCategories();
         this.setGridPath("//div[@data-testid='product-grid']");
         this.setProductPath(".//div[contains(@data-item-id, '')]");
-
     }
 
     // EFFECTS: Generates/updates all products of this store
@@ -22,11 +21,9 @@ public class Walmart extends AbstractStore {
 
     // EFFECTS: returns the next page of a given URL
     public String getNextURL(String url, int i) {
-        if (url.contains("page=")) {
-            // If the URL already contains 'page=', replace the current page number with i + 1
-            return url.replaceAll("page=\\d+", "page=" + (i + 1));
+        if (i == 0) {
+            return url;
         } else {
-            // If the URL does not contain 'page='
             return url + "&page=" + (i + 1);
         }
     }
