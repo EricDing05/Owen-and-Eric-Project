@@ -87,4 +87,5 @@ public abstract class AbstractStore {
     public abstract void generateProducts();
     public abstract String getNextURL(String url, int i);
 
+
 }

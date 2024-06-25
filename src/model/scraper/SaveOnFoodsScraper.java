@@ -41,8 +41,12 @@ public class SaveOnFoodsScraper extends WebsiteScraper {
     // EFFECTS: takes a list of productElements and prints their prices
     public void printPrices(List<WebElement> productElements) {
         for (WebElement e : productElements) {
-            String price = e.findElement(By.cssSelector("p.AriaProductTitleParagraph--1yc7f4f.jFsEKu")).getText();
+            String main = e.findElement(By.cssSelector("p.AriaProductTitleParagraph--1yc7f4f.jFsEKu")).getText();
+            int i = main.indexOf(",");
+            String description = main.substring(0, i);
+            String price = main.substring(i + 2, main.length());
             System.out.println(price);
+            System.out.println(description);
         }
     }
 

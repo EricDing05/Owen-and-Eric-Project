@@ -3,6 +3,7 @@ package model.scraper;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import model.AbstractStore;
+import model.Product;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,18 +25,20 @@ public class ThriftyScraper extends WebsiteScraper {
         }
         for (WebElement e : productElements) {
             String dataProduct = e.getAttribute("data-product");
-            parseJson(dataProduct);
+            parseJson(dataProduct, store);
         }
     }
 
 
     // EFFECTS: takes the JSON data from the website and parses it (currently just printing to console)
-    public void parseJson(String input) {
+    public void parseJson(String input, AbstractStore store) {
         Gson gson = new Gson();
         JsonObject json = gson.fromJson(input, JsonObject.class);
         String name = json.get("FullDisplayName").getAsString();
         Double price = json.get("RegularPrice").getAsDouble();
-        System.out.println(name + price);
+        String image = json.get("ProductImageUrl").getAsString();
+        String storeName = "Thriftys";
+        store.addProduct(new Product(name, price, image, "", storeName));
     }
 
 
