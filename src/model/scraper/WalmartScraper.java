@@ -1,6 +1,7 @@
 package model.scraper;
 
 import model.AbstractStore;
+import model.Product;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,39 +23,37 @@ public class WalmartScraper extends WebsiteScraper {
             throw new RuntimeException();
         }
         for (WebElement e : productElements) {
-
+            createProduct(e, store);
         }
     }
 
-//TODO maybe abstract more
 
-    //EFFECTS: Scrapes all the products off the website page
-//    public void scrapePage(String url, AbstractStore store, WebDriver driver) {
-//        try {
-//            driver.get(url);
-//            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-//            WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(store.getGridPath())));
-//
-//            List<WebElement> productTitles = gridElement.findElements(By.xpath(store.getProductPath()));
-//
-//            for (WebElement productTitle : productTitles) {
-//                try {
-//                    WebElement priceElement = productTitle.findElement(By.xpath(".//span[contains(text(),'current')]"));
-//                    String priceText = priceElement.getText();
-//                    System.out.println("Price: " + priceText);
-//                } catch (Exception e) {
-//                    System.out.println("Price element not found in this product tile.");
-//                }
-//            }
-//
-//        } catch (Exception ex) {
-//            System.out.println("An error occurred: " + ex.getMessage());
-//            ex.printStackTrace();
-//        } finally {
-//            driver.quit();
-//        }
-//    }
-//
+    //EFFECTS: given the html product element, makes a product and adds it to store
+    public void createProduct(WebElement p, AbstractStore store) {
+        // Get the product name
+        String name = p.findElement(By.xpath(".//a[@link-identifier and @href]/following-sibling::span")).getText();
+        String imgUrl = p.findElement(By.xpath(".//img[@data-testid='productTileImage']")).getAttribute("src");
+
+        String priceText = p.findElement(By.xpath(".//span[contains(text(), 'current price')]/../following-sibling::div")).getText();
+        double price = convertPriceToDouble(priceText);
+
+        String description = "n/a"; //There's no description
+        String storeName = store.getName();
+        store.addProduct(new Product(name, price, imgUrl, description, storeName));
+    }
+
+    public double convertPriceToDouble(String priceText) {
+        priceText = priceText.replace("$", "").replace("¢", "").trim();
+        double price = 0.0;
+
+        if (priceText.contains("¢")) {
+            price = Double.parseDouble(priceText) / 100;
+        } else {
+            price = Double.parseDouble(priceText);
+        }
+
+        return price;
+    }
 
 
 
