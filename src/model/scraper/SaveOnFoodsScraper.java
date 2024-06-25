@@ -49,6 +49,8 @@ public class SaveOnFoodsScraper extends WebsiteScraper {
             System.out.println(description);
 
             String imgUrl = e.findElement(By.xpath(".//div[contains(@data-testid, 'productCardImage')]//img")).getAttribute("src");
+            String description2 = e.findElement(By.xpath("(//p[contains(@class, 'AriaProductTitleParagraph')])[2]")).getText();
+            System.out.println(description2);
             System.out.println(imgUrl);
         }
     }
