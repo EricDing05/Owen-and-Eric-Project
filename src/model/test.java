@@ -1,14 +1,15 @@
 package model;
 
-import model.store.SaveOnFoods;
 
+import model.store.Walmart;
 
 public class test {
 
     public static void main(String[] args) {
-        AbstractStore Costco = new SaveOnFoods("costco");
+        AbstractStore Costco = new Walmart("costco");  //save on, thriftys
         System.out.println(Costco.getCategoriesURLs().values());
         Costco.generateProducts();
     }
+
 }
 

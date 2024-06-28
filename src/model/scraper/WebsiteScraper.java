@@ -1,10 +1,14 @@
 package model.scraper;
 
 import model.AbstractStore;
+import model.scraper.Exceptions.NoMoreProductsException;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
+import java.util.List;
 
 public abstract class WebsiteScraper {
 
@@ -18,24 +22,41 @@ public abstract class WebsiteScraper {
 
     //EFFECTS: Scrapes all pages of a given category
     public void scrapeCategory(String url, AbstractStore store) {
-        for (int i = 0; i < 9999; i++) { //TODO need to think of a better way to do this becuase this relies on it throwing an exception when
-            // TODO a url that has a page number past what it has throws an exception, but some stores wont throw an exception and it will loop 9999 times and be ineffiecient.
+        for (int i = 0; i < 9999; i++) {
             WebDriver driver = new SafariDriver();
             try {
-                driver.manage().timeouts().implicitlyWait(Duration.ofMillis(9000));
-                String currentPageURL = store.getNextURL(url,i); //TODO make this method
+                driver.manage().timeouts().implicitlyWait(Duration.ofMillis(20000));
+                String currentPageURL = store.getNextURL(url, i); //TODO make this method
                 System.out.println(currentPageURL);
                 scrapePage(currentPageURL, store, driver);
                 driver.quit();
+
+            } catch (NoMoreProductsException ex) {
+                driver.quit();
+                ex.printStackTrace();
+                return; //
             } catch (Exception e) {
                 driver.quit();
                 e.printStackTrace();
-                return;
             }
         }
     }
 
-    //EFFECTS: scrapes all the products of a given page
-    public abstract void scrapePage(String url, AbstractStore store, WebDriver driver);
+    //EFFECTS: Scrapes all the products off the website page
+    public void scrapePage(String url, AbstractStore store, WebDriver driver) {
+        driver.get(url);
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
+        WebElement gridElement = driver.findElement(By.xpath(store.getGridPath()));
+        List<WebElement> productElements = gridElement.findElements(By.xpath(store.getProductPath()));
+        if (productElements.size() == 0) {
+            throw new NoMoreProductsException();
+        }
+        for (WebElement e : productElements) {
+            store.getScraper().createProduct(e, store);
+        }
+        System.out.println(store.getProducts().size());
+    }
+
+    public abstract void createProduct(WebElement e, AbstractStore store);
 
 }
