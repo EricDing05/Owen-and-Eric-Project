@@ -10,7 +10,7 @@ public class SaveOnFoodsScraper extends WebsiteScraper {
 
 
     // EFFECTS: takes a list of productElements and prints their prices
-    public void createProduct(WebElement e, AbstractStore store) {
+    public void scrapePage(WebElement e, AbstractStore store) {
             String main = e.findElement(By.cssSelector("p.AriaProductTitleParagraph--1yc7f4f.jFsEKu")).getText();
             int i = main.lastIndexOf(',');
             String name = main.substring(0, i);
