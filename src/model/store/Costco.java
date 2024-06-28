@@ -24,7 +24,7 @@ public class Costco extends AbstractStore {
         if (i == 0) {
             return url;
         } else {
-            return url + "?currentPage=" + i + "&pageSize=24";
+            return url + "?currentPage=" + (i + 1) + "&pageSize=24";
         }
     }
 

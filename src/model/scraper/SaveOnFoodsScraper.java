@@ -14,34 +14,21 @@ public class SaveOnFoodsScraper extends WebsiteScraper {
 
     //EFFECTS: Scrapes all the products off the website page
     public void scrapePage(String url, AbstractStore store, WebDriver driver) {
-
-            driver.manage().timeouts().implicitlyWait(Duration.ofMillis(9000));
-            // connect to saveonfoods website
-            driver.get(url);
-            // wait 5 seconds to allow the website to fully load
-            // TODO: create a better waiting system
-            driver.manage().timeouts().implicitlyWait(Duration.ofMillis(9000));
-            findElements(driver, store);
-            driver.quit();
-    }
-
-
-    //EFFECTS: Finds the product element of the website page
-    private void findElements(WebDriver driver, AbstractStore store) {
-        // Use the xPath of the gridElement to locate and get it
-        WebElement gridElement = driver.findElement(By.xpath("//*[@id=\"pageMain\"]/div[2]/div[1]/div/div[3]/div/section[1]/section[2]/div[3]"));
-        // Within the gridElement, take get all the productElements
-        List<WebElement> productElements = gridElement.findElements(By.xpath("//div[@class='ColListing--1fk1zey jGGReB']"));
+        driver.get(url);
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
+        WebElement gridElement = driver.findElement(By.xpath(store.getGridPath()));
+        List<WebElement> productElements = gridElement.findElements(By.xpath(store.getProductPath()));
         if (productElements.size() == 0) {
             throw new RuntimeException();
         }
-        // Within productElements, find the prices and print them to the console
-        this.printPrices(productElements, store);
+        for (WebElement e : productElements) {
+            printPrices(e, store);
+        }
+        System.out.println(store.getProducts().size());
     }
 
     // EFFECTS: takes a list of productElements and prints their prices
-    public void printPrices(List<WebElement> productElements, AbstractStore store) {
-        for (WebElement e : productElements) {
+    public void printPrices(WebElement e, AbstractStore store) {
             String main = e.findElement(By.cssSelector("p.AriaProductTitleParagraph--1yc7f4f.jFsEKu")).getText();
             int i = main.lastIndexOf(',');
             String name = main.substring(0, i);
@@ -51,7 +38,6 @@ public class SaveOnFoodsScraper extends WebsiteScraper {
             String description2 = e.findElement(By.xpath("(//p[contains(@class, 'AriaProductTitleParagraph')])[2]")).getText();
             store.addProduct(new Product(name, price, imgUrl, description2, "Save-on-Foods"));
 
-        }
     }
 
 
