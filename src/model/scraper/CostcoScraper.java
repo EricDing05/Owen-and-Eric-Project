@@ -3,40 +3,18 @@ package model.scraper;
 import model.AbstractStore;
 import model.Product;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.List;
 
 public class CostcoScraper extends WebsiteScraper {
 
 
-    //EFFECTS: Scrapes all the products off the website page
-    public void scrapePage(String url, AbstractStore store, WebDriver driver) {
-
-        try {
-            driver.get(url);
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(store.getGridPath())));
-            List<WebElement> productHeads = gridElement.findElements(By.xpath(store.getProductPath()));
-
-            for (WebElement productHead : productHeads) {
-                createProduct(productHead, store);
-            }
-        } catch (Exception e){
-
-        }
-
-    }
-
 
     //EFFECTS: given the html product element, makes a product and adds it to a store
     public void createProduct(WebElement p, AbstractStore store) {
         //getting all the neccessary product fields
-        String name = p.findElement(By.xpath(".//span[starts-with(@id, 'product_desc_') and contains(@class, 'description')]//a")).getText();
+        String name = p.findElement(By.xpath(".//span[starts-with(@id, 'product_desc_') and contains(@class, 'description')]//a")).getText().trim();
         String priceText = p.findElement(By.xpath(".//div[starts-with(@automation-id, 'itemPriceOutput_') and contains(@class, 'price')]")).getText();
         double price = Double.parseDouble(priceText.replace("$", "").trim());
         //the getAttribute is cuz the link is inside the hmtl tag
@@ -53,6 +31,8 @@ public class CostcoScraper extends WebsiteScraper {
             }
         }
 
+
+        System.out.println(name);
         //make product and add it to store
         store.addProduct(new Product(name,price,imgUrl,description,storeName));
 
