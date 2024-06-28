@@ -10,7 +10,7 @@ public class NoFrills extends AbstractStore {
         super(name);
         initializeCategories();
         this.setGridPath("//div[@data-testid='product-grid']");
-        this.setProductPath("//div[contains(@class, 'chakra-linkbox') and contains(@class, 'css-')]");
+        this.setProductPath("//div[@class='css-0]");
         this.scraper = new noFrillsScraper();
     }
 

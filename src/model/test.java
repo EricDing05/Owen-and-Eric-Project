@@ -1,12 +1,12 @@
 package model;
 
-import model.store.SaveOnFoods;
+import model.store.NoFrills;
 
 
 public class test {
 
     public static void main(String[] args) {
-        AbstractStore Costco = new SaveOnFoods("costco");
+        AbstractStore Costco = new NoFrills("costco");
         System.out.println(Costco.getCategoriesURLs().values());
         Costco.generateProducts();
     }

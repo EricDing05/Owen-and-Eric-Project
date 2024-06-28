@@ -16,8 +16,6 @@ public class noFrillsScraper extends WebsiteScraper {
 
     //EFFECTS: Scrapes all the products off the website page
     public void scrapePage(String url, AbstractStore store, WebDriver driver) {
-
-        try {
             driver.get(url);
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
             WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(store.getGridPath())));
@@ -25,10 +23,6 @@ public class noFrillsScraper extends WebsiteScraper {
             for (WebElement productHead : productHeads) {
                 createProduct(productHead, store);
             }
-        } catch (Exception e){
-
-        }
-
     }
 
 
