@@ -1,29 +1,29 @@
-package model.scraper;
-
-import model.AbstractStore;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
-import java.time.Duration;
-import java.util.List;
-
-public class SuperStoreScraper extends WebsiteScraper {
-
-    //EFFECTS: Scrapes all the products off the website page
-    public void scrapePage(String url, AbstractStore store, WebDriver driver) {
-        driver.get(url);
-        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
-        WebElement gridElement = driver.findElement(By.xpath("//div[@data-testid='product-grid']"));
-        List<WebElement> productElements = gridElement.findElements(By.xpath("//div[@class='css-0']"));
-        System.out.println(productElements.size());
-        if (productElements.size() == 0) {
-            throw new RuntimeException();
-        }
-        for (WebElement e : productElements) {
-            WebElement priceElement = e.findElement(By.xpath(".//span[contains(text(),'current')]"));
-        }
-    }
+//package model.scraper;
+//
+//import model.AbstractStore;
+//import org.openqa.selenium.By;
+//import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.WebElement;
+//
+//import java.time.Duration;
+//import java.util.List;
+//
+//public class SuperStoreScraper extends WebsiteScraper {
+//
+//    //EFFECTS: Scrapes all the products off the website page
+//    public void scrapePage(String url, AbstractStore store, WebDriver driver) {
+//        driver.get(url);
+//        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
+//        WebElement gridElement = driver.findElement(By.xpath("//div[@data-testid='product-grid']"));
+//        List<WebElement> productElements = gridElement.findElements(By.xpath("//div[@class='css-0']"));
+//        System.out.println(productElements.size());
+//        if (productElements.size() == 0) {
+//            throw new RuntimeException();
+//        }
+//        for (WebElement e : productElements) {
+//            WebElement priceElement = e.findElement(By.xpath(".//span[contains(text(),'current')]"));
+//        }
+//    }
 
 //    //EFFECTS: Scrapes all the products off the website page
 //    public void scrapePage(String url, AbstractStore store, WebDriver driver) {
@@ -52,4 +52,4 @@ public class SuperStoreScraper extends WebsiteScraper {
 //        }
 //    }
 
-}
+//}

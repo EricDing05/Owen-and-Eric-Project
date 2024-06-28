@@ -11,8 +11,8 @@ public class ThriftyFoods extends AbstractStore  {
         super(name);
         initializeCategories();
         this.scraper = new ThriftyScraper();
-        // this.setGridPath(); //TODO
-        // this.setProductPath(); //TODO
+        this.setGridPath("//*[@id=\"body_0_main_1_ProductSearch_GroceryBrowsing_TemplateResult_SearchResultListView_MansoryPanel\"]/div");
+        this.setProductPath("//div[@class='item-product js-product js-equalized js-addtolist-container js-ga']");
     }
 
     // EFFECTS: Generates/updates all products of this store
