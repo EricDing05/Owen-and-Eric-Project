@@ -1,4 +1,5 @@
 package model;
+
 import model.store.*;
 
 public class test {
@@ -17,8 +18,14 @@ public class test {
       //  AbstractStore Maxi = new Maxi("Maxi");
       //  Maxi.generateProducts();
 
-        AbstractStore IndependentGrocer = new IndependentGrocer("g");
-        IndependentGrocer.generateProducts();
+      //  AbstractStore IndependentGrocer = new IndependentGrocer("g");
+       // IndependentGrocer.generateProducts();
+
+      //  AbstractStore Zehrs = new Zehrs("g");
+       // Zehrs.generateProducts();
+
+        AbstractStore AtlanticSuperStore = new AtlanticSuperStore("g");
+        AtlanticSuperStore.generateProducts();
 
         //SaveOnFoods.generateProducts();
         //Costco.generateProducts();

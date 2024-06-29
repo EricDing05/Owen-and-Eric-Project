@@ -2,10 +2,9 @@ package model.store;
 
 import model.scraper.SuperStoreScraper;
 
-public class SuperStore extends LobLawsSuper {
+public class Zehrs extends LobLawsSuper {
 
-    // EFFECTS: Creates an instance of a store
-    public SuperStore(String name) {
+    public Zehrs(String name) {
         super(name);
         initializeCategories();
         scraper = new SuperStoreScraper();
@@ -15,7 +14,7 @@ public class SuperStore extends LobLawsSuper {
     // EFFECTS: initializes all the categories and their URLs
     public void initializeCategories() {
         //the page with everything
-        this.categoriesURLs.put("Food","https://www.realcanadiansuperstore.ca/food/c/27985");
+        this.categoriesURLs.put("Food","https://www.zehrs.ca/food/c/27985");
     }
 
 }
