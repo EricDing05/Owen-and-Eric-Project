@@ -1,7 +1,6 @@
 package model;
 
-import model.store.*;
-
+import model.store.SuperStore;
 
 public class test {
 
@@ -10,13 +9,15 @@ public class test {
         //AbstractStore Thriftyfoods = new ThriftyFoods("Thriftyfoods");  //save on, thriftys
        // AbstractStore SaveOnFoods = new SaveOnFoods("SaveOnFoods");  //save on, thriftys
        // AbstractStore Walmart = new Walmart("Walmart"); //
-        AbstractStore NoFrills = new NoFrills("NoFrills");
+       // AbstractStore NoFrills = new NoFrills("NoFrills");
+        AbstractStore SuperStore = new SuperStore("Super Store");
 
        // SaveOnFoods.generateProducts();
        // Costco.generateProducts();
         //Thriftyfoods.generateProducts();
       //  Walmart.generateProducts();
-        NoFrills.generateProducts();
+        // NoFrills.generateProducts();
+        SuperStore.generateProducts();
 
 //        Costco.saveProducts();
 //        Thriftyfoods.saveProducts();
