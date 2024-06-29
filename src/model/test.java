@@ -1,6 +1,5 @@
 package model;
-
-import model.store.LobLaws;
+import model.store.*;
 
 public class test {
 
@@ -12,8 +11,14 @@ public class test {
        // AbstractStore NoFrills = new NoFrills("NoFrills");
        // AbstractStore SuperStore = new SuperStore("Super Store");
 
-        AbstractStore LobLaws = new LobLaws("LobLaws");
-        LobLaws.generateProducts(); //TODO need format prices
+      //  AbstractStore LobLaws = new LobLaws("LobLaws");
+        // LobLaws.generateProducts(); //TODO need format prices
+
+      //  AbstractStore Maxi = new Maxi("Maxi");
+      //  Maxi.generateProducts();
+
+        AbstractStore IndependentGrocer = new IndependentGrocer("g");
+        IndependentGrocer.generateProducts();
 
         //SaveOnFoods.generateProducts();
         //Costco.generateProducts();
