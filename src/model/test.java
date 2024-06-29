@@ -1,6 +1,6 @@
 package model;
 
-import model.store.SuperStore;
+import model.store.LobLaws;
 
 public class test {
 
@@ -10,18 +10,21 @@ public class test {
        // AbstractStore SaveOnFoods = new SaveOnFoods("SaveOnFoods");  //save on, thriftys
        // AbstractStore Walmart = new Walmart("Walmart"); //
        // AbstractStore NoFrills = new NoFrills("NoFrills");
-        AbstractStore SuperStore = new SuperStore("Super Store");
+       // AbstractStore SuperStore = new SuperStore("Super Store");
 
-       // SaveOnFoods.generateProducts();
-       // Costco.generateProducts();
+        AbstractStore LobLaws = new LobLaws("LobLaws");
+        LobLaws.generateProducts(); //TODO need format prices
+
+        //SaveOnFoods.generateProducts();
+        //Costco.generateProducts();
         //Thriftyfoods.generateProducts();
-      //  Walmart.generateProducts();
-        // NoFrills.generateProducts();
-        SuperStore.generateProducts();
+        //Walmart.generateProducts();
+        //NoFrills.generateProducts();
+        //SuperStore.generateProducts();
 
-//        Costco.saveProducts();
-//        Thriftyfoods.saveProducts();
-//        SaveOnFoods.saveProducts();
+        //Costco.saveProducts();
+        //Thriftyfoods.saveProducts();
+        //SaveOnFoods.saveProducts();
 
     }
 

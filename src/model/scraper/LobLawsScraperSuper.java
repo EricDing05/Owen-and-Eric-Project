@@ -13,8 +13,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-public class noFrillsScraper extends LobLawsScraperSuper {
-
+public class LobLawsScraperSuper extends WebsiteScraper {
 
     @Override
     //EFFECTS: Scrapes all the products off the website page
@@ -23,8 +22,8 @@ public class noFrillsScraper extends LobLawsScraperSuper {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(24), Duration.ofMillis(2000));
         WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[data-testid='product-grid']")));
 
-       //old  List<WebElement> productElements = gridElement.findElements(By.cssSelector("div[data-testid='product-grid'] > div.css-0\n"));
-        List<WebElement> productElements = gridElement.findElements(By.cssSelector("div.chakra-linkbox[class*='css-']")); //testing
+        //old  List<WebElement> productElements = gridElement.findElements(By.cssSelector("div[data-testid='product-grid'] > div.css-0\n"));
+        List<WebElement> productElements = gridElement.findElements(By.cssSelector("div.css-f5i5wc")); //testing
         if (productElements.size() == 0) {
             throw new NoMoreProductsException();
         }
@@ -46,7 +45,7 @@ public class noFrillsScraper extends LobLawsScraperSuper {
         String name = p.findElement(By.cssSelector("h3[data-testid='product-title']")).getText();
         WebElement priceElement = p.findElement(By.xpath(".//span[@data-testid='sale-price' or @data-testid='regular-price']//span[contains(@class, 'css-')]\n"));
         String priceText = priceElement.getText().replace("$", "").replace("about", "").trim();
-        double price = Double.parseDouble(priceText);
+        double price = formatPrice(priceText);
 
         String imgUrl = p.findElement(By.cssSelector("div[data-testid='product-image'] img")).getAttribute("src");
 
@@ -56,4 +55,19 @@ public class noFrillsScraper extends LobLawsScraperSuper {
         store.addProduct(new Product(name, price, imgUrl, description, storeName));
     }
 
+    public static double formatPrice(String priceText) {
+        priceText = priceText.replace("$", "").replace("about", "").trim();
+        if (priceText.contains("FOR")) {
+            String[] parts = priceText.split("FOR");
+            if (parts.length == 2) {
+                int quantity = Integer.parseInt(parts[0].trim());
+                double totalPrice = Double.parseDouble(parts[1].trim());
+                return totalPrice / quantity;
+            }
+        }
+        if (priceText.contains("MIN")) {
+            priceText = priceText.split("MIN")[0].trim();
+        }
+        return Double.parseDouble(priceText);
+    }
 }

@@ -13,7 +13,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-public class SuperStoreScraper extends WebsiteScraper {
+public class SuperStoreScraper extends LobLawsScraperSuper {
 
 
     @Override
@@ -53,20 +53,6 @@ public class SuperStoreScraper extends WebsiteScraper {
         store.addProduct(new Product(name, price, imgUrl, description, storeName)); //Number format exception
     }
 
-    public double formatPrice(String priceText) {
-        priceText = priceText.replace("$", "").replace("about", "").trim();
-
-        if (priceText.contains("FOR")) {
-            String[] parts = priceText.split("FOR");
-            if (parts.length == 2) {
-                int quantity = Integer.parseInt(parts[0].trim());
-                double totalPrice = Double.parseDouble(parts[1].trim());
-                return totalPrice / quantity;
-            }
-        }
-
-        return Double.parseDouble(priceText);
-    }
 
 
 

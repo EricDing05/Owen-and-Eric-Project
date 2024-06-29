@@ -1,9 +1,8 @@
 package model.store;
 
-import model.AbstractStore;
 import model.scraper.noFrillsScraper;
 
-public class NoFrills extends AbstractStore {
+public class NoFrills extends LobLawsSuper {
 
     // EFFECTS: Creates an instance of a store
     public NoFrills(String name) {
@@ -14,15 +13,7 @@ public class NoFrills extends AbstractStore {
         this.scraper = new noFrillsScraper();
     }
 
-    // EFFECTS: Generates/updates all products of this store
-    public void generateProducts() {
-        this.scraper.scrapeWebsite(this);
-    }
 
-    // EFFECTS: returns the next page of a given URL
-    public String getNextURL(String url, int i) {
-            return url + "?page=" + (i + 1); //this
-    }
 
     // EFFECTS: initializes all the categories and their URLs
     public void initializeCategories() {
