@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class noFrillsScraper extends WebsiteScraper {
 
@@ -23,12 +24,17 @@ public class noFrillsScraper extends WebsiteScraper {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20), Duration.ofMillis(2000));
         WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[data-testid='product-grid']")));
 
-        List<WebElement> productElements = gridElement.findElements(By.cssSelector("div[data-testid='product-grid'] > div.css-0\n"));
+       //old  List<WebElement> productElements = gridElement.findElements(By.cssSelector("div[data-testid='product-grid'] > div.css-0\n"));
+        List<WebElement> productElements = gridElement.findElements(By.cssSelector("div.chakra-linkbox[class*='css-']")); //testing
         if (productElements.size() == 0) {
             throw new NoMoreProductsException();
         }
         for (WebElement e : productElements) {
-            store.getScraper().createProduct(e, store);
+            try {
+                store.getScraper().createProduct(e, store);
+            } catch (NoSuchElementException ex) {
+                ex.printStackTrace();
+            }
         }
         System.out.println(store.getProducts().size());
     }
