@@ -3,8 +3,6 @@ package model.store;
 import model.persistance.Writer;
 import model.scraper.WalmartScraper;
 
-import java.io.IOException;
-
 public class Walmart extends AbstractStore {
 
     // EFFECTS: Creates an instance of a store
@@ -53,15 +51,6 @@ public class Walmart extends AbstractStore {
         //might need to add dietary category, but might not have to bc they would be repeats.
     }
 
-    public void save() {
-        try {
-            writer.open();
-            writer.write(this);
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
 
 }

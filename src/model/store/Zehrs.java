@@ -1,5 +1,6 @@
 package model.store;
 
+import model.persistance.Writer;
 import model.scraper.SuperStoreScraper;
 
 public class Zehrs extends LobLawsSuper {
@@ -8,6 +9,7 @@ public class Zehrs extends LobLawsSuper {
         super(name);
         initializeCategories();
         scraper = new SuperStoreScraper();
+        writer = new Writer("/Users/ericding/IdeaProjects/App/.idea/data/Zehrs.json");
     }
 
 

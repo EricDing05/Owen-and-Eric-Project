@@ -1,6 +1,6 @@
 package model.store;
 
-import model.AbstractStore;
+
 
 public abstract class LobLawsSuper extends AbstractStore {
 

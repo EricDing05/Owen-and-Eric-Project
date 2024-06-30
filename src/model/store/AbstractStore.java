@@ -6,6 +6,7 @@ import model.persistance.Writer;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -51,7 +52,15 @@ public abstract class AbstractStore {
         return json;
     }
 
-    public abstract void save();
+    public void save() {
+        try {
+            writer.open();
+            writer.write(this);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public String getName() {
         return name;

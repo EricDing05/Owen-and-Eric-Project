@@ -3,8 +3,6 @@ package model.store;
 import model.persistance.Writer;
 import model.scraper.ThriftyScraper;
 
-import java.io.IOException;
-
 public class ThriftyFoods extends AbstractStore  {
 
 
@@ -49,16 +47,6 @@ public class ThriftyFoods extends AbstractStore  {
         this.categoriesURLs.put("VITAMINS & MORE","https://www.thriftyfoods.com/shop-online/vitamins-and-more");
     }
 
-    @Override
-    public void save() {
-        try {
-            writer.open();
-            writer.write(this);
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     //https://www.thriftyfoods.com/shop-online/bakery-commercial
     //https://www.thriftyfoods.com/shop-online/bakery-commercial?page=2&pageSize=20

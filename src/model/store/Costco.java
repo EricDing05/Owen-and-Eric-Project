@@ -3,8 +3,6 @@ package model.store;
 import model.persistance.Writer;
 import model.scraper.CostcoScraper;
 
-import java.io.IOException;
-
 public class Costco extends AbstractStore {
 
     // EFFECTS: Creates an instance of a store
@@ -59,16 +57,7 @@ public class Costco extends AbstractStore {
 //        this.categoriesURLs.put("Health & Beauty","https://www.costco.ca/health-beauty.html?costcoprogramtypes=costco-grocery&refine=||item_program_eligibility-2DayDelivery");
     }
 
-    @Override
-    public void save() {
-        try {
-            writer.open();
-            writer.write(this);
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
 
 
 }

@@ -1,7 +1,8 @@
 package model.scraper;
 
-import model.AbstractStore;
+
 import model.Product;
+import model.store.AbstractStore;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

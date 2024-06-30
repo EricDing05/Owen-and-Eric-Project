@@ -1,7 +1,8 @@
 package model.scraper;
 
-import model.AbstractStore;
+
 import model.scraper.Exceptions.NoMoreProductsException;
+import model.store.AbstractStore;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;

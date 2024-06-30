@@ -1,5 +1,6 @@
 package model.store;
 
+import model.persistance.Writer;
 import model.scraper.SuperStoreScraper;
 
 public class SuperStore extends LobLawsSuper {
@@ -9,6 +10,7 @@ public class SuperStore extends LobLawsSuper {
         super(name);
         initializeCategories();
         scraper = new SuperStoreScraper();
+        writer = new Writer("/Users/ericding/IdeaProjects/App/.idea/data/SuperStore.json");
     }
 
 

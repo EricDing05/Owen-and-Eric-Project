@@ -1,9 +1,7 @@
 package model.store;
 
-import model.scraper.SaveOnFoodsScraper;
 import model.persistance.Writer;
-
-import java.io.IOException;
+import model.scraper.SaveOnFoodsScraper;
 
 
 public class SaveOnFoods extends AbstractStore  {
@@ -38,15 +36,6 @@ public class SaveOnFoods extends AbstractStore  {
         }
     }
 
-    public void save() {
-        try {
-            writer.open();
-            writer.write(this);
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
 
     // EFFECTS: initializes all the categories and their URLs
