@@ -38,7 +38,7 @@ public abstract class WebsiteScraper {
 
             } catch (StaleElementReferenceException se) {
                 driver.quit();
-                scrapeCategory(url, store, i); // add a limit
+                scrapeCategory(url, store, i); // add a limit // Eric: we re-try when we have a stale element? is there any other way?
             } catch (Exception e) {
                 driver.quit();
                 e.printStackTrace();
