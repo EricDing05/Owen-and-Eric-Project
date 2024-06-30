@@ -39,12 +39,10 @@ public abstract class WebsiteScraper {
             } catch (StaleElementReferenceException se) {
                 driver.quit();
                 scrapeCategory(url, store, i); // add a limit
-            } catch (NoMoreProductsException ex) { // no such element exception, stale element exception
-                driver.quit();
-                ex.printStackTrace();
             } catch (Exception e) {
                 driver.quit();
                 e.printStackTrace();
+                return;
             }
         }
     }
