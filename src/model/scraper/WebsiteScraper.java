@@ -1,8 +1,9 @@
 package model.scraper;
 
-import model.AbstractStore;
+import model.store.AbstractStore;
 import model.scraper.Exceptions.NoMoreProductsException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.safari.SafariDriver;
@@ -30,14 +31,17 @@ public abstract class WebsiteScraper {
                 System.out.println(currentPageURL);
                 scrapePage(currentPageURL, store, driver);
                 driver.quit();
+                store.save();
 
-            } catch (NoMoreProductsException ex) {
+            } catch (StaleElementReferenceException ex) {
+                // continue searching in hopes of finding more products after the stale element
                 driver.quit();
                 ex.printStackTrace();
-                return; //
             } catch (Exception e) {
+                // otherwise, stop searching as we have reached the end
                 driver.quit();
                 e.printStackTrace();
+                return; //
             }
         }
     }
@@ -57,6 +61,9 @@ public abstract class WebsiteScraper {
         System.out.println(store.getProducts().size());
     }
 
+
     public abstract void createProduct(WebElement e, AbstractStore store);
+
+
 
 }

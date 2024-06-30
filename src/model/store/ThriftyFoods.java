@@ -1,7 +1,9 @@
 package model.store;
 
-import model.AbstractStore;
+import model.persistance.Writer;
 import model.scraper.ThriftyScraper;
+
+import java.io.IOException;
 
 public class ThriftyFoods extends AbstractStore  {
 
@@ -13,6 +15,7 @@ public class ThriftyFoods extends AbstractStore  {
         this.scraper = new ThriftyScraper();
         this.setGridPath("//*[@id=\"body_0_main_1_ProductSearch_GroceryBrowsing_TemplateResult_SearchResultListView_MansoryPanel\"]/div");
         this.setProductPath("//div[@class='item-product js-product js-equalized js-addtolist-container js-ga']");
+        writer = new Writer("/Users/ericding/IdeaProjects/App/.idea/data/ThriftyFoods.json");
     }
 
     // EFFECTS: Generates/updates all products of this store
@@ -22,7 +25,7 @@ public class ThriftyFoods extends AbstractStore  {
 
     // EFFECTS: returns the next page of a given URL
     public String getNextURL(String url, int i) {
-            return url + "?page=" + (i + 1) + "&pageSize=20";
+            return url + "?page=" + (i + 1) + "&pageSize=80";
     }
 
     // EFFECTS: initializes all the categories and their URLs
@@ -30,7 +33,7 @@ public class ThriftyFoods extends AbstractStore  {
         this.categoriesURLs.put("BAKERY (COMMERCIAL)","https://www.thriftyfoods.com/shop-online/bakery-commercial");
         this.categoriesURLs.put("BAKERY (INSTORE)","https://www.thriftyfoods.com/shop-online/bakery-instore");
         this.categoriesURLs.put("BULK FOODS","https://www.thriftyfoods.com/shop-online/bulk-foods");
-        this.categoriesURLs.put("DELI","https://www.thriftyfoods.com/shop-online/deli");
+        // this.categoriesURLs.put("DELI","https://www.thriftyfoods.com/shop-online/deli");
         this.categoriesURLs.put("FLORAL","https://www.thriftyfoods.com/shop-online/floral");
 
         this.categoriesURLs.put("FROZEN","https://www.thriftyfoods.com/shop-online/frozen");
@@ -44,6 +47,17 @@ public class ThriftyFoods extends AbstractStore  {
         this.categoriesURLs.put("SUSHI","https://www.thriftyfoods.com/shop-online/sushi");
         this.categoriesURLs.put("TAKE IT TO GO","https://www.thriftyfoods.com/shop-online/take-it-to-go");
         this.categoriesURLs.put("VITAMINS & MORE","https://www.thriftyfoods.com/shop-online/vitamins-and-more");
+    }
+
+    @Override
+    public void save() {
+        try {
+            writer.open();
+            writer.write(this);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     //https://www.thriftyfoods.com/shop-online/bakery-commercial

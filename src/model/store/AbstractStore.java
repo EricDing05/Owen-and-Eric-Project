@@ -1,8 +1,15 @@
-package model;
+package model.store;
 
+import model.Product;
 import model.scraper.WebsiteScraper;
+import model.persistance.Writer;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public abstract class AbstractStore {
 
@@ -13,6 +20,7 @@ public abstract class AbstractStore {
     private String gridPath;
     private String productPath;
     private String infoPath;
+    protected Writer writer;
 
     public AbstractStore(String name) {
         this.name = name;
@@ -28,6 +36,22 @@ public abstract class AbstractStore {
             products.add(p);
         }
     }
+
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("products", productsToJson());
+        return json;
+    }
+
+    private JSONArray productsToJson() {
+        JSONArray json = new JSONArray();
+        for (Product p : this.products) {
+            json.put(p.toJson());
+        }
+        return json;
+    }
+
+    public abstract void save();
 
     public String getName() {
         return name;

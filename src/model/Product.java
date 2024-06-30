@@ -1,6 +1,8 @@
 package model;
 
 
+import org.json.JSONObject;
+
 public class Product {
 
     private String name;
@@ -44,6 +46,16 @@ public class Product {
 
     public String getStoreName() {
         return storeName;
+    }
+
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("price", this.price);
+        json.put("name", this.name);
+        json.put("imageUrl", this.imageUrl);
+        json.put("description", this.description);
+        json.put(storeName, this.storeName);
+        return json;
     }
 
 

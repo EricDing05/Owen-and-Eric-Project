@@ -1,7 +1,9 @@
 package model.store;
 
-import model.AbstractStore;
+import model.persistance.Writer;
 import model.scraper.WalmartScraper;
+
+import java.io.IOException;
 
 public class Walmart extends AbstractStore {
 
@@ -12,7 +14,7 @@ public class Walmart extends AbstractStore {
         initializeCategories();
         this.setGridPath("//div[@data-testid='product-grid']");
         this.setProductPath(".//div[contains(@data-item-id, '')]");
-
+        this.writer = new Writer("/Users/ericding/IdeaProjects/App/.idea/data/Walmart.json");
     }
 
     // EFFECTS: Generates/updates all products of this store
@@ -51,6 +53,15 @@ public class Walmart extends AbstractStore {
         //might need to add dietary category, but might not have to bc they would be repeats.
     }
 
+    public void save() {
+        try {
+            writer.open();
+            writer.write(this);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }

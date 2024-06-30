@@ -1,7 +1,9 @@
 package model.store;
 
-import model.AbstractStore;
 import model.scraper.SaveOnFoodsScraper;
+import model.persistance.Writer;
+
+import java.io.IOException;
 
 
 public class SaveOnFoods extends AbstractStore  {
@@ -14,6 +16,7 @@ public class SaveOnFoods extends AbstractStore  {
         this.setGridPath("//section[@aria-labelledby='productGrid__title']"); //"//*[@id=\"pageMain\"]/div[2]/div[1]/div/div[3]/div/section[1]/section[2]/div[3]"
         this.setProductPath("//article[starts-with(@class, 'ProductCardWrapper--')]"); // "//div[@class='ColListing--1fk1zey jGGReB']"
         scraper = new SaveOnFoodsScraper();
+        writer = new Writer("/Users/ericding/IdeaProjects/App/.idea/data/SaveOnFoods.json");
     }
 
     // EFFECTS: Generates/updates all products of this store
@@ -32,6 +35,16 @@ public class SaveOnFoods extends AbstractStore  {
             int nextSkip = i * 30;
             return url.replaceAll("page=\\d+", "page=" + nextPage)
                     .replaceAll("skip=\\d+", "skip=" + nextSkip);
+        }
+    }
+
+    public void save() {
+        try {
+            writer.open();
+            writer.write(this);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

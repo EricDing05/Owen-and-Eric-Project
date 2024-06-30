@@ -2,7 +2,7 @@ package model.scraper;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import model.AbstractStore;
+import model.store.AbstractStore;
 import model.Product;
 import org.openqa.selenium.WebElement;
 

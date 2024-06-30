@@ -1,6 +1,6 @@
 //package model.store;
 //
-//import model.AbstractStore;
+//import model.store.AbstractStore;
 //import model.scraper.noFrillsScraper;
 //
 //public class NoFrills extends AbstractStore {

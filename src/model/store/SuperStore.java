@@ -1,6 +1,6 @@
 //package model.store;
 //
-//import model.AbstractStore;
+//import model.store.AbstractStore;
 //import model.scraper.SuperStoreScraper;
 //
 //public class SuperStore extends AbstractStore {

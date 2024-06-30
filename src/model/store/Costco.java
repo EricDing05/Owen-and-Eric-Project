@@ -1,7 +1,9 @@
 package model.store;
 
-import model.AbstractStore;
+import model.persistance.Writer;
 import model.scraper.CostcoScraper;
+
+import java.io.IOException;
 
 public class Costco extends AbstractStore {
 
@@ -12,6 +14,7 @@ public class Costco extends AbstractStore {
         this.setGridPath("//div[@automation-id='productList']");
         this.setProductPath("//div[contains(@class, 'product-tile-set')]"); //this might not work. not tested
         scraper = new CostcoScraper();
+        this.writer = new Writer("/Users/ericding/IdeaProjects/App/.idea/data/Costco.json");
     }
 
     // EFFECTS: Generates/updates all products of this store
@@ -56,6 +59,16 @@ public class Costco extends AbstractStore {
 //        this.categoriesURLs.put("Health & Beauty","https://www.costco.ca/health-beauty.html?costcoprogramtypes=costco-grocery&refine=||item_program_eligibility-2DayDelivery");
     }
 
+    @Override
+    public void save() {
+        try {
+            writer.open();
+            writer.write(this);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }
