@@ -58,8 +58,30 @@ public class Product {
         return json;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Product)) return false;
 
+        Product product = (Product) o;
 
+        if (Double.compare(product.getPrice(), getPrice()) != 0) return false;
+        if (!getName().equals(product.getName())) return false;
+        if (!getImageUrl().equals(product.getImageUrl())) return false;
+        if (!getDescription().equals(product.getDescription())) return false;
+        return getStoreName().equals(product.getStoreName());
+    }
 
-
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = getName().hashCode();
+        temp = Double.doubleToLongBits(getPrice());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + getImageUrl().hashCode();
+        result = 31 * result + getDescription().hashCode();
+        result = 31 * result + getStoreName().hashCode();
+        return result;
+    }
 }
