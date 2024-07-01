@@ -30,15 +30,15 @@ public abstract class WebsiteScraper {
             WebDriver driver = new SafariDriver();
             try {
                 // temp removal    driver.manage().timeouts().implicitlyWait(Duration.ofMillis(20000));
-                String currentPageURL = store.getNextURL(url, i); //TODO make this method
+                String currentPageURL = store.getNextURL(url, i);
                 System.out.println(currentPageURL);
                 scrapePage(currentPageURL, store, driver);
                 driver.quit();
 
             } catch (StaleElementReferenceException se) {
                 driver.quit();
-                scrapeCategory(url, store, i); // add a limit
-            } catch (NoMoreProductsException ex) { // no such element exception, stale element exception
+                scrapeCategory(url, store, i);
+            } catch (NoMoreProductsException ex) {
                 driver.quit();
                 ex.printStackTrace();
             } catch (Exception e) {

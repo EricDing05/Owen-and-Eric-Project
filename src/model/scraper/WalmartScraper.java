@@ -2,11 +2,36 @@ package model.scraper;
 
 import model.AbstractStore;
 import model.Product;
+import model.scraper.Exceptions.NoMoreProductsException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.List;
 
 public class WalmartScraper extends WebsiteScraper {
 
+
+
+    @Override
+    public void scrapePage(String url, AbstractStore store, WebDriver driver) {
+        driver.get(url);
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20), Duration.ofMillis(2000));
+        WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(store.getGridPath())));
+
+        List<WebElement> productElements = gridElement.findElements(By.xpath(store.getProductPath()));
+        if (productElements.size() == 0) {
+            throw new NoMoreProductsException();
+        }
+        for (WebElement e : productElements) {
+            store.getScraper().createProduct(e, store);
+        }
+        System.out.println(store.getProducts().size());
+    }
 
 
     //EFFECTS: given the html product element, makes a product and adds it to store
