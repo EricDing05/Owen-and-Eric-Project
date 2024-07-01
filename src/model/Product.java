@@ -54,7 +54,7 @@ public class Product {
         json.put("name", this.name);
         json.put("imageUrl", this.imageUrl);
         json.put("description", this.description);
-        json.put(storeName, this.storeName);
+        json.put("storeName", this.storeName);
         return json;
     }
 

@@ -12,7 +12,7 @@ public class Costco extends AbstractStore {
         this.setGridPath("//div[@automation-id='productList']");
         this.setProductPath("//div[contains(@class, 'product-tile-set')]"); //this might not work. not tested
         scraper = new CostcoScraper();
-        this.writer = new Writer("/Users/ericding/IdeaProjects/App/.idea/data/Costco.json");
+        this.writer = new Writer(".idea/data/Costco.json");
     }
 
     // EFFECTS: Generates/updates all products of this store

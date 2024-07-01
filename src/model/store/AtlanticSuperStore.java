@@ -9,7 +9,7 @@ public class AtlanticSuperStore extends LobLawsSuper {
         super(name);
         scraper = new LobLawsScraperSuper();
         initializeCategories();
-        writer = new Writer("/Users/ericding/IdeaProjects/App/.idea/data/AtlanticSuperStore.json");
+        writer = new Writer(".idea/data/AtlanticSuperStore.json");
     }
 
     public void initializeCategories() {

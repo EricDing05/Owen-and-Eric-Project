@@ -1,0 +1,674 @@
+{"products": [
+    {
+        "price": 1.75,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20175355001/b3/en/front/20175355001_front_a06_@2.png",
+        "name": "Bananas, Bunch",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 1.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20070132001/b3/en/front/20070132001_front_a06_@2.png",
+        "name": "English Cucumber",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 4.97,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20067326001/b3/en/front/20067326001_front_a06_@2.png",
+        "name": "Red Seedless Watermelon",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 7.79,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20159690001/b3/en/front/20159690001_front_a06_@2.png",
+        "name": "Red Cherries",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 5.49,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20080137001/b3/en/front/20080137001_front_a06_@2.png",
+        "name": "Blueberries 1 pint",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 1.29,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20107500001/b3/en/front/20107500001_front_a06_@2.png",
+        "name": "Green Onion",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 4.12,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20812144001/b3/en/front/20812144001_front_a06_@2.png",
+        "name": "Large Grade A Eggs",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 4.68,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20026703001/b3/en/front/20026703001_front_a06_@2.png",
+        "name": "Tomato On The Vine Red (1 Bunch)",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 2.5,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20049778001/b3/en/front/20049778001_front_a06_@2.png",
+        "name": "Strawberries 1LB",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 1.18,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20426141001/b3/en/front/20426141001_front_a06_@2.png",
+        "name": "Tomato Beefsteak  Red",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 5.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20067389001/b3/en/front/20067389001_front_a06_@2.png",
+        "name": "Romaine Heart, 3 Pack",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 10.89,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20159199001/b3/en/front/20159199001_front_a06_@2.png",
+        "name": "Extra Large Red Seedless Grapes",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 2.47,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20135326001/b3/en/front/20135326001_front_a06_@2.png",
+        "name": "Lettuce Iceberg",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 3.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20811994001/b3/en/front/20811994001_front_a06_@2.png",
+        "name": "Yellow Onions, 3 lb Bag",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 5.16,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20174581001/b3/en/front/20174581001_front_a06_@2.png",
+        "name": "Asparagus",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 4.88,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20069661001/b3/en/front/20069661001_front_a06_@2.png",
+        "name": "Strawberries 2LB",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 5.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20142232001/b3/en/front/20142232001_front_a06_@2.png",
+        "name": "Avocados Bag, 5-Pack",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 5.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20828461001/b3/en/front/20828461001_front_a06_@2.png",
+        "name": "English Cucumber 3Ct    ",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 0.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20028593001/b3/en/front/20028593001_front_a06_@2.png",
+        "name": "Lemon",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 2.44,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20134101001/b3/en/front/20134101001_front_a06_@2.png",
+        "name": "Red Onion",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 3.29,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20163119001/b3/en/front/20163119001_front_a06_@2.png",
+        "name": "Celery Stalks",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 0.64,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20091825001/b3/en/front/20091825001_front_a06_@2.png",
+        "name": "Cilantro",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 0.6900000000000001,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20131170001/b3/en/front/20131170001_front_a06_@2.png",
+        "name": "Bi-Colour Corn, Corn on the Cob",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 0.5,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20040489001/b3/en/front/20040489001_front_a06_@2.png",
+        "name": "Limes",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 1.23,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20426596001/b3/en/front/20426596001_front_a06_@2.png",
+        "name": "Zucchini",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 2.11,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20007535001/b3/en/front/20007535001_front_a06_@2.png",
+        "name": "Red Peppers    ",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 3.49,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21367888001/b3/en/front/21367888001_front_a06_@2.png",
+        "name": "Grape Tomatoes",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 0.66,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20143381001/b3/en/front/20143381001_front_a06_@2.png",
+        "name": "Roma Tomatoes",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 11.22,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20425775001/b3/en/front/20425775001_front_a06_@2.png",
+        "name": "Extra Large Green Seedless Grapes",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 4.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20128938001/b3/en/front/20128938001_front_a06_@2.png",
+        "name": "Raspberries 1/2 pint",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 2.16,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20139509001/b3/en/front/20139509001_front_a06_@2.png",
+        "name": "Organic Bananas, Bunch",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 2.05,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20425893001/b3/en/front/20425893001_front_a06_@2.png",
+        "name": "Sweet Green Peppers",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 2.44,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20154975/b3/en/front/20154975_front_a06_@2.png",
+        "name": "Natural Spring Water",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 0.77,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21004355001/b3/en/front/21004355001_front_a06_@2.png",
+        "name": "Garlic Bulbs, 3-count",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 0.92,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20179038001/b3/en/front/20179038001_front_a06_@2.png",
+        "name": "Ginger",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 3.49,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20145621001/b3/en/front/20145621001_front_a06_@2.png",
+        "name": "Broccoli",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 2.64,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20348977001/b3/en/front/20348977001_front_a06_@2.png",
+        "name": "Sweet Corn",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 4.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20167017001/b3/en/front/20167017001_front_a06_@2.png",
+        "name": "Cantaloupe",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 10.12,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21435777001/b3/en/front/21435777001_front_a06_@2.png",
+        "name": "Large Size Eggs",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 4.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20135377001/b3/en/front/20135377001_front_a06_@2.png",
+        "name": "Cauliflower",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 3.03,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20083454001/b3/en/front/20083454001_front_a06_@2.png",
+        "name": "Sweet Onion",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 3.97,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20160992001/b3/en/front/20160992001_front_a06_@2.png",
+        "name": "Pineapple",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 1.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20059635001/b3/en/front/20059635001_front_a06_@2.png",
+        "name": "Mango",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 0.88,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20311564001/b3/en/front/20311564001_front_a06_@2.png",
+        "name": "Yellow Peaches",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 4.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20051015001/b3/en/front/20051015001_front_a06_@2.png",
+        "name": "Blackberries 1/2 Pint",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 52.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21414032/b3/en/front/21414032_front_a06_@2.png",
+        "name": "Marine Collagen Powder Unflavoured",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 6.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21169949/b3/en/front/21169949_front_a06_@2.png",
+        "name": "Kids Fluoride Free Toothpaste",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 6.69,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21100346/b3/en/front/21100346_front_a06_@2.png",
+        "name": "Sprouted Power Bagels Sesame Sunflower Organic 5 Bagels",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 3.75,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20321599/b3/en/front/20321599_front_a06_@2.png",
+        "name": "Gran Pasticceria, Dark Hazelnut",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 4.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21061898/b3/en/front/21061898_front_a06_@2.png",
+        "name": "Banana Strawberry Juice Boxes ",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 8.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20559471/b3/en/front/20559471_front_a06_@2.png",
+        "name": "Gourmet West Coast Dark Roast™ Coffee TASSIMO T DISCs",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 19.56,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20046400/b3/en/front/20046400_front_a06_@2.png",
+        "name": "Kosher Lean Ground Beef",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 4.49,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21573987/b3/en/front/21573987_front_a06_@2.png",
+        "name": "Summertime Cookies, Watermelon",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 30.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21416032/b3/en/front/21416032_front_a06_@2.png",
+        "name": "A Magnesium Powder Supplement Orange Flavour",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 8.49,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20311110001/b3/en/front/20311110001_front_a06_@2.png",
+        "name": "Choco Blanc",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 2.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21108098/b3/en/front/21108098_front_a06_@2.png",
+        "name": "Almond Beverage, Unsweetened Vanilla",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 3.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20302565005/b3/en/front/20302565005_front_a06_@2.png",
+        "name": "Peach Mist Naturally Fruit-Flavoured Water Beverage",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 1.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20057539001/b3/en/front/20057539001_front_a06_@2.png",
+        "name": "Butter Chicken Curry Paste",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 3.5,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21595694/b3/en/front/21595694_front_a06_@2.png",
+        "name": "Peach Nectarine Can",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 2.5,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21587926/b3/en/front/21587926_front_a06_@2.png",
+        "name": "Smokey Bacon Crackers",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 6.49,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21300749/b3/en/front/21300749_front_a06_@2.png",
+        "name": "Popcorn Pack, White Cheddar",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 2.69,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20322576007/b3/en/front/20322576007_front_a06_@2.png",
+        "name": "Goad Gathiya",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 5.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21176582/b3/en/front/21176582_front_a06_@2.png",
+        "name": "Previously Frozen Bay Scallops",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 5.79,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20581363/b3/en/front/20581363_front_a06_@2.png",
+        "name": "Chocolate, Candy Dark Toffee Peanut Chew Full Size",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 8.49,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21496784/b3/en/front/21496784_front_a06_@2.png",
+        "name": "Boost Bars Chocolate Brownie",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 10.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21037760/b3/en/front/21037760_front_a06_@2.png",
+        "name": "Matzo Farfel     ",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 9.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20594806003/b3/en/front/20594806003_front_a06_@2.png",
+        "name": "Markdale Creamery Vanilla Ice Cream",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 2.69,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21433563/b3/en/front/21433563_front_a06_@2.png",
+        "name": "Lemon Iced Tea",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 6.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20319871/b3/en/front/20319871_front_a06_@2.png",
+        "name": "Blue Goodness",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 6.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20746245005/b3/en/front/20746245005_front_a06_@2.png",
+        "name": "Loads Of Cookies \u2018N\u2019 Crème Light Ice Cream",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 10.49,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20551605/b3/en/front/20551605_front_a06_@2.png",
+        "name": "Flax Plus Cinnamon",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 53.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20730370/b3/en/front/20730370_front_a06_@2.png",
+        "name": "Active Collagen",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 11.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20039456/b3/en/front/20039456_front_a06_@2.png",
+        "name": "Fleur de Sel de Camargue",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 26.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21517458/b3/en/front/21517458_front_a06_@2.png",
+        "name": "Whole Raw Cashews, 1.13KG",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 3.81,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21405284/b3/en/front/21405284_front_a06_@2.png",
+        "name": "Chicken Bones, Tray Pack",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 5.49,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20885283001/b3/en/front/20885283001_front_a06_@2.png",
+        "name": "Organic Qi'a Hot Oatmeal, Supergrains",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 4.79,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21292039/b3/en/front/21292039_front_a06_@2.png",
+        "name": "Biodegradable Sponge",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 1.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20688318001/b3/en/front/20688318001_front_a06_@2.png",
+        "name": "Fried Pork Rinds, Garlic",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 12,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21432397/b3/en/front/21432397_front_a06_@2.png",
+        "name": "Large Steak & Egg Salad",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 6.29,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21237406/b3/en/front/21237406_front_a06_@2.png",
+        "name": "Oven Baked Mac & Cheese, White Cheddar",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 3.49,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20296687002/b3/en/front/20296687002_front_a06_@2.png",
+        "name": "Peanut Free Apple Cereal Bars",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 6.49,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20096628001/b3/en/front/20096628001_front_a06_@2.png",
+        "name": "Soft Cream Cheese",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 29.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21215460/b3/en/front/21215460_front_a06_@2.png",
+        "name": "Boosted Marine Collagen    ",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 3.29,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20025029002/b3/en/front/20025029002_front_a06_@2.png",
+        "name": "Sour Sticks, Raspberry",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 9.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21400894/b3/en/front/21400894_front_a06_@2.png",
+        "name": "Natural Lavender Laundry Wash ",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 5.49,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21290142/b3/en/front/21290142_front_a06_@2.png",
+        "name": "Rum & Raisin Ice Cream",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 2.79,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21527498/b3/en/front/21527498_front_a06_@2.png",
+        "name": "Bamba Peanut Butter Puffs",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 4.49,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20003599/b3/en/front/20003599_front_a06_@2.png",
+        "name": "Chicken Marinade Sauce, Teriyaki",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 4.49,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21582930/b3/en/front/21582930_front_a06_@2.png",
+        "name": "Garlic Toast",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 3.49,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20618936/b3/en/front/20618936_front_a06_@2.png",
+        "name": "Clingstone Peach Halves in Juice From Concentrate",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 1.29,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21528503/b3/en/front/21528503_front_a06_@2.png",
+        "name": "Ice Black Tea Drink Lemon Flavour",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 3.49,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20302838/b3/en/front/20302838_front_a06_@2.png",
+        "name": "Creamy Potato Salad",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 2.49,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20694780004/b3/en/front/20694780004_front_a06_@2.png",
+        "name": "Raspberry Tea",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 2.29,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/20854532006/b3/en/front/20854532006_front_a06_@2.png",
+        "name": "Kashmiri Mirch Masala",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 12.99,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21290266/b3/en/front/21290266_front_a06_@2.png",
+        "name": "Thai Hom Mali Brown Jasmine Rice",
+        "description": "n/a",
+        "storeName": "costco"
+    },
+    {
+        "price": 2,
+        "imageUrl": "https://assets.shop.loblaws.ca/products/21030129/b3/en/front/21030129_front_a06_@2.png",
+        "name": "Excel Peppermint Flavoured Sugar Free Soft Chew Gum, 15 Pieces, 1 Pack",
+        "description": "n/a",
+        "storeName": "costco"
+    }
+]}

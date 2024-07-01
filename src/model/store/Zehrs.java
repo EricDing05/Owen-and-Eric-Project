@@ -9,7 +9,7 @@ public class Zehrs extends LobLawsSuper {
         super(name);
         initializeCategories();
         scraper = new SuperStoreScraper();
-        writer = new Writer("/Users/ericding/IdeaProjects/App/.idea/data/Zehrs.json");
+        writer = new Writer(".idea/data/Zehrs.json");
     }
 
 

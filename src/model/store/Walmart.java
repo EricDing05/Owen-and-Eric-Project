@@ -12,7 +12,7 @@ public class Walmart extends AbstractStore {
         initializeCategories();
         this.setGridPath("//div[@data-testid='product-grid']");
         this.setProductPath(".//div[contains(@data-item-id, '')]");
-        this.writer = new Writer("/Users/ericding/IdeaProjects/App/.idea/data/Walmart.json");
+        this.writer = new Writer(".idea/data/Walmart.json");
     }
 
     // EFFECTS: Generates/updates all products of this store

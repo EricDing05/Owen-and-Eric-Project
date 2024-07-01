@@ -12,7 +12,7 @@ public class NoFrills extends LobLawsSuper {
         this.setGridPath("//div[@data-testid='product-grid']");
         this.setProductPath("//div[contains(@class, 'chakra-linkbox')]");
         this.scraper = new noFrillsScraper();
-        writer = new Writer("/Users/ericding/IdeaProjects/App/.idea/data/NoFrills.json");
+        writer = new Writer(".idea/data/NoFrills.json");
     }
 
 

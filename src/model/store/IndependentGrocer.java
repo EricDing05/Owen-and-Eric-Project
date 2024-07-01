@@ -9,7 +9,7 @@ public class IndependentGrocer extends LobLawsSuper {
         super(name);
         scraper = new LobLawsScraperSuper();
         initializeCategories();
-        writer = new Writer("/Users/ericding/IdeaProjects/App/.idea/data/IndependentGrocer.json");
+        writer = new Writer(".idea/data/IndependentGrocer.json");
     }
 
     public void initializeCategories() {
