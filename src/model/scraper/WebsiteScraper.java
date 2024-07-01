@@ -1,7 +1,8 @@
 package model.scraper;
 
-import model.AbstractStore;
+
 import model.scraper.Exceptions.NoMoreProductsException;
+import model.store.AbstractStore;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -30,20 +31,18 @@ public abstract class WebsiteScraper {
             WebDriver driver = new SafariDriver();
             try {
                 // temp removal    driver.manage().timeouts().implicitlyWait(Duration.ofMillis(20000));
-                String currentPageURL = store.getNextURL(url, i);
+                String currentPageURL = store.getNextURL(url, i); //TODO make this method
                 System.out.println(currentPageURL);
                 scrapePage(currentPageURL, store, driver);
                 driver.quit();
 
             } catch (StaleElementReferenceException se) {
                 driver.quit();
-                scrapeCategory(url, store, i);
-            } catch (NoMoreProductsException ex) {
-                driver.quit();
-                ex.printStackTrace();
+                scrapeCategory(url, store, i); // add a limit // Eric: we re-try when we have a stale element? is there any other way?
             } catch (Exception e) {
                 driver.quit();
                 e.printStackTrace();
+                return;
             }
         }
     }

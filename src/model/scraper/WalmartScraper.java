@@ -1,6 +1,6 @@
 package model.scraper;
 
-import model.AbstractStore;
+import model.store.AbstractStore;
 import model.Product;
 import model.scraper.Exceptions.NoMoreProductsException;
 import org.openqa.selenium.By;

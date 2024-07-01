@@ -1,6 +1,6 @@
 //package tests;
 //
-//import model.AbstractStore;
+//import model.store.AbstractStore;
 //import model.Product;
 //import model.scraper.WebsiteScraper;
 //import model.store.SuperStore;
