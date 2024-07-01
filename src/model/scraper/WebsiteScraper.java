@@ -35,7 +35,7 @@ public abstract class WebsiteScraper {
                 System.out.println(currentPageURL);
                 scrapePage(currentPageURL, store, driver);
                 driver.quit();
-
+                store.save();
             } catch (StaleElementReferenceException se) {
                 driver.quit();
                 scrapeCategory(url, store, i); 

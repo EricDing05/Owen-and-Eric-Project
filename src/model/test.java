@@ -2,14 +2,15 @@ package model;
 
 
 import model.store.AbstractStore;
-import model.store.*;
+import model.store.ThriftyFoods;
 
 public class test {
 
     public static void main(String[] args) {
-        AbstractStore SuperStore = new SuperStore("SuperStore");  //save on, thriftys
-        SuperStore.generateProducts();
-        SuperStore.save();
+        AbstractStore Costco = new ThriftyFoods("costco");  //save on, thriftys
+        System.out.println(Costco.getCategoriesURLs().values());
+        Costco.generateProducts();
+        Costco.save();
     }
 
 }
