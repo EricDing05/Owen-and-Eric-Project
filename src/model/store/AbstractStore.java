@@ -30,6 +30,7 @@ public abstract class AbstractStore {
         categoriesURLs = new HashMap<>();
     }
 
+    // EFFECTS: tries to return an arraylist of products read from JSON file. If null then returns a new arraylist
     protected List<Product> readProducts() {
         try {
             return jsonReader.read();

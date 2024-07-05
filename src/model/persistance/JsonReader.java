@@ -49,6 +49,7 @@ public class JsonReader {
         return products;
     }
 
+    // EFFECTS: parses product from JSONObject and returns it
     private Product parseProduct(JSONObject json) {
         Double price = json.getDouble("price");
         String name = json.getString("name");
