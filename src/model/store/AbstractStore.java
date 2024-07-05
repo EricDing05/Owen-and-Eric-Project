@@ -1,8 +1,9 @@
 package model.store;
 
 import model.Product;
+import model.persistance.JsonReader;
+import model.persistance.JsonWriter;
 import model.scraper.WebsiteScraper;
-import model.persistance.Writer;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -21,19 +22,27 @@ public abstract class AbstractStore {
     private String gridPath;
     private String productPath;
     private String infoPath;
-    protected Writer writer;
+    protected JsonWriter jsonWriter;
+    protected JsonReader jsonReader;
 
     public AbstractStore(String name) {
         this.name = name;
         categoriesURLs = new HashMap<>();
-        products = new ArrayList<>();
+    }
+
+    protected List<Product> readProducts() {
+        try {
+            return jsonReader.read();
+        } catch (Exception e) {
+            return new ArrayList<>();
+        }
     }
 
 
     public abstract void initializeCategories();
 
     public void addProduct(Product p) {
-        if (!products.contains(p)) {    //TODO make a overriden equals for this
+        if (!products.contains(p)) {
             products.add(p);
         }
     }
@@ -54,9 +63,9 @@ public abstract class AbstractStore {
 
     public void save() {
         try {
-            writer.open();
-            writer.write(this);
-            writer.close();
+            jsonWriter.open();
+            jsonWriter.write(this);
+            jsonWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

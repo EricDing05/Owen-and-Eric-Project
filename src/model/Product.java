@@ -65,23 +65,18 @@ public class Product {
 
         Product product = (Product) o;
 
-        if (Double.compare(product.getPrice(), getPrice()) != 0) return false;
-        if (!getName().equals(product.getName())) return false;
-        if (!getImageUrl().equals(product.getImageUrl())) return false;
-        if (!getDescription().equals(product.getDescription())) return false;
-        return getStoreName().equals(product.getStoreName());
+        if (Double.compare(product.price, price) != 0) return false;
+        return name.equals(product.name);
     }
 
     @Override
     public int hashCode() {
         int result;
         long temp;
-        result = getName().hashCode();
-        temp = Double.doubleToLongBits(getPrice());
+        result = name.hashCode();
+        temp = Double.doubleToLongBits(price);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
-        result = 31 * result + getImageUrl().hashCode();
-        result = 31 * result + getDescription().hashCode();
-        result = 31 * result + getStoreName().hashCode();
         return result;
     }
+
 }

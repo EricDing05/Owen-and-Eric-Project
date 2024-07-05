@@ -1,6 +1,7 @@
 package model.store;
 
-import model.persistance.Writer;
+import model.persistance.JsonReader;
+import model.persistance.JsonWriter;
 import model.scraper.CostcoScraper;
 
 public class Costco extends AbstractStore {
@@ -12,7 +13,9 @@ public class Costco extends AbstractStore {
         this.setGridPath("//div[@automation-id='productList']");
         this.setProductPath("//div[contains(@class, 'product-tile-set')]"); //this might not work. not tested
         scraper = new CostcoScraper();
-        this.writer = new Writer(".idea/data/Costco.json");
+        this.jsonWriter = new JsonWriter(".idea/data/Costco.json");
+        this.jsonReader = new JsonReader(".idea/data/Costco.json");
+        products = readProducts();
     }
 
     // EFFECTS: Generates/updates all products of this store

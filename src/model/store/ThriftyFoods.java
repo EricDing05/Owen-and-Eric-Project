@@ -1,6 +1,7 @@
 package model.store;
 
-import model.persistance.Writer;
+import model.persistance.JsonReader;
+import model.persistance.JsonWriter;
 import model.scraper.ThriftyScraper;
 
 public class ThriftyFoods extends AbstractStore  {
@@ -13,7 +14,9 @@ public class ThriftyFoods extends AbstractStore  {
         this.scraper = new ThriftyScraper();
         this.setGridPath("//*[@id=\"body_0_main_1_ProductSearch_GroceryBrowsing_TemplateResult_SearchResultListView_MansoryPanel\"]/div");
         this.setProductPath("//div[@class='item-product js-product js-equalized js-addtolist-container js-ga']");
-        writer = new Writer(".idea/data/ThriftyFoods.json");
+        jsonWriter = new JsonWriter(".idea/data/ThriftyFoods.json");
+        this.jsonReader = new JsonReader(".idea/data/ThriftyFoods.json");
+        products = readProducts();
     }
 
     // EFFECTS: Generates/updates all products of this store
