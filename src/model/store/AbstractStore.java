@@ -20,8 +20,11 @@ public abstract class AbstractStore {
     protected WebsiteScraper scraper;
     private String gridPath;
     private String productPath;
-    private String infoPath;
+    private String noMoreProductsPath;
+    private String noMoreProductsString;
+
     protected Writer writer;
+
 
     public AbstractStore(String name) {
         this.name = name;
@@ -102,12 +105,20 @@ public abstract class AbstractStore {
         this.productPath = productPath;
     }
 
-    public String getInfoPath() {
-        return infoPath;
+    public String getNoMoreProductsPath() {
+        return noMoreProductsPath;
     }
 
-    public void setInfoPath(String infoPath) {
-        this.infoPath = infoPath;
+    public void setNoMoreProductsPath(String noMoreProductsPath) {
+        this.noMoreProductsPath = noMoreProductsPath;
+    }
+
+    public String getNoMoreProductsString() {
+        return noMoreProductsString;
+    }
+
+    public void setNoMoreProductsString(String noMoreProductsString) {
+        this.noMoreProductsString = noMoreProductsString;
     }
 
     public Map<String, String> getCategoriesURLs() {

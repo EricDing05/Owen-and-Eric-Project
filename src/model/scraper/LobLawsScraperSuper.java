@@ -2,6 +2,7 @@ package model.scraper;
 
 
 import model.Product;
+import model.scraper.Exceptions.NoMoreProductsException;
 import model.store.AbstractStore;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,6 +22,13 @@ public class LobLawsScraperSuper extends WebsiteScraper {
         driver.get(url);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20), Duration.ofMillis(1500));
         List<WebElement> productElements = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("div.css-f5i5wc")));
+
+
+        WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(5), Duration.ofMillis(2500));
+        WebElement noResultsElement = shortWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(store.getNoMoreProductsPath())));
+        if (noResultsElement.getText().contains(store.getNoMoreProductsString())) {
+            throw new NoMoreProductsException("No results found for the page: " + url);
+        }
 
         for (WebElement e : productElements) {
             try {

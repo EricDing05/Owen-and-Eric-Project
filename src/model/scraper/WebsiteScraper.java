@@ -21,7 +21,7 @@ public abstract class WebsiteScraper {
     public void scrapeWebsite(AbstractStore store) {
         for (String url : store.getCategoriesURLs().values()) {
             int j = 0;
-            scrapeCategory(url,store,j); //
+            scrapeCategory(url, store, j); //
         }
     }
 
@@ -38,7 +38,7 @@ public abstract class WebsiteScraper {
                 store.save();
             } catch (StaleElementReferenceException se) {
                 driver.quit();
-                scrapeCategory(url, store, i); 
+                scrapeCategory(url, store, i);
             } catch (Exception e) {
                 driver.quit();
                 e.printStackTrace();
@@ -51,20 +51,23 @@ public abstract class WebsiteScraper {
     public void scrapePage(String url, AbstractStore store, WebDriver driver) {
         driver.get(url);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20), Duration.ofMillis(2000));
+        WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(5), Duration.ofMillis(2500));
         WebElement gridElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(store.getGridPath())));
 
         List<WebElement> productElements = gridElement.findElements(By.xpath(store.getProductPath()));
-        if (productElements.size() == 0) {
-            throw new NoMoreProductsException();
+
+        WebElement noResultsElement = shortWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(store.getNoMoreProductsPath())));
+        if (noResultsElement.getText().contains(store.getNoMoreProductsString())) {
+            throw new NoMoreProductsException("No results found for the page: " + url);
         }
+
         for (WebElement e : productElements) {
             store.getScraper().createProduct(e, store);
         }
         System.out.println(store.getProducts().size());
     }
 
-    public abstract void createProduct(WebElement e, AbstractStore store);
-
-
-
+    public abstract void createProduct (WebElement e, AbstractStore store);
 }
+
+
