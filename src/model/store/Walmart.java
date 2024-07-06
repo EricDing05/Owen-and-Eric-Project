@@ -1,6 +1,7 @@
 package model.store;
 
-import model.persistance.Writer;
+import model.persistance.JsonReader;
+import model.persistance.JsonWriter;
 import model.scraper.WalmartScraper;
 
 public class Walmart extends AbstractStore {
@@ -12,7 +13,9 @@ public class Walmart extends AbstractStore {
         initializeCategories();
         this.setGridPath("//div[@data-testid='product-grid']");
         this.setProductPath(".//div[contains(@data-item-id, '')]");
-        this.writer = new Writer(".idea/data/Walmart.json");
+        this.jsonWriter = new JsonWriter(".idea/data/Walmart.json");
+        this.jsonReader = new JsonReader(".idea/data/Walmart.json");
+        products = readProducts();
     }
 
     // EFFECTS: Generates/updates all products of this store

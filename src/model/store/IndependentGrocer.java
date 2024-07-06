@@ -1,6 +1,7 @@
 package model.store;
 
-import model.persistance.Writer;
+import model.persistance.JsonReader;
+import model.persistance.JsonWriter;
 import model.scraper.LobLawsScraperSuper;
 
 public class IndependentGrocer extends LobLawsSuper {
@@ -9,7 +10,9 @@ public class IndependentGrocer extends LobLawsSuper {
         super(name);
         scraper = new LobLawsScraperSuper();
         initializeCategories();
-        writer = new Writer(".idea/data/IndependentGrocer.json");
+        jsonWriter = new JsonWriter(".idea/data/IndependentGrocer.json");
+        this.jsonReader = new JsonReader(".idea/data/IndependentGrocer.json");
+        products = readProducts();
     }
 
     public void initializeCategories() {

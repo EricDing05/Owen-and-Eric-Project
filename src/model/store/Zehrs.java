@@ -1,6 +1,7 @@
 package model.store;
 
-import model.persistance.Writer;
+import model.persistance.JsonReader;
+import model.persistance.JsonWriter;
 import model.scraper.SuperStoreScraper;
 
 public class Zehrs extends LobLawsSuper {
@@ -9,7 +10,9 @@ public class Zehrs extends LobLawsSuper {
         super(name);
         initializeCategories();
         scraper = new SuperStoreScraper();
-        writer = new Writer(".idea/data/Zehrs.json");
+        jsonWriter = new JsonWriter(".idea/data/Zehrs.json");
+        this.jsonReader = new JsonReader(".idea/data/Zehrs.json");
+        products = readProducts();
     }
 
 

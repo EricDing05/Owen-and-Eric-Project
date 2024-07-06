@@ -1,6 +1,7 @@
 package model.store;
 
-import model.persistance.Writer;
+import model.persistance.JsonReader;
+import model.persistance.JsonWriter;
 import model.scraper.noFrillsScraper;
 
 public class NoFrills extends LobLawsSuper {
@@ -12,7 +13,9 @@ public class NoFrills extends LobLawsSuper {
         this.setGridPath("//div[@data-testid='product-grid']");
         this.setProductPath("//div[contains(@class, 'chakra-linkbox')]");
         this.scraper = new noFrillsScraper();
-        writer = new Writer(".idea/data/NoFrills.json");
+        jsonWriter = new JsonWriter(".idea/data/NoFrills.json");
+        this.jsonReader = new JsonReader(".idea/data/NoFrills.json");
+        products = readProducts();
     }
 
 

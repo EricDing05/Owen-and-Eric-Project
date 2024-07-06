@@ -1,8 +1,9 @@
 package model.store;
 
 import model.Product;
+import model.persistance.JsonReader;
+import model.persistance.JsonWriter;
 import model.scraper.WebsiteScraper;
-import model.persistance.Writer;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -20,23 +21,29 @@ public abstract class AbstractStore {
     protected WebsiteScraper scraper;
     private String gridPath;
     private String productPath;
-    private String noMoreProductsPath;
-    private String noMoreProductsString;
-
-    protected Writer writer;
-
+    private String infoPath;
+    protected JsonWriter jsonWriter;
+    protected JsonReader jsonReader;
 
     public AbstractStore(String name) {
         this.name = name;
         categoriesURLs = new HashMap<>();
-        products = new ArrayList<>();
+    }
+
+    // EFFECTS: tries to return an arraylist of products read from JSON file. If null then returns a new arraylist
+    protected List<Product> readProducts() {
+        try {
+            return jsonReader.read();
+        } catch (Exception e) {
+            return new ArrayList<>();
+        }
     }
 
 
     public abstract void initializeCategories();
 
     public void addProduct(Product p) {
-        if (!products.contains(p)) {    //TODO make a overriden equals for this
+        if (!products.contains(p)) {
             products.add(p);
         }
     }
@@ -57,9 +64,9 @@ public abstract class AbstractStore {
 
     public void save() {
         try {
-            writer.open();
-            writer.write(this);
-            writer.close();
+            jsonWriter.open();
+            jsonWriter.write(this);
+            jsonWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -105,20 +112,12 @@ public abstract class AbstractStore {
         this.productPath = productPath;
     }
 
-    public String getNoMoreProductsPath() {
-        return noMoreProductsPath;
+    public String getInfoPath() {
+        return infoPath;
     }
 
-    public void setNoMoreProductsPath(String noMoreProductsPath) {
-        this.noMoreProductsPath = noMoreProductsPath;
-    }
-
-    public String getNoMoreProductsString() {
-        return noMoreProductsString;
-    }
-
-    public void setNoMoreProductsString(String noMoreProductsString) {
-        this.noMoreProductsString = noMoreProductsString;
+    public void setInfoPath(String infoPath) {
+        this.infoPath = infoPath;
     }
 
     public Map<String, String> getCategoriesURLs() {

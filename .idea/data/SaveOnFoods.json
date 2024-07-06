@@ -1,142 +1,16 @@
 {"products": [
     {
-        "price": 3.69,
-        "imageUrl": "https://sbs-prd-cdn-products.azureedge.net/media/image/product/en/medium/0026576800000.jpg",
-        "name": " Pepper Ham",
-        "Thriftys": "Thriftys",
-        "description": ""
+        "price": 10.99,
+        "imageUrl": "https://storage.googleapis.com/images-sof-prd-9fa6b8b.sof.prd.v8.commerce.mi9cloud.com/product-images/cell/00191011001299.jpg",
+        "name": "Just Egg - Plant Based Liquid, 500 Gram",
+        "description": "Use it to make pillowy omelettes, delicious French toast or scrambled.",
+        "storeName": "Save-on-Foods"
     },
     {
-        "price": 3.69,
-        "imageUrl": "https://sbs-prd-cdn-products.azureedge.net/media/image/product/en/medium/0022361300000.jpg",
-        "name": " Honey Ham",
-        "Thriftys": "Thriftys",
-        "description": ""
-    },
-    {
-        "price": 3.99,
-        "imageUrl": "https://sbs-prd-cdn-products.azureedge.net/media/image/product/en/medium/0028698400000.jpg",
-        "name": "Shaved or Sliced Cotto Ham",
-        "Thriftys": "Thriftys",
-        "description": ""
-    },
-    {
-        "price": 4.99,
-        "imageUrl": "https://sbs-prd-cdn-products.azureedge.net/media/image/product/en/medium/0023604500000.jpg",
-        "name": "Sterling Silver Beef Roast Beef",
-        "Thriftys": "Thriftys",
-        "description": ""
-    },
-    {
-        "price": 2.99,
-        "imageUrl": "https://sbs-prd-cdn-products.azureedge.net/media/image/product/en/medium/0028078500000.jpg",
-        "name": " Chicken Breast Smoked",
-        "Thriftys": "Thriftys",
-        "description": ""
-    },
-    {
-        "price": 3.99,
-        "imageUrl": "https://sbs-prd-cdn-products.azureedge.net/media/image/product/en/medium/0027274100000.jpg",
-        "name": " Roast Turkey Breast",
-        "Thriftys": "Thriftys",
-        "description": ""
-    },
-    {
-        "price": 5.99,
-        "imageUrl": "https://sbs-prd-cdn-products.azureedge.net/media/image/product/en/medium/0006354999102.jpg",
-        "name": "In Brine, Pieces Feta Cheese",
-        "Thriftys": "Thriftys",
-        "description": ""
-    },
-    {
-        "price": 2.79,
-        "imageUrl": "https://sbs-prd-cdn-products.azureedge.net/media/image/product/en/medium/0027654200000.jpg",
-        "name": " Lyoner Sausage",
-        "Thriftys": "Thriftys",
-        "description": ""
-    },
-    {
-        "price": 2.79,
-        "imageUrl": "https://sbs-prd-cdn-products.azureedge.net/media/image/product/en/medium/0000000045676.jpg",
-        "name": "Bavarian Meat Loaf",
-        "Thriftys": "Thriftys",
-        "description": ""
-    },
-    {
-        "price": 7.99,
-        "imageUrl": "https://sbs-prd-cdn-products.azureedge.net/media/image/product/en/medium/0028558100000.jpg",
-        "name": "Kalamata Pitted Olives",
-        "Thriftys": "Thriftys",
-        "description": ""
-    },
-    {
-        "price": 8.49,
-        "imageUrl": "https://sbs-prd-cdn-products.azureedge.net/media/image/product/en/medium/0006882011446.jpg",
-        "name": "Double Cream Brie Cheese",
-        "Thriftys": "Thriftys",
-        "description": ""
-    },
-    {
-        "price": 7.29,
-        "imageUrl": "https://sbs-prd-cdn-products.azureedge.net/media/image/product/en/medium/0006882013016.jpg",
-        "name": "Feta Cheese",
-        "Thriftys": "Thriftys",
-        "description": ""
-    },
-    {
-        "price": 7.49,
-        "imageUrl": "https://sbs-prd-cdn-products.azureedge.net/media/image/product/en/medium/0007981300027.jpg",
-        "name": "Shallot & Chive Cheese",
-        "Thriftys": "Thriftys",
-        "description": ""
-    },
-    {
-        "price": 5.99,
-        "imageUrl": "https://sbs-prd-cdn-products.azureedge.net/media/image/product/en/medium/0006354999206.jpg",
-        "name": "In Brine, Light Feta Cheese",
-        "Thriftys": "Thriftys",
-        "description": ""
-    },
-    {
-        "price": 6.49,
-        "imageUrl": "https://sbs-prd-cdn-products.azureedge.net/media/image/product/en/medium/0006882013372.jpg",
-        "name": "Roast Extra Lean Thinly Sliced Turkey Breast",
-        "Thriftys": "Thriftys",
-        "description": ""
-    },
-    {
-        "price": 5.79,
-        "imageUrl": "https://sbs-prd-cdn-products.azureedge.net/media/image/product/en/medium/0021039600000.jpg",
-        "name": "Fat Free Turkey Breast",
-        "Thriftys": "Thriftys",
-        "description": ""
-    },
-    {
-        "price": 6.29,
-        "imageUrl": "https://sbs-prd-cdn-products.azureedge.net/media/image/product/en/medium/0004175701157.jpg",
-        "name": "Original Cheese",
-        "Thriftys": "Thriftys",
-        "description": ""
-    },
-    {
-        "price": 3.99,
-        "imageUrl": "https://sbs-prd-cdn-products.azureedge.net/media/image/product/en/medium/0028698800000.jpg",
-        "name": "Shaved or Sliced Cotto Ham with Herbs",
-        "Thriftys": "Thriftys",
-        "description": ""
-    },
-    {
-        "price": 8.79,
-        "imageUrl": "https://sbs-prd-cdn-products.azureedge.net/media/image/product/en/medium/0006882012184.jpg",
-        "name": "Trio (Pepperoni Smoked Ham Salami) Italian Sub",
-        "Thriftys": "Thriftys",
-        "description": ""
-    },
-    {
-        "price": 8.79,
-        "imageUrl": "https://sbs-prd-cdn-products.azureedge.net/media/image/product/en/medium/0006940100895.jpg",
-        "name": "Char Cervelat Salami",
-        "Thriftys": "Thriftys",
-        "description": ""
+        "price": 7.89,
+        "imageUrl": "https://storage.googleapis.com/images-sof-prd-9fa6b8b.sof.prd.v8.commerce.mi9cloud.com/product-images/cell/00191011000988.jpg",
+        "name": "Just Egg - Plant-Based Folded, 227 Gram",
+        "description": "Use it to make pillowy omelettes, delicious French toast or scrambled.",
+        "storeName": "Save-on-Foods"
     }
 ]}
