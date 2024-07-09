@@ -18,7 +18,7 @@ public class ThriftyFoods extends AbstractStore  {
         this.jsonReader = new JsonReader(".idea/data/ThriftyFoods.json");
         products = readProducts();
         this.setNoMoreProductsPath("//a[contains(@class, 'icon--arrow-skinny-right') and contains(@title, 'Next Page')]"); //TODO
-        this.setNoMoreProductsString(""); //TODO
+        this.setNoMoreProductsString("");
     }
 
     // EFFECTS: Generates/updates all products of this store

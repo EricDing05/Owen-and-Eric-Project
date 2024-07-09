@@ -73,4 +73,15 @@ public class LobLawsScraperSuper extends WebsiteScraper {
     }
 
 
+
+    @Override
+    public boolean hasNoMoreProduct(AbstractStore store, WebElement noResultsElement ) {
+        if ("true".equals(noResultsElement)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+
 }

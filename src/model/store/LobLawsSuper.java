@@ -7,6 +7,9 @@ public abstract class LobLawsSuper extends AbstractStore {
     public LobLawsSuper(String name) {
         super(name);
         initializeCategories();
+        this.setNoMoreProductsPath("a.chakra-link.css-haqcta[aria-label=\"Next Page\"]"); //TODO
+        this.setNoMoreProductsString("");
+
     }
 
     // EFFECTS: returns the next page of a given URL
