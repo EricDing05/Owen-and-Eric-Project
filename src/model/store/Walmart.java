@@ -15,6 +15,8 @@ public class Walmart extends AbstractStore {
         this.setProductPath(".//div[contains(@data-item-id, '')]");
         this.jsonWriter = new JsonWriter(".idea/data/Walmart.json");
         this.jsonReader = new JsonReader(".idea/data/Walmart.json");
+        this.setNoMoreProductsPath("//div[contains(@class, 'subheadline')]"); //TODO
+        this.setNoMoreProductsString("This page couldn't be found."); //TODO
         products = readProducts();
     }
 

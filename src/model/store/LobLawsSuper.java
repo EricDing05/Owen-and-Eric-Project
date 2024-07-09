@@ -7,8 +7,6 @@ public abstract class LobLawsSuper extends AbstractStore {
     public LobLawsSuper(String name) {
         super(name);
         initializeCategories();
-        this.setNoMoreProductsPath("[data-testid='sub-heading']");
-        this.setNoMoreProductsString("No items are available");
     }
 
     // EFFECTS: returns the next page of a given URL

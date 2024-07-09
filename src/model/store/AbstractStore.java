@@ -25,6 +25,10 @@ public abstract class AbstractStore {
     protected JsonWriter jsonWriter;
     protected JsonReader jsonReader;
 
+
+    private String NoMoreProductsString;
+    private String NoMoreProductsPath;
+
     public AbstractStore(String name) {
         this.name = name;
         categoriesURLs = new HashMap<>();
@@ -129,6 +133,22 @@ public abstract class AbstractStore {
     }
     public abstract void generateProducts();
     public abstract String getNextURL(String url, int i);
+
+    public String getNoMoreProductsString() {
+        return NoMoreProductsString;
+    }
+
+    public void setNoMoreProductsString(String noMoreProductsString) {
+        NoMoreProductsString = noMoreProductsString;
+    }
+
+    public String getNoMoreProductsPath() {
+        return NoMoreProductsPath;
+    }
+
+    public void setNoMoreProductsPath(String noMoreProductsPath) {
+        NoMoreProductsPath = noMoreProductsPath;
+    }
 
 
 }

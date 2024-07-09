@@ -15,6 +15,8 @@ public class Costco extends AbstractStore {
         scraper = new CostcoScraper();
         this.jsonWriter = new JsonWriter(".idea/data/Costco.json");
         this.jsonReader = new JsonReader(".idea/data/Costco.json");
+        this.setNoMoreProductsPath("//span[@automation-id='totalProductsOutputText']");
+        this.setNoMoreProductsString(""); //TODO
         products = readProducts();
     }
 

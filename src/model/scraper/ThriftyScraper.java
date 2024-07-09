@@ -22,5 +22,11 @@ public class ThriftyScraper extends WebsiteScraper {
         store.addProduct(new Product(name, price, image, "", storeName));
     }
 
+    @Override
+    public boolean hasNoMoreProduct(AbstractStore store, WebElement noResultsElement ) {
+        String classAttribute = noResultsElement.getAttribute("class");
+        return classAttribute.contains("disabled");
+    }
+
 
 }

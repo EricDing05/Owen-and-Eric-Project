@@ -31,11 +31,18 @@ public class CostcoScraper extends WebsiteScraper {
             }
         }
 
-
         System.out.println(name);
         //make product and add it to store
         store.addProduct(new Product(name,price,imgUrl,description,storeName));
+    }
 
+    @Override
+    public boolean hasNoMoreProduct(AbstractStore store, WebElement noResultsElement) {
+        String[] parts = noResultsElement.getText().split(" ");
+        String[] rangeParts = parts[1].split("-");
+        int firstNumber = Integer.parseInt(rangeParts[0].trim());
+        int lastNumber = Integer.parseInt(parts[parts.length - 1].trim());
+        return firstNumber > lastNumber;
     }
 
 

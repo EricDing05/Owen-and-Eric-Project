@@ -40,7 +40,6 @@ public class LobLawsScraperSuper extends WebsiteScraper {
         System.out.println(store.getProducts().size());
     }
 
-
     //EFFECTS: given the html product element, makes a product and adds it to store
     public void createProduct(WebElement p, AbstractStore store) {
 
@@ -72,4 +71,6 @@ public class LobLawsScraperSuper extends WebsiteScraper {
         }
         return Double.parseDouble(priceText);
     }
+
+
 }

@@ -57,7 +57,7 @@ public abstract class WebsiteScraper {
         List<WebElement> productElements = gridElement.findElements(By.xpath(store.getProductPath()));
 
         WebElement noResultsElement = shortWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(store.getNoMoreProductsPath())));
-        if (noResultsElement.getText().contains(store.getNoMoreProductsString())) {
+        if (hasNoMoreProduct(store,noResultsElement)) {
             throw new NoMoreProductsException("No results found for the page: " + url);
         }
 
@@ -67,7 +67,12 @@ public abstract class WebsiteScraper {
         System.out.println(store.getProducts().size());
     }
 
-    public abstract void createProduct (WebElement e, AbstractStore store);
+    public abstract void createProduct(WebElement e, AbstractStore store);
+
+    public boolean hasNoMoreProduct(AbstractStore store, WebElement noResultsElement ) {
+        return noResultsElement.getText().contains(store.getNoMoreProductsString());
+    }
+
 }
 
 

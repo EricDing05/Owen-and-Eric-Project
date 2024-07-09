@@ -17,6 +17,8 @@ public class SaveOnFoods extends AbstractStore  {
         scraper = new SaveOnFoodsScraper();
         jsonWriter = new JsonWriter(".idea/data/SaveOnFoods.json");
         this.jsonReader = new JsonReader(".idea/data/SaveOnFoods.json");
+        this.setNoMoreProductsPath("//div[contains(@class, 'noResultsContentTestId')]"); //TODO
+        this.setNoMoreProductsString("No Results"); //TODO
         products = readProducts();
     }
 

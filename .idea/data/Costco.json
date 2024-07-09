@@ -75,5 +75,180 @@
         "name": "Greenfield Natural Meat Co. Oven Roasted Turkey Breast 1.4 kg (3 lb)",
         "description": "",
         "storeName": "costco"
+    },
+    {
+        "price": 179.99,
+        "imageUrl": "https://www.costco.ca/halal-fine-foods-chicken-wings-variety-pack-6-kg-13.2-lb.product.4000104025.html",
+        "name": "Halal Fine Foods Chicken Wings Variety Pack 6 kg (13.2 lb)",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 24.99,
+        "imageUrl": "https://www.costco.ca/hungry-buddha-bars%2c-12-%c3%97-40-g.product.4000181463.html",
+        "name": "Hungry Buddha Bars, 12 × 40 g",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 89.99,
+        "imageUrl": "https://www.costco.ca/amino-balls-vegan-protein-variety-pack%2c-36-%c3%97-40-g.product.4000266211.html",
+        "name": "Amino Balls Vegan Protein Variety Pack, 36 × 40 g",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 134.99,
+        "imageUrl": "https://www.costco.ca/dose-organic-ginger-%2526-turmeric-daily-booster-shots-60-ml-2-fl-oz-%c3%97-48-bottles.product.100844933.html",
+        "name": "DOSE Organic Ginger & Turmeric Daily Booster Shots 60 mL (2 fl oz) × 48 bottles",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 149.99,
+        "imageUrl": "https://www.costco.ca/gutsy-kombucha-organic-discovery-pack%2c-355-ml-12-fl-oz-x-48-cans.product.100985840.html",
+        "name": "Gutsy Kombucha Organic Discovery Pack, 355 mL (12 fl oz) x 48 cans",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 13.99,
+        "imageUrl": "https://www.costco.ca/premium-organic-coconut-milk%2c-6-count.product.100679988.html",
+        "name": "Premium Organic Coconut Milk, 6-count",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 129.99,
+        "imageUrl": "https://www.costco.ca/la-presserie-asian-soups%2c-12-%c3%97-500-g.product.4000254380.html",
+        "name": "La Presserie Asian Soups, 12 × 500 g",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 12.99,
+        "imageUrl": "https://www.costco.ca/heavenly-hunks-oatmeal-dark-chocolate-cookies%2c-567g.product.100654896.html",
+        "name": "Heavenly Hunks Oatmeal Dark Chocolate Cookies, 567g",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 52.99,
+        "imageUrl": "https://www.costco.ca/no-sugar-keto-bar%2c-bars%2c-2-%c3%97-480-g.product.100515989.html",
+        "name": "No Sugar Keto Bar, Bars, 2 × 480 g",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 24.99,
+        "imageUrl": "https://www.costco.ca/nature's-bakery-whole-wheat-fig-bars-variety-pack---1.81-kg.product.100810799.html",
+        "name": "Nature's Bakery Whole Wheat Fig Bars Variety Pack - 1.81 kg",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 16.99,
+        "imageUrl": "https://www.costco.ca/madegood-granola-minis%2c-24-%c3%97-24-g.product.4000252022.html",
+        "name": "MadeGood Granola Minis, 24 × 24 g",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 32.99,
+        "imageUrl": "https://www.costco.ca/floating-leaf-wild-rice-blend%2c-2-x-1.5-kg.product.100765642.html",
+        "name": "Floating Leaf Wild Rice Blend, 2 x 1.5 kg",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 34.99,
+        "imageUrl": "https://www.costco.ca/healthy-crunch-keto-chia-jam-variety-pack%2c-6-x-230-ml.product.100688431.html",
+        "name": "Healthy Crunch Keto Chia Jam Variety Pack, 6 x 230 ml",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 44.99,
+        "imageUrl": "https://www.costco.ca/prana-granolove-oatmeal-cookie-crunch-organic-granola%2c-3-%c3%97-1-kg.product.4000244977.html",
+        "name": "Prana Granolove Oatmeal Cookie Crunch Organic Granola, 3 × 1 kg",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 39.99,
+        "imageUrl": "https://www.costco.ca/floating-leaf-jasmine-thai-trio-rice-blend%2c-2-%c3%97-1.8-kg.product.4000147760.html",
+        "name": "Floating Leaf Jasmine Thai Trio Rice Blend, 2 × 1.8 kg",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 44.99,
+        "imageUrl": "https://www.costco.ca/healthy-crunch---dark-chocolate-superfoods%2c-6-%c3%97-235-g.product.100826822.html",
+        "name": "Healthy Crunch - Dark Chocolate Superfoods, 6 × 235 g",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 29.99,
+        "imageUrl": "https://www.costco.ca/healthy-crunch-seed-butter-variety-pack%2c-5-x-340-g.product.100688433.html",
+        "name": "Healthy Crunch Seed Butter Variety Pack, 5 x 340 g",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 39.99,
+        "imageUrl": "https://www.costco.ca/healthy-crunch-crispy-squares-collection%2c-8-%c3%97-132-g.product.100808930.html",
+        "name": "Healthy Crunch Crispy Squares Collection, 8 × 132 g",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 63.99,
+        "imageUrl": "https://www.costco.ca/pb2-original-powdered-peanut-butter%2c-6-%c3%97-454-g.product.4000057867.html",
+        "name": "PB2 Original Powdered Peanut Butter, 6 × 454 g",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 199.99,
+        "imageUrl": "https://www.costco.ca/dose-5-day-organic-cold-pressed-juice-cleanse-40-bottles.product.100844938.html",
+        "name": "DOSE 5-day Organic Cold-Pressed Juice Cleanse 40 bottles",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 42.99,
+        "imageUrl": "https://www.costco.ca/abokichi-okazu-miso-variety-pack%2c-4-%c3%97-230-ml.product.4000104718.html",
+        "name": "Abokichi Okazu Miso Variety Pack, 4 × 230 mL",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 99.99,
+        "imageUrl": "https://www.costco.ca/oggi-beyond-meat-americana-vegan-pizza-390-g-13.8-oz-x-8-pack.product.100796319.html",
+        "name": "Oggi Beyond Meat Americana Vegan Pizza 390 g (13.8 oz) x 8 pack",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 99.99,
+        "imageUrl": "https://www.costco.ca/oggi-beyond-meat-pizza-pack-390-g-13.8-oz-x-8-pack.product.100796478.html",
+        "name": "Oggi Beyond Meat Pizza Pack 390 g (13.8 oz) x 8 pack",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 29.99,
+        "imageUrl": "https://www.costco.ca/bad-monkey-caramel-cr%c3%a8me-br%c3%bbl%c3%a9e-popcorn%2c-24-%c3%97-40-g.product.4000194526.html",
+        "name": "Bad Monkey Caramel Crème Brûlée Popcorn, 24 × 40 g",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 159.99,
+        "imageUrl": "https://www.costco.ca/dose-organic-cold-pressed-green-juice-variety-pack-300-ml-10.14-fl-oz-x-30-bottles.product.100844981.html",
+        "name": "DOSE Organic Cold-Pressed Green Juice Variety Pack 300 mL (10.14 fl oz) x 30 bottles",
+        "description": "",
+        "storeName": "costco"
     }
 ]}
