@@ -16,7 +16,6 @@ import java.util.List;
 
 public abstract class WebsiteScraper {
 
-
     //EFFECTS: Scrapes all categories of a store
     public void scrapeWebsite(AbstractStore store) {
         for (String url : store.getCategoriesURLs().values()) {
