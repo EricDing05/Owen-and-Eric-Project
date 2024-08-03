@@ -53,6 +53,11 @@ const navigation = [
     href: "/about",
     icon: "bi bi-people",
   },
+  {
+     title: "New List", // Add the NewList title
+     href: "/newlist", // Add the NewList href
+     icon: "bi bi-list", // Choose an appropriate icon for NewList
+    },
 ];
 
 const Sidebar = () => {
