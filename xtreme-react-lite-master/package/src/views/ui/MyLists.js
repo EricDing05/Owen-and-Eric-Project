@@ -2,10 +2,9 @@ import React from 'react';
 import { Table, Button, Container } from 'reactstrap';
 
 const lists = [
-  { id: 1, name: 'My List #1' },
+  { id: 1, name: 'My List #1' },   // can make this a variable to have the lists varyff
   { id: 2, name: 'My List #2' },
   { id: 3, name: 'My List #3' },
-  // Add more lists as needed
 ];
 
 const MyLists = () => {
