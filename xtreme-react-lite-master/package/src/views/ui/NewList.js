@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Form, FormGroup, Label, Input, ListGroup, ListGroupItem } from 'reactstrap';
-import './NewList.css';
 
 
 const NewList = () => {

@@ -15,7 +15,6 @@ const MyLists = () => {
         <thead>
           <tr>
             <th>My List</th>
-            <th>View / Edit List</th>
             <th>Search List</th>
           </tr>
         </thead>
@@ -23,7 +22,6 @@ const MyLists = () => {
           {lists.map((list) => (
             <tr key={list.id}>
               <td><Button color="primary">{list.name}</Button></td>
-              <td><Button color="warning">View/Edit List</Button></td>
               <td><Button color="info">Search List</Button></td>
             </tr>
           ))}
