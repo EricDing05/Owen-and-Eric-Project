@@ -58,6 +58,13 @@ const navigation = [
      href: "/newlist", // Add the NewList href
      icon: "bi bi-list", // Choose an appropriate icon for NewList
     },
+
+  {
+      title: "My Lists", // Add new navigation item
+      href: "/mylists",
+      icon: "bi bi-list",
+    },
+
 ];
 
 const Sidebar = () => {

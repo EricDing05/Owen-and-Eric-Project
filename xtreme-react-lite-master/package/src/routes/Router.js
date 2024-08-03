@@ -1,6 +1,5 @@
 import { lazy } from "react";
 import { Navigate } from "react-router-dom";
-
 /****Layouts*****/
 const FullLayout = lazy(() => import("../layouts/FullLayout.js"));
 
@@ -17,6 +16,7 @@ const Tables = lazy(() => import("../views/ui/Tables"));
 const Forms = lazy(() => import("../views/ui/Forms"));
 const Breadcrumbs = lazy(() => import("../views/ui/Breadcrumbs"));
 const NewList = lazy(() => import("../views/ui/NewList"));
+const MyLists = lazy(() => import("../views/ui/MyLists")); // made a route for myList page
 
 /*****Routes******/
 
@@ -37,6 +37,7 @@ const ThemeRoutes = [
       { path: "/forms", exact: true, element: <Forms /> },
       { path: "/breadcrumbs", exact: true, element: <Breadcrumbs /> },
       { path: "/newlist", exact: true, element: <NewList /> },
+      { path: "/mylists", element: <MyLists /> }, // added mylists here
     ],
   },
 ];
