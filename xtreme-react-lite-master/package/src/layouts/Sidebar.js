@@ -3,6 +3,11 @@ import Logo from "./Logo";
 import { Link, useLocation } from "react-router-dom";
 
 const navigation = [
+{
+    title: "Home",
+    href: "/Home",
+    icon: "bi bi-house",
+  },
 
   {
      title: "New List", // Add the NewList title

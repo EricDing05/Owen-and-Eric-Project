@@ -17,6 +17,8 @@ const Forms = lazy(() => import("../views/ui/Forms"));
 const Breadcrumbs = lazy(() => import("../views/ui/Breadcrumbs"));
 const NewList = lazy(() => import("../views/ui/NewList"));
 const MyLists = lazy(() => import("../views/ui/MyLists")); // made a route for myList page
+const Home = lazy(() => import("../views/ui/Home")); // made a route for myList page
+
 
 /*****Routes******/
 
@@ -25,7 +27,7 @@ const ThemeRoutes = [
     path: "/",
     element: <FullLayout />,
     children: [
-      { path: "/", element: <Navigate to="/starter" /> },
+      { path: "/", element: <Navigate to="/Home" /> },
       { path: "/starter", exact: true, element: <Starter /> },
       { path: "/about", exact: true, element: <About /> },
       { path: "/alerts", exact: true, element: <Alerts /> },
@@ -38,6 +40,7 @@ const ThemeRoutes = [
       { path: "/breadcrumbs", exact: true, element: <Breadcrumbs /> },
       { path: "/newlist", exact: true, element: <NewList /> },
       { path: "/mylists", element: <MyLists /> }, // added mylists here
+      { path: "/home", element: <Home /> }, // added mylists here
     ],
   },
 ];
