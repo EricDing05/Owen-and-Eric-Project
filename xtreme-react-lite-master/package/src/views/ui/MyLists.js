@@ -26,16 +26,26 @@ const MyLists = () => {
     ];
 
     const [items, setItems] = useState(initialItems);
+    const [removedItems, setRemovedItems] = useState([]);
 
     const handleRemove = (itemId) => {
+      const itemToRemove = items.find(item => item.id === itemId);
       const newItems = items.filter(item => item.id !== itemId);
       setItems(newItems);
+      setRemovedItems([...removedItems, itemToRemove]);
+    };
+
+    const handleUndo = () => {
+      if (removedItems.length > 0) {
+        const lastRemovedItem = removedItems.pop();
+        setItems([...items, lastRemovedItem]);
+        setRemovedItems([...removedItems]);
+      }
     };
 
     return (
       <Container>
         <h3 className="mb-3">My List: {list.name}</h3>
-        <Button color="secondary" onClick={handleBack}>Back to My Lists</Button>
         <Table striped>
           <thead>
             <tr>
@@ -58,6 +68,10 @@ const MyLists = () => {
             ))}
           </tbody>
         </Table>
+        <div className="d-flex justify-content-between mt-3">
+          <Button color="secondary" onClick={handleBack}>Back to My Lists</Button>
+          <Button color="warning" onClick={handleUndo}>Undo</Button>
+        </div>
       </Container>
     );
   };
