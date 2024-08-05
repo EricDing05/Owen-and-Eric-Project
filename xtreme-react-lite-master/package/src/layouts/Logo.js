@@ -1,10 +1,10 @@
-import { ReactComponent as LogoDark } from "../assets/images/logos/xtremelogo.svg";
 import { Link } from "react-router-dom";
+import { ReactComponent as LogoDark } from "../assets/images/logos/groceryGuruLogo.svg";
 
 const Logo = () => {
   return (
-    <Link to="/">
-      <LogoDark />
+    <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
+      <LogoDark style={{ width: '190px', height: 'auto', display: 'block' }} />
     </Link>
   );
 };
