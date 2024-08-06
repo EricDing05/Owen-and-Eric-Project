@@ -6557,5 +6557,19 @@
         "name": "Muscle Milk Protein Chocolate Protein Shake, 18 x 330 mL",
         "description": "",
         "storeName": "costco"
+    },
+    {
+        "price": 124.99,
+        "imageUrl": "https://www.costco.ca/canada-meat-group---boneless-skinless-chicken-breast%2c-6.84-kg.product.4000285389.html",
+        "name": "Canada Meat Group - Boneless Skinless Chicken Breast, 6.84 kg",
+        "description": "",
+        "storeName": "costco"
+    },
+    {
+        "price": 24.99,
+        "imageUrl": "https://www.costco.ca/kirkland-signature-chicken-breast-canned%2c-6-%c3%97-354-g.product.100413547.html",
+        "name": "Kirkland Signature Chicken Breast Canned, 6 × 354 g",
+        "description": "",
+        "storeName": "costco"
     }
 ]}
