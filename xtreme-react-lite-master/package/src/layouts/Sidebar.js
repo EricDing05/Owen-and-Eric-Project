@@ -21,6 +21,13 @@ const navigation = [
       icon: "bi bi-list",
     },
 
+  {
+     title: "Contact Us", // Add new navigation item
+     href: "/contactus",
+     icon: "bi bi-list",
+    },
+
+
 ];
 
 const Sidebar = () => {

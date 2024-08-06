@@ -112,7 +112,7 @@ const NewList = () => {
                                         <Input
                                             type="text"
                                             id="itemSize"
-                                            placeholder="Ex. 2lb"
+                                            placeholder="Ex. 2"
                                             value={size}
                                             onChange={(e) => setSize(e.target.value)}
                                             size="sm"

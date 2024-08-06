@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Container, Table, Button } from 'reactstrap';
 
+
+//this to be updated to be dynamic
 const MyList = () => {
   const initialItems = [
     { id: 1, name: 'Item 1', brand: 'Brand A', quantity: 10 },
