@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import axios from 'axios';
 
 const CreateAccount = () => {
     const [firstName, setFirstName] = useState('');
@@ -9,16 +10,34 @@ const CreateAccount = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [modal, setModal] = useState(false);
+    const [errorModal, setErrorModal] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
 
     const toggleModal = () => setModal(!modal);
+    const toggleErrorModal = () => setErrorModal(!errorModal);
+
+    const isValidName = (name) => /^[a-zA-Z]+$/.test(name);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log({ firstName, lastName, username, email, password, confirmPassword });
-        toggleModal();
+        if (password !== confirmPassword) {
+            setErrorMessage("Passwords do not match!");
+            toggleErrorModal();
+        } else if (!isValidName(firstName) || !isValidName(lastName)) {
+            setErrorMessage("First name and last name should only contain letters.");
+            toggleErrorModal();
+        } else {
+            const accountData = { firstName, lastName, username, email, password };
+            axios.post('http://localhost:5000/save-account', accountData)
+                .then((response) => {
+                    console.log(response.data);
+                    toggleModal();
+                })
+                .catch((error) => {
+                    console.error('There was an error saving the account data!', error);
+                });
+        }
     };
-
-//TODO add logic to restrict inputs and logic to double check password is the same
 
     return (
         <Container className="d-flex justify-content-center min-vh-100">
@@ -38,6 +57,7 @@ const CreateAccount = () => {
                                     value={firstName}
                                     onChange={(e) => setFirstName(e.target.value)}
                                     size="sm"
+                                    required
                                 />
                             </Col>
                         </FormGroup>
@@ -64,6 +84,7 @@ const CreateAccount = () => {
                                     value={username}
                                     onChange={(e) => setUsername(e.target.value)}
                                     size="sm"
+                                    required
                                 />
                             </Col>
                         </FormGroup>
@@ -77,6 +98,7 @@ const CreateAccount = () => {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                     size="sm"
+                                    required
                                 />
                             </Col>
                         </FormGroup>
@@ -90,6 +112,7 @@ const CreateAccount = () => {
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
                                     size="sm"
+                                    required
                                 />
                             </Col>
                         </FormGroup>
@@ -103,6 +126,7 @@ const CreateAccount = () => {
                                     value={confirmPassword}
                                     onChange={(e) => setConfirmPassword(e.target.value)}
                                     size="sm"
+                                    required
                                 />
                             </Col>
                         </FormGroup>
@@ -119,6 +143,15 @@ const CreateAccount = () => {
                     </ModalBody>
                     <ModalFooter>
                         <Button color="primary" onClick={toggleModal}>OK</Button>
+                    </ModalFooter>
+                </Modal>
+                <Modal isOpen={errorModal} toggle={toggleErrorModal}>
+                    <ModalHeader toggle={toggleErrorModal}>Error</ModalHeader>
+                    <ModalBody>
+                        {errorMessage}
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button color="primary" onClick={toggleErrorModal}>OK</Button>
                     </ModalFooter>
                 </Modal>
             </div>

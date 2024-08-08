@@ -58,7 +58,7 @@ public class Product {
         return json;
     }
 
-    @Override
+    @Override  //TODO if only the price has changed then update the products' price.
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Product)) return false;

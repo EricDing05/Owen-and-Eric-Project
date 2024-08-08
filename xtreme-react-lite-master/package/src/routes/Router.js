@@ -21,6 +21,7 @@ const Home = lazy(() => import("../views/ui/Home")); // made a route for myList 
 const ContactUs = lazy(() => import("../views/ui/ContactUs")); // made a route for myList page
 const CreateAccount = lazy(() => import("../views/ui/CreateAccount"));
 const MyAccount = lazy(() => import("../views/ui/MyAccount"));
+const Login = lazy(() => import("../views/ui/Login"));
 
 /*****Routes******/
 
@@ -45,7 +46,8 @@ const ThemeRoutes = [
       { path: "/home", element: <Home /> }, // added mylists here
       { path: "/contactus", element: <Home /> },
       { path: "/createaccount", element: <CreateAccount /> },
-      { path: "/myaccount", element: <MyAccount /> }
+      { path: "/myaccount", element: <MyAccount /> },
+      { path: "/login", element: <Login /> }
     ],
   },
 ];

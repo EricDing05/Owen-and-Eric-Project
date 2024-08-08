@@ -7,18 +7,25 @@ const NewList = () => {
     const [name, setName] = useState('');
     const [brand, setBrand] = useState('');
     const [size, setSize] = useState('');
-    const [unit, setUnit] = useState('units');
+    const [unit, setUnit] = useState('');
     const [modal, setModal] = useState(false);
 
     const toggleModal = () => setModal(!modal);
 
     const addItem = () => {
         if (name) {
-            setItems([...items, { name, brand, size, unit }]);
+            const item = { name, brand };
+            if (size) {
+                item.size = size;
+                if (unit) {
+                    item.unit = unit;
+                }
+            }
+            setItems([...items, item]);
             setName('');
             setBrand('');
             setSize('');
-            setUnit('units');
+            setUnit('');
         }
     };
 
@@ -27,9 +34,16 @@ const NewList = () => {
         setItems(newItems);
     };
 
-    const saveList = () => { //implement save logic here
+    const saveList = () => {
         console.log("List saved:", { listName, items });
         toggleModal();
+    };
+
+    const handleAmountChange = (e) => {
+        const value = e.target.value;
+        if (/^\d*\.?\d*$/.test(value)) {
+            setSize(value);
+        }
     };
 
     return (
@@ -68,7 +82,7 @@ const NewList = () => {
                                 <ListGroup>
                                     {items.map((item, index) => (
                                         <ListGroupItem key={index} className="d-flex justify-content-between align-items-center">
-                                            {item.name} {item.brand && `- ${item.brand}`} {item.size && `- ${item.size}`} {item.unit}
+                                            {item.name} {item.brand && `- ${item.brand}`} {item.size && `${item.size}`} {item.size && item.unit}
                                             <Button color="danger" size="sm" onClick={() => removeItem(index)}>Remove</Button>
                                         </ListGroupItem>
                                     ))}
@@ -114,7 +128,7 @@ const NewList = () => {
                                             id="itemSize"
                                             placeholder="Ex. 2"
                                             value={size}
-                                            onChange={(e) => setSize(e.target.value)}
+                                            onChange={handleAmountChange}
                                             size="sm"
                                         />
                                     </Col>
@@ -125,13 +139,15 @@ const NewList = () => {
                                             value={unit}
                                             onChange={(e) => setUnit(e.target.value)}
                                             size="sm"
+                                            disabled={!size}
                                         >
+                                            <option value="">Select unit</option>
                                             <option>units</option>
                                             <option>grams</option>
-                                            <option>kg</option>
+                                            <option>Kg</option>
                                             <option>lbs</option>
-                                            <option>oz</option>
-                                            <option>ml</option>
+                                            <option>Oz</option>
+                                            <option>mL</option>
                                             <option>Liters</option>
                                         </Input>
                                     </Col>

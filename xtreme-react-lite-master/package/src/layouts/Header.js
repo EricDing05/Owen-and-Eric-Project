@@ -115,6 +115,9 @@ const Header = () => {
                         <DropdownItem tag={Link} to="/createaccount">
                           Create a New Account
                         </DropdownItem>
+                        <DropdownItem tag={Link} to="/login">
+                                                  Login
+                                                </DropdownItem>
             <DropdownItem>Logout</DropdownItem>
           </DropdownMenu>
         </Dropdown>
