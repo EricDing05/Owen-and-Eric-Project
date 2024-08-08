@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import ProductsList from '/Users/ericding/IdeaProjects/App/xtreme-react-lite-master/package/src/components/ProductsList.js';
+import ProductsList from '../../components/ProductsList.js'
 
 const Home = () => {
     return (
