@@ -22,8 +22,8 @@ const navigation = [
     },
 
   {
-     title: "Contact Us", // Add new navigation item
-     href: "/contactus",
+     title: "Report A Bug", // Add new navigation item
+     href: "/reportabug",
      icon: "bi bi-list",
     },
 

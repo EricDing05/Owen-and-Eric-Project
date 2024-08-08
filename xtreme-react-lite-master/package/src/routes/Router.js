@@ -18,7 +18,7 @@ const Breadcrumbs = lazy(() => import("../views/ui/Breadcrumbs"));
 const NewList = lazy(() => import("../views/ui/NewList"));
 const MyLists = lazy(() => import("../views/ui/MyLists")); // made a route for myList page
 const Home = lazy(() => import("../views/ui/Home")); // made a route for myList page
-const ContactUs = lazy(() => import("../views/ui/ContactUs")); // made a route for myList page
+const ReportABug = lazy(() => import("../views/ui/ReportABug")); // made a route for myList page
 const CreateAccount = lazy(() => import("../views/ui/CreateAccount"));
 const MyAccount = lazy(() => import("../views/ui/MyAccount"));
 const Login = lazy(() => import("../views/ui/Login"));
@@ -44,7 +44,7 @@ const ThemeRoutes = [
       { path: "/newlist", exact: true, element: <NewList /> },
       { path: "/mylists", element: <MyLists /> }, // added mylists here
       { path: "/home", element: <Home /> }, // added mylists here
-      { path: "/contactus", element: <Home /> },
+      { path: "/reportabug", element: <ReportABug /> },
       { path: "/createaccount", element: <CreateAccount /> },
       { path: "/myaccount", element: <MyAccount /> },
       { path: "/login", element: <Login /> }

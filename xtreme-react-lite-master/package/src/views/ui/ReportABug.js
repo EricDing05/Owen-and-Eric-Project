@@ -9,14 +9,11 @@ const Home = () => {
                 <Row className="justify-content-center">
                     <Col md="12" className="text-center">
                         <header className="my-3">
-                            <h1>Welcome to Grocery Guru</h1>
+                            <h1>Found a Bug? Help Us Help You by Reporting It!</h1>
                         </header>
                         <main>
-                            <p>Grocery Guru helps you find the best prices for your grocery list across different stores.
-                            Simply create a list, and we'll show you the price of that list at every store.</p>
-                            <Link to="/newlist">
-                                <Button color="primary">Get Started</Button>
-                            </Link>
+                            <p>Your feedback is invaluable to us in ensuring a smooth and efficient experience. If you encounter any bugs or issues, please let us know so we can address them promptly. Email us at grocerygurubugreport@gmail.com</p>
+
                         </main>
                     </Col>
                 </Row>
