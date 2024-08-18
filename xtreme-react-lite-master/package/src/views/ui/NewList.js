@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';  // Import axios for making API requests
 import { Container, Row, Col, Button, Form, FormGroup, Label, Input, ListGroup, ListGroupItem, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import axios from 'axios';
 
@@ -18,10 +19,7 @@ const NewList = () => {
         if (name) {
             const item = { name, brand };
             if (size) {
-                item.size = size;
-                if (unit) {
-                    item.unit = unit;
-                }
+                item.size = `${size} ${unit}`;
             }
             setItems([...items, item]);
             setName('');
@@ -37,9 +35,26 @@ const NewList = () => {
         setItems(newItems);
     };
 
-    const saveList = () => {
-        console.log("List saved:", { listName, items });
-        toggleModal();
+    const saveList = async () => {
+        if (!listName) {
+            alert('Please enter a list name');
+            return;
+        }
+
+        const newList = {
+            userId: 'user_id_placeholder',  // Replace this with the actual user ID if you have authentication
+            name: listName,
+            items: items
+        };
+
+        try {
+            const response = await axios.post('http://localhost:4000/api/lists/save', newList); // Save the list to the backend
+            console.log('List saved:', response.data);
+            toggleModal();
+        } catch (error) {
+            console.error('Error saving list:', error);
+            alert('There was an error saving your list. Please try again.');
+        }
     };
 //TODO
 
@@ -109,7 +124,7 @@ const NewList = () => {
                                 <ListGroup>
                                     {items.map((item, index) => (
                                         <ListGroupItem key={index} className="d-flex justify-content-between align-items-center">
-                                            {item.name} {item.brand && `- ${item.brand}`} {item.size && `${item.size}`} {item.size && item.unit}
+                                            {item.name} {item.brand && `- ${item.brand}`} {item.size && `${item.size}`}
                                             <Button color="danger" size="sm" onClick={() => removeItem(index)}>Remove</Button>
                                         </ListGroupItem>
                                     ))}
