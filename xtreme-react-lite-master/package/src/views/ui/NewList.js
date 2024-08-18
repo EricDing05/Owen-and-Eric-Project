@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Form, FormGroup, Label, Input, ListGroup, ListGroupItem, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import axios from 'axios';
 
 const NewList = () => {
     const [listName, setListName] = useState('');
@@ -9,6 +10,7 @@ const NewList = () => {
     const [size, setSize] = useState('');
     const [unit, setUnit] = useState('');
     const [modal, setModal] = useState(false);
+    const [suggestions, setSuggestions] = useState([]);
 
     const toggleModal = () => setModal(!modal);
 
@@ -26,6 +28,7 @@ const NewList = () => {
             setBrand('');
             setSize('');
             setUnit('');
+            setSuggestions([]);
         }
     };
 
@@ -38,13 +41,30 @@ const NewList = () => {
         console.log("List saved:", { listName, items });
         toggleModal();
     };
+//TODO
 
-    const handleAmountChange = (e) => {
-        const value = e.target.value;
-        if (/^\d*\.?\d*$/.test(value)) {
-            setSize(value);
-        }
+    const handleNameChange = (e) => {
+            const value = e.target.value;
+            setName(value);
+
+            if (value.length > 2) {
+                axios.get(`/api/products/search?q=${value}`)
+                    .then(response => {
+                        setSuggestions(response.data);
+                    })
+                    .catch(error => {
+                        console.error('Error fetching search results:', error);
+                    });
+            } else {
+                setSuggestions([]);
+            }
+        };
+
+    const selectSuggestion = (suggestion) => {
+        setName(suggestion.name);
+        setSuggestions([]);
     };
+
 
     return (
         <Container className="d-flex justify-content-center align-items-center min-vh-50">
@@ -105,6 +125,15 @@ const NewList = () => {
                                             onChange={(e) => setName(e.target.value)}
                                             size="sm"
                                         />
+                                         {suggestions.length > 0 && (
+                                                                                    <ListGroup className="mt-2">
+                                                                                        {suggestions.map((suggestion, index) => (
+                                                                                            <ListGroupItem key={index} onClick={() => selectSuggestion(suggestion)}>
+                                                                                                {suggestion.name}
+                                                                                            </ListGroupItem>
+                                                                                        ))}
+                                                                                    </ListGroup>
+                                                                                )}
                                     </Col>
                                 </FormGroup>
                                 <FormGroup row>

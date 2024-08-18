@@ -24,6 +24,8 @@ app.get('/', (req, res) => {
   res.send('Welcome to Grocery Guru Backend');
 });
 
+
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
