@@ -85,6 +85,7 @@ const NewList = () => {
             if (/^\d*\.?\d*$/.test(value)) {
                 setSize(value);
             }
+
     };
 
 
