@@ -65,6 +65,13 @@ const NewList = () => {
         setSuggestions([]);
     };
 
+    const handleAmountChange = (e) => {
+            const value = e.target.value;
+            if (/^\d*\.?\d*$/.test(value)) {
+                setSize(value);
+            }
+    };
+
 
     return (
         <Container className="d-flex justify-content-center align-items-center min-vh-50">
