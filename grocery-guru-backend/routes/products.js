@@ -25,7 +25,7 @@ router.get('/search', async (req, res) => {
                         "query": searchText,
                         "path": "name",
                         "fuzzy": {
-                            "maxEdits": 2,       // Number of allowed character edits (1 or 2)
+                            "maxEdits": 4,       // Number of allowed character edits (1 or 2)
                             "prefixLength": 2    // Number of initial characters that must match exactly
                         }
                     }
