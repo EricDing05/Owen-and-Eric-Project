@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Table, Button, Container } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import { Container, Row, Col, Button, Table } from 'reactstrap';
 
 const lists = [
   { id: 1, name: 'My List #1' },
@@ -98,7 +99,12 @@ const MyLists = () => {
                       {list.name}
                     </Button>
                   </td>
-                  <td><Button color="info">Search List</Button></td>
+
+                  <td>
+                    <Link to="/searchlist">
+                    <Button color="info">Search List</Button>
+                  </Link>
+                  </td>
                 </tr>
               ))}
             </tbody>

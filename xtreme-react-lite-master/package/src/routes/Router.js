@@ -22,6 +22,8 @@ const ReportABug = lazy(() => import("../views/ui/ReportABug")); // made a route
 const CreateAccount = lazy(() => import("../views/ui/CreateAccount"));
 const MyAccount = lazy(() => import("../views/ui/MyAccount"));
 const Login = lazy(() => import("../views/ui/Login"));
+const SearchList = lazy(() => import("../views/ui/SearchList"));
+
 
 /*****Routes******/
 
@@ -47,7 +49,8 @@ const ThemeRoutes = [
       { path: "/reportabug", element: <ReportABug /> },
       { path: "/createaccount", element: <CreateAccount /> },
       { path: "/myaccount", element: <MyAccount /> },
-      { path: "/login", element: <Login /> }
+      { path: "/login", element: <Login /> },
+      { path: "/searchlist", element: <SearchList /> }
     ],
   },
 ];

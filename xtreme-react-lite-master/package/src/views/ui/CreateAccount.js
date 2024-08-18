@@ -18,6 +18,12 @@ const CreateAccount = () => {
 
     const isValidName = (name) => /^[a-zA-Z]+$/.test(name);
 
+    const handleNameInput = (e) => {
+        if (!isValidName(e.key) && e.key !== 'Backspace') {
+            e.preventDefault();
+        }
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (password !== confirmPassword) {
@@ -56,6 +62,7 @@ const CreateAccount = () => {
                                     placeholder="Enter your first name"
                                     value={firstName}
                                     onChange={(e) => setFirstName(e.target.value)}
+                                    onKeyPress={handleNameInput}
                                     size="sm"
                                     required
                                 />
@@ -70,6 +77,7 @@ const CreateAccount = () => {
                                     placeholder="Enter your last name"
                                     value={lastName}
                                     onChange={(e) => setLastName(e.target.value)}
+                                    onKeyPress={handleNameInput}
                                     size="sm"
                                 />
                             </Col>
