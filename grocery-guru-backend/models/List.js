@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ListSchema = new Schema({
-  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, // Assuming you have user authentication
+  sessionId: { type: String, required: true }, // Assuming you have user authentication
   name: { type: String, required: true }, // Name of the list
   items: [
     {

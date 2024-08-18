@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';  // Import axios for making API requests
 import { Container, Row, Col, Button, Form, FormGroup, Label, Input, ListGroup, ListGroupItem, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import axios from 'axios';
+import { getSessionId } from '../../utils';  // Import the function from your utility file
 
 const NewList = () => {
     const [listName, setListName] = useState('');
@@ -35,26 +35,23 @@ const NewList = () => {
         setItems(newItems);
     };
 
-    const saveList = async () => {
-        if (!listName) {
-            alert('Please enter a list name');
-            return;
-        }
 
-        const newList = {
-            userId: 'user_id_placeholder',  // Replace this with the actual user ID if you have authentication
-            name: listName,
-            items: items
-        };
 
-        try {
-            const response = await axios.post('http://localhost:4000/api/lists/save', newList); // Save the list to the backend
-            console.log('List saved:', response.data);
-            toggleModal();
-        } catch (error) {
-            console.error('Error saving list:', error);
-            alert('There was an error saving your list. Please try again.');
-        }
+    const saveList = async (listName, items) => {
+      const sessionId = getSessionId();
+
+      const newList = {
+        sessionId: sessionId,  // Include sessionId
+        name: listName,
+        items: items
+      };
+
+      try {
+        const response = await axios.post('http://localhost:4000/api/lists/save', newList);
+        console.log('List saved:', response.data);
+      } catch (error) {
+        console.error('Error saving list:', error);
+      }
     };
 //TODO
 
@@ -78,6 +75,14 @@ const NewList = () => {
     const selectSuggestion = (suggestion) => {
         setName(suggestion.name);
         setSuggestions([]);
+    };
+
+    const handleAmountChange = (e) => {
+            const value = e.target.value;
+            if (/^\d*\.?\d*$/.test(value)) {
+                setSize(value);
+            }
+
     };
 
 
@@ -197,7 +202,7 @@ const NewList = () => {
                                     </Col>
                                 </FormGroup>
                                 <div className="d-flex justify-content-between mt-2">
-                                    <Button color="primary" onClick={saveList}>Save List</Button>
+                                    <Button color="primary" onClick={() => saveList(listName, items)}>Save List</Button>
                                     <Button color="primary" onClick={addItem}>Add Item</Button>
                                 </div>
                             </Form>

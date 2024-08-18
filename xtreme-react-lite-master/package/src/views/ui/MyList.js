@@ -1,25 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Container, Table, Button } from 'reactstrap';
 
-
-//this to be updated to be dynamic
-const MyList = () => {
-  const initialItems = [
-    { id: 1, name: 'Item 1', brand: 'Brand A', quantity: 10 },
-    { id: 2, name: 'Item 2', brand: 'Brand B', quantity: 5 },
-    { id: 3, name: 'Item 3', brand: 'Brand C', quantity: 8 },
-  ];
-
-  const [items, setItems] = useState(initialItems);
-
+const MyList = ({ list, items, setItems, handleBack }) => {
   const handleRemove = (itemId) => {
-    const newItems = items.filter(item => item.id !== itemId);
+    const newItems = items.filter(item => item._id !== itemId); // Use _id as the unique identifier
     setItems(newItems);
+
+    // Optionally, update the backend to remove the item
+    // axios.delete(`http://localhost:4000/api/lists/${list._id}/items/${itemId}`)
+    //   .catch(error => console.error('Error removing item:', error));
   };
 
   return (
     <Container>
-      <h3 className="mb-3">My List</h3>
+      <h3 className="mb-3">My List: {list.name}</h3>
       <Table striped>
         <thead>
           <tr>
@@ -31,17 +25,21 @@ const MyList = () => {
         </thead>
         <tbody>
           {items.map((item) => (
-            <tr key={item.id}>
+            <tr key={item._id}>
               <td>{item.name}</td>
               <td>{item.brand}</td>
-              <td>{item.quantity}</td>
+              <td>{item.size}</td> {/* Assuming size is used for quantity */}
               <td>
-                <Button color="danger" onClick={() => handleRemove(item.id)}>Remove</Button>
+                <Button color="danger" onClick={() => handleRemove(item._id)}>Remove</Button>
               </td>
             </tr>
           ))}
         </tbody>
       </Table>
+      <div className="d-flex justify-content-between mt-3">
+        <Button color="secondary" onClick={handleBack}>Back to My Lists</Button>
+        {/* Other buttons like Undo can go here */}
+      </div>
     </Container>
   );
 };
