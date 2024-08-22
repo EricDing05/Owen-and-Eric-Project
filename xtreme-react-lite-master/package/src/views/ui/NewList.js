@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';  // Import axios for making API requests
-import { Container, Row, Col, Button, Form, FormGroup, Label, Input, ListGroup, ListGroupItem, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import axios from 'axios';
+import { Container, Row, Col, Button, Form, FormGroup, Label, Input, ListGroup, ListGroupItem, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 const NewList = () => {
     const [listName, setListName] = useState('');
@@ -56,38 +55,36 @@ const NewList = () => {
             alert('There was an error saving your list. Please try again.');
         }
     };
-//TODO
+
 
     const handleNameChange = (e) => {
-            const value = e.target.value;
-            setName(value);
+        const value = e.target.value;
+        setName(value);
 
-            if (value.length > 2) {
-                axios.get(`/api/products/search?q=${value}`)
-                    .then(response => {
-                        setSuggestions(response.data);
-                    })
-                    .catch(error => {
-                        console.error('Error fetching search results:', error);
-                    });
-            } else {
-                setSuggestions([]);
-            }
-        };
+        if (value.length > 2) {
+            axios.get(`/api/products/search?q=${value}`)
+                .then(response => {
+                    setSuggestions(response.data);
+                })
+                .catch(error => {
+                    console.error('Error fetching search results:', error);
+                });
+        } else {
+            setSuggestions([]);
+        }
+    };
 
     const selectSuggestion = (suggestion) => {
-        setName(suggestion.name);
-        setSuggestions([]);
+        setName(suggestion.name);  // Set the name to the selected suggestion
+        setSuggestions([]);  // Clear suggestions after selection
     };
 
     const handleAmountChange = (e) => {
-            const value = e.target.value;
-            if (/^\d*\.?\d*$/.test(value)) {
-                setSize(value);
-            }
-
+        const value = e.target.value;
+        if (/^\d*\.?\d*$/.test(value)) {
+            setSize(value);
+        }
     };
-
 
     return (
         <Container className="d-flex justify-content-center align-items-center min-vh-50">
@@ -145,18 +142,22 @@ const NewList = () => {
                                             id="itemName"
                                             placeholder="Ex. Oranges"
                                             value={name}
-                                            onChange={(e) => setName(e.target.value)}
+                                            onChange={handleNameChange}  // Use the handleNameChange function here
                                             size="sm"
                                         />
-                                         {suggestions.length > 0 && (
-                                                                                    <ListGroup className="mt-2">
-                                                                                        {suggestions.map((suggestion, index) => (
-                                                                                            <ListGroupItem key={index} onClick={() => selectSuggestion(suggestion)}>
-                                                                                                {suggestion.name}
-                                                                                            </ListGroupItem>
-                                                                                        ))}
-                                                                                    </ListGroup>
-                                                                                )}
+                                        {suggestions.length > 0 && (
+                                            <ListGroup className="mt-2">
+                                                {suggestions.map((suggestion, index) => (
+                                                    <ListGroupItem
+                                                        key={index}
+                                                        onClick={() => selectSuggestion(suggestion)}  // On click, set the name to the suggestion
+                                                        style={{ cursor: 'pointer' }}
+                                                    >
+                                                        {suggestion.name}
+                                                    </ListGroupItem>
+                                                ))}
+                                            </ListGroup>
+                                        )}
                                     </Col>
                                 </FormGroup>
                                 <FormGroup row>

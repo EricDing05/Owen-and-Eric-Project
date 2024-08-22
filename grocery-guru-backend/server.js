@@ -18,16 +18,11 @@ mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
 
 // Routes
 const productsRouter = require('./routes/products'); // Adjust the path as necessary
-const listsRouter = require('./routes/lists'); // Add this line to import your lists routes
-
-app.use('/api/lists', listsRouter); // Add this line to use the lists routes
 app.use('/api/products', productsRouter);
 
 app.get('/', (req, res) => {
   res.send('Welcome to Grocery Guru Backend');
 });
-
-
 
 // Start the server
 app.listen(port, () => {
