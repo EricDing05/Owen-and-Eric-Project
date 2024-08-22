@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';  // Import axios for making API requests
 import { Container, Row, Col, Button, Form, FormGroup, Label, Input, ListGroup, ListGroupItem, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import axios from 'axios';
 
 const NewList = () => {
     const [listName, setListName] = useState('');
