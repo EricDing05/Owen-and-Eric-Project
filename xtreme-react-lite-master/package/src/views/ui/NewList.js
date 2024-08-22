@@ -55,24 +55,25 @@ const NewList = () => {
             alert('There was an error saving your list. Please try again.');
         }
     };
-//TODO
+
 
     const handleNameChange = (e) => {
-            const value = e.target.value;
-            setName(value);
+        const value = e.target.value;
+        setName(value);
 
-            if (value.length > 2) {
-                axios.get(`/api/products/search?q=${value}`)
-                    .then(response => {
-                        setSuggestions(response.data);
-                    })
-                    .catch(error => {
-                        console.error('Error fetching search results:', error);
-                    });
-            } else {
-                setSuggestions([]);
-            }
-        };
+        if (value.length > 2) {
+            axios.get(`/api/products/search?q=${value}`)
+                .then(response => {
+                    console.log('Suggestions:', response.data); // Log suggestions
+                    setSuggestions(response.data);
+                })
+                .catch(error => {
+                    console.error('Error fetching search results:', error);
+                });
+        } else {
+            setSuggestions([]);
+        }
+    };
 
     const selectSuggestion = (suggestion) => {
         setName(suggestion.name);
@@ -144,18 +145,19 @@ const NewList = () => {
                                             id="itemName"
                                             placeholder="Ex. Oranges"
                                             value={name}
-                                            onChange={(e) => setName(e.target.value)}
+                                            onChange={handleNameChange}  // Update to call the function here
                                             size="sm"
                                         />
-                                         {suggestions.length > 0 && (
-                                                                                    <ListGroup className="mt-2">
-                                                                                        {suggestions.map((suggestion, index) => (
-                                                                                            <ListGroupItem key={index} onClick={() => selectSuggestion(suggestion)}>
-                                                                                                {suggestion.name}
-                                                                                            </ListGroupItem>
-                                                                                        ))}
-                                                                                    </ListGroup>
-                                                                                )}
+                                        {suggestions.length > 0 && (
+                                            <ListGroup className="mt-2">
+                                                {suggestions.map((suggestion, index) => (
+                                                    <ListGroupItem key={index} onClick={() => selectSuggestion(suggestion)}>
+                                                        {suggestion.name}
+                                                    </ListGroupItem>
+                                                ))}
+                                            </ListGroup>
+                                        )}
+
                                     </Col>
                                 </FormGroup>
                                 <FormGroup row>
