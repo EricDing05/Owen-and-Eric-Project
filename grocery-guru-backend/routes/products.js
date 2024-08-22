@@ -12,34 +12,21 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Fuzzy search route
+
 router.get('/search', async (req, res) => {
     const searchText = req.query.q;
 
     try {
-        const searchResults = await Product.aggregate([
-            {
-                $search: {
-                    "index": "default",  // Replace "default" with your index name if needed
-                    "text": {
-                        "query": searchText,
-                        "path": "name",
-                        "fuzzy": {
-                            "maxEdits": 4,       // Number of allowed character edits (1 or 2)
-                            "prefixLength": 2    // Number of initial characters that must match exactly
-                        }
-                    }
-                }
-            },
-            { $limit: 10 } // Limit the number of results
-        ]);
+        const searchResults = await Product.find({
+            $text: { $search: searchText }
+        }).limit(8);
 
         res.json(searchResults);
     } catch (err) {
+        console.error('Error during product search:', err);
         res.status(500).json({ error: err.message });
     }
 });
-
 
 
 module.exports = router;
