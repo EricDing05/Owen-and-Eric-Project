@@ -16,10 +16,15 @@ mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected...'))
   .catch(err => console.error(err));
 
-// Routes
+// Products Routes
 const productsRouter = require('./routes/products'); // Adjust the path as necessary
 app.use('/api/products', productsRouter);
 
+// Lists Routes
+const listsRouter = require('./routes/lists');
+app.use('/api/lists', listsRouter);
+
+// Root Route
 app.get('/', (req, res) => {
   res.send('Welcome to Grocery Guru Backend');
 });

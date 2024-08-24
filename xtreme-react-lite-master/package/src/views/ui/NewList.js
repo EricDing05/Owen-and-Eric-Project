@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';  // Import axios for making API requests
 import { Container, Row, Col, Button, Form, FormGroup, Label, Input, ListGroup, ListGroupItem, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { getSessionId } from '../../utils';
 
 const NewList = () => {
     const [listName, setListName] = useState('');
@@ -40,8 +41,10 @@ const NewList = () => {
             return;
         }
 
+        const sessionId = getSessionId();  // Retrieve the session ID
+
         const newList = {
-            userId: 'user_id_placeholder',  // Replace this with the actual user ID if you have authentication
+            sessionId: sessionId,  // Use the session ID instead of a placeholder
             name: listName,
             items: items
         };
