@@ -1,14 +1,15 @@
 import React from 'react';
 import { Container, Table, Button } from 'reactstrap';
+import axios from 'axios';
 
 const MyList = ({ list, items, setItems, handleBack }) => {
   const handleRemove = (itemId) => {
     const newItems = items.filter(item => item._id !== itemId); // Use _id as the unique identifier
     setItems(newItems);
 
-    // Optionally, update the backend to remove the item
-    // axios.delete(`http://localhost:4000/api/lists/${list._id}/items/${itemId}`)
-    //   .catch(error => console.error('Error removing item:', error));
+     // Optionally, update the backend to remove the item
+     axios.delete(`http://localhost:4000/api/lists/${list._id}/items/${itemId}`)
+       .catch(error => console.error('Error removing item:', error));
   };
 
   return (

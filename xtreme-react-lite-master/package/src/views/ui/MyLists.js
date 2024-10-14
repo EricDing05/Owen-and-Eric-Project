@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col, Button, Table } from 'reactstrap';
 import axios from 'axios';
-import { getSessionId } from '../../utils';  // Ensure you have this utility function
+import { getSessionId } from '../../utils';
 import MyList from './MyList';
 
 const MyLists = () => {
@@ -13,7 +13,7 @@ const MyLists = () => {
   useEffect(() => {
     // Fetch lists from the backend when the component mounts
     const fetchLists = async () => {
-      const sessionId = getSessionId();  // Assuming you have this utility function
+      const sessionId = getSessionId();
       try {
         const response = await axios.get(`http://localhost:4000/api/lists/my-lists/${sessionId}`);
         setLists(response.data);

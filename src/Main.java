@@ -1,11 +1,11 @@
 import model.Product;
 import model.store.AbstractStore;
-import model.store.ThriftyFoods;
+import model.store.LobLaws;
 
 public class Main {
 
     public static void main(String[] args) {
-        AbstractStore costco = new ThriftyFoods("Costco");
+        AbstractStore costco = new LobLaws("Costco");
         costco.generateProducts();
 
         for(Product p : costco.getProducts()) {
